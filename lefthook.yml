@@ -1,0 +1,20 @@
+{
+  "hooks": {
+    "pre-commit": {
+      "commands": {
+        "analyze": {
+          "run": "dart analyze --no-fatal-warnings",
+          "name": "Dart analyzer"
+        },
+        "format": {
+          "run": "dart format --set-exit-if-changed .",
+          "name": "Dart formatter"
+        },
+        "test": {
+          "run": "dart test --no-pub",
+          "name": "Dart tests"
+        }
+      }
+    }
+  }
+}

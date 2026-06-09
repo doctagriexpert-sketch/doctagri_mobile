@@ -1,0 +1,59 @@
+  Widget _buildConfidenceExplanation(double confidence) {
+    String title;
+    String message;
+    Color color;
+    IconData icon;
+
+    if (confidence > 0.7) {
+      title = '✅ Résultat fiable';
+      message = 'L\'IA est très confiante dans ce diagnostic.';
+      color = Colors.green[700]!;
+      icon = Icons.verified;
+    } else if (confidence > 0.4) {
+      title = '⚠️ Résultat modéré';
+      message = 'Le diagnostic est probable mais pourrait nécessiter une confirmation.';
+      color = Colors.orange[700]!;
+      icon = Icons.warning_amber;
+    } else {
+      title = '❌ Résultat incertain';
+      message = 'L\'IA n\'est pas sûre. Prenez une nouvelle photo avec:\n• Meilleur éclairage\n• Feuille bien centrée\n• Image nette et claire';
+      color = Colors.red[700]!;
+      icon = Icons.error_outline;
+    }
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: color.withOpacity(0.3), width: 1.5),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: color, size: 28),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: color,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  message,
+                  style: TextStyle(fontSize: 14, color: Colors.grey[800]),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }

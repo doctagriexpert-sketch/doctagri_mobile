@@ -1,0 +1,85 @@
+# Machine Learning Models
+*.keras
+*.h5
+*.tflite
+!assets/models/*.tflite
+# Backup du modèle cassava : asset non-runtime, 16 Mo → exclu de l'historique
+assets/models/model_backup.tflite
+
+# Virtual Environments
+.venv*/
+.venv_tf/
+
+# Analysis & Logs
+analysis*.txt
+analyze*.txt
+errors_detailed.txt
+full_analysis.txt
+issues.txt
+conversion_log.txt
+load_test*.txt
+final_analyze.txt
+analyze_result*.txt
+analyze_output.log
+analyze_check.txt
+analyze_wide.txt
+analyze_utf8.txt
+convert_model*.py
+quantize_tflite.py
+
+# Misc
+*.log
+nul
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Environment variables (CRITICAL: Never commit these!)
+.env
+*.env
+.env.*
+!.env.example
+
+# Android signing (CRITICAL: Never commit keystore or key properties!)
+**/key.properties
+**/*.jks
+**/*.keystore
+**/android/app/*.jks
+**/android/app/*.keystore
+**/android/key.properties

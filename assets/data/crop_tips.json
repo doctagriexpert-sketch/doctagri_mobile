@@ -1,0 +1,174 @@
+[
+  {
+    "cropId": "mais",
+    "emoji": "🌽",
+    "name": {
+      "fr": "Maïs",
+      "ee": "Agblɛ",
+      "kab": "Agblɛ"
+    },
+    "tips": [
+      {
+        "title": {
+          "fr": "Semis et préparation du sol",
+          "ee": "Subɔ kple anyigba dzadzraɖo",
+          "kab": "Subɔ kple anyigba dzadzraɖo"
+        },
+        "audioText": {
+          "fr": "Pour réussir votre culture de maïs, labourez profondément le sol avant les premières pluies. Semez deux grains par poquet, à 25 centimètres d'écartement sur la ligne, et 75 centimètres entre les lignes. Respectez cet espacement pour optimiser le rendement.",
+          "ee": "Be wò agblɛ nàwɔ nyuie la, kplɔ anyigba nyuie hafi tsidzadza gbãtɔ nava. Ƒã atsi eve ɖe do ɖe sia ɖe me. Ðe 25 sentimeta ɖe atsiwo dome le fli dzi, eye 75 sentimeta ɖe fliwo dome.",
+          "kab": "Be wò agblɛ nàwɔ nyuie la, kplɔ anyigba nyuie hafi tsidzadza gbãtɔ nava. Ƒã atsi eve ɖe do ɖe sia ɖe me. Ðe 25 sentimeta ɖe atsiwo dome."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=B4tBvD0Rf7s"
+      },
+      {
+        "title": {
+          "fr": "Fertilisation du maïs",
+          "ee": "Agblɛ ƒe nudodo",
+          "kab": "Agblɛ ƒe nudodo"
+        },
+        "audioText": {
+          "fr": "Appliquez le NPK 15-15-15 à raison de 150 kilos par hectare, 15 jours après la levée. Complétez par de l'urée 45% au stade 30 jours, à raison de 100 kilos par hectare, enfoui à 5 centimètres du plant.",
+          "ee": "Tsɔ NPK 15-15-15 ɖo 150 kilo ɖe hekta ɖeka dzi, ŋkeke 15 le atsiwo ƒe dodo megbe. Tsɔ ure hã kpe ɖe eŋu le ŋkeke 30 ƒe ɣeyiɣi me.",
+          "kab": "Tsɔ NPK 15-15-15 ɖo 150 kilo ɖe hekta ɖeka dzi, ŋkeke 15 le atsiwo ƒe dodo megbe."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=9nLNOJ-KT5o"
+      },
+      {
+        "title": {
+          "fr": "Lutte contre la chenille légionnaire",
+          "ee": "Didi ɖe hahã vɔ̃ɖitɔ ŋu",
+          "kab": "Didi ɖe hahã vɔ̃ɖitɔ ŋu"
+        },
+        "audioText": {
+          "fr": "Inspectez vos plants chaque semaine. Dès les premiers trous dans les feuilles, pulvérisez un biopesticide à base de Bacillus thuringiensis, de préférence en fin de journée. Répétez le traitement tous les 7 jours pendant 3 semaines.",
+          "ee": "Kpɔ wò atsiwo ŋkeke adre ɖe adre me. Ne èkpɔ do le lãmewo me la, tsɔ Bacillus thuringiensis ƒui ɖe wo dzi le ɣetrɔ me.",
+          "kab": "Kpɔ wò atsiwo ŋkeke adre ɖe adre me. Ne èkpɔ do le lãmewo me la, tsɔ biopesticide ƒui ɖe wo dzi le ɣetrɔ me."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=VQhEpYJn65o"
+      }
+    ]
+  },
+  {
+    "cropId": "manioc",
+    "emoji": "🌱",
+    "name": {
+      "fr": "Manioc",
+      "ee": "Agbeli",
+      "kab": "Agbeli"
+    },
+    "tips": [
+      {
+        "title": {
+          "fr": "Choix et bouturage",
+          "ee": "Atsi nyuiwo tiatia",
+          "kab": "Atsi nyuiwo tiatia"
+        },
+        "audioText": {
+          "fr": "Utilisez uniquement des boutures saines provenant de plants de 8 à 12 mois. Coupez des boutures de 25 à 30 centimètres comportant au moins 4 à 6 yeux. Plantez-les inclinées à 45 degrés, avec deux tiers enfouis.",
+          "ee": "Tsɔ agbeli ƒe atsi nyuiwo ko. Tso wo 25 alo 30 sentimeta kple ŋku ene alo ade. Ƒã wo le 45 grad nu.",
+          "kab": "Tsɔ agbeli ƒe atsi nyuiwo ko. Tso wo 25 alo 30 sentimeta. Ƒã wo le 45 grad nu."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=L2j4hxK7ZKg"
+      },
+      {
+        "title": {
+          "fr": "Prévention de la mosaïque africaine",
+          "ee": "Dɔmegblẽ Afrika tɔ ŋu dzadzraɖo",
+          "kab": "Dɔmegblẽ Afrika tɔ ŋu dzadzraɖo"
+        },
+        "audioText": {
+          "fr": "La mosaïque africaine du manioc est transmise par les aleurodes. Utilisez des variétés tolérantes comme TMS et surveillez les feuilles jaunies ou déformées. Arrachez et brûlez immédiatement tout plant suspect.",
+          "ee": "Dɔmegblẽ sia le aɖaba mewo me dzɔm. Tsɔ agbeli ƒomevi nyuiwo abe TMS ene. Ho atsi vɔ̃ɖiwo ɖa nàtɔ dzoe enumake.",
+          "kab": "Dɔmegblẽ sia le aɖaba mewo me dzɔm. Ho atsi vɔ̃ɖiwo ɖa nàtɔ dzoe enumake."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=IQ0DPRyrZ2k"
+      }
+    ]
+  },
+  {
+    "cropId": "tomate",
+    "emoji": "🍅",
+    "name": {
+      "fr": "Tomate",
+      "ee": "Tomati",
+      "kab": "Tomati"
+    },
+    "tips": [
+      {
+        "title": {
+          "fr": "Tuteurage et taille",
+          "ee": "Tomati ƒe tsɔtsɔ do",
+          "kab": "Tomati ƒe tsɔtsɔ do"
+        },
+        "audioText": {
+          "fr": "Installez des tuteurs de 1 mètre 50 dès le repiquage. Supprimez les gourmands qui poussent à l'aisselle des feuilles chaque semaine. Gardez une seule tige principale pour les variétés indéterminées.",
+          "ee": "Tsɔ ati legbe le atsi la gbɔ enumake. Lã atsi vivi siwo doa go le lãmewo dome ŋkeke adre ɖe adre me.",
+          "kab": "Tsɔ ati legbe le atsi la gbɔ. Lã atsi vivi siwo doa go le lãmewo dome."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=_DO__U5j33k"
+      },
+      {
+        "title": {
+          "fr": "Lutte contre le mildiou",
+          "ee": "Dɔmegblẽ xoxo ƒe gbɔgblɔɖa",
+          "kab": "Dɔmegblẽ xoxo ƒe gbɔgblɔɖa"
+        },
+        "audioText": {
+          "fr": "Le mildiou apparaît par temps humide. Aérez les plants, arrosez au pied uniquement, et traitez préventivement à la bouillie bordelaise à raison de 300 grammes pour 100 litres d'eau. Évitez les traitements en plein soleil.",
+          "ee": "Dɔmegblẽ xoxo vana ne tsi dza fũ. Tsɔ bouillie bordelaise ƒui ɖe atsiwo dzi le ŋdi alo ɣetrɔ.",
+          "kab": "Dɔmegblẽ xoxo vana ne tsi dza fũ. Tsɔ bouillie bordelaise ƒui ɖe atsiwo dzi."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=LT54a9IoLh4"
+      }
+    ]
+  },
+  {
+    "cropId": "riz",
+    "emoji": "🌾",
+    "name": {
+      "fr": "Riz",
+      "ee": "Mɔli",
+      "kab": "Mɔli"
+    },
+    "tips": [
+      {
+        "title": {
+          "fr": "Repiquage du riz irrigué",
+          "ee": "Mɔli ƒe subɔsubɔ",
+          "kab": "Mɔli ƒe subɔsubɔ"
+        },
+        "audioText": {
+          "fr": "Repiquez les plantules à 20 ou 25 jours, hauteur 15 à 20 centimètres, à raison de 2 à 3 brins par touffe. Espacement recommandé : 20 centimètres entre les lignes et 20 centimètres sur la ligne, lame d'eau de 5 centimètres.",
+          "ee": "Tsɔ mɔli ƒe atsi suewo subɔ ne wode ŋkeke 20 alo 25. Ðe 20 sentimeta ɖe atsiwo dome.",
+          "kab": "Tsɔ mɔli ƒe atsi suewo subɔ ne wode ŋkeke 20 alo 25."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=JGvHmV_2E5A"
+      }
+    ]
+  },
+  {
+    "cropId": "igname",
+    "emoji": "🥔",
+    "name": {
+      "fr": "Igname",
+      "ee": "Te",
+      "kab": "Te"
+    },
+    "tips": [
+      {
+        "title": {
+          "fr": "Buttage et tuteurage",
+          "ee": "Te ƒe dzadzraɖo",
+          "kab": "Te ƒe dzadzraɖo"
+        },
+        "audioText": {
+          "fr": "Formez des buttes de 50 centimètres de haut avant les pluies. Plantez des tubercules de 250 à 400 grammes à 10 centimètres de profondeur. Installez des tuteurs dès que les tiges atteignent 50 centimètres.",
+          "ee": "Wɔ buti siwo kɔ 50 sentimeta hafi tsidzadza nava. Ƒã te atsi siwo nu sẽ 250 ƒu 400 gram.",
+          "kab": "Wɔ buti siwo kɔ 50 sentimeta hafi tsidzadza nava. Ƒã te atsi siwo nu sẽ 250 ƒu 400 gram."
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=4RFb80yq9wY"
+      }
+    ]
+  }
+]

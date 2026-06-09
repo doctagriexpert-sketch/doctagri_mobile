@@ -1,0 +1,24 @@
+name: doctagri_diagnosis
+description: Diagnosis feature for DoctAgri
+version: 1.0.0
+
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.4.9
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  doctagri_core:
+    path: ../doctagri_core
+  doctagri_ml_engine:
+    path: ../doctagri_ml_engine
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0

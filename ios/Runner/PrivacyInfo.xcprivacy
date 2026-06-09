@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>NSPrivacyTracking</key>
+  <false/>
+  <key>NSPrivacyTrackingDomains</key>
+  <array/>
+  <key>NSPrivacyCollectedDataTypes</key>
+  <array>
+    <dict>
+      <key>NSPrivacyType</key>
+      <string>NSPrivacyTypeUserGeneratedContent</string>
+      <key>NSPrivacyTypeDescription</key>
+      <string>Photos of crops used for disease diagnosis</string>
+      <key>NSPrivacyTypeLinked</key>
+      <false/>
+    </dict>
+    <dict>
+      <key>NSPrivacyType</key>
+      <string>NSPrivacyTypeDeviceAttributes</string>
+      <key>NSPrivacyTypeDescription</key>
+      <string>Device model and OS version for crash reporting</string>
+      <key>NSPrivacyTypeLinked</key>
+      <false/>
+    </dict>
+  </array>
+  <key>NSPrivacyAccessedAPIType</key>
+  <array>
+    <dict>
+      <key>NSPrivacyAccessedAPITypeReason</key>
+      <string>CA92.1</string>
+      <key>NSPrivacyAccessedAPITypeCategory</key>
+      <string>CachedValues</string>
+    </dict>
+    <dict>
+      <key>NSPrivacyAccessedAPITypeReason</key>
+      <string>3B52.1</string>
+      <key>NSPrivacyAccessedAPITypeCategory</key>
+      <string>FileTimestamp</string>
+    </dict>
+  </array>
+</dict>
+</plist>

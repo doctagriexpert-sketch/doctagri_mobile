@@ -1,0 +1,44 @@
+name: doctagri
+repository: https://github.com/doctagri/doctagri
+description: DoctAgri - Agricultural disease diagnostic app
+
+publish_to: none
+
+packages:
+  - packages/doctagri_core
+  - packages/doctagri_design_system
+  - packages/doctagri_ml_engine
+  - packages/doctagri_diagnosis
+  - packages/doctagri_history
+  - packages/doctagri_validation
+  - packages/doctagri_knowledge
+  - packages/doctagri_sync
+  - packages/doctagri_auth
+  - packages/doctagri_telemetry
+
+scripts:
+  analyze:
+    name: Analyze all packages
+    description: Run dart analyze across all packages
+    package: doctagri_*
+    run: dart analyze --no-fatal-warnings
+
+  format:
+    name: Format all packages
+    description: Format dart code
+    package: doctagri_*
+    run: dart format .
+
+  test:
+    name: Test all packages
+    description: Run tests across all packages
+    package: doctagri_*
+    run: dart test --no-pub
+
+command:
+  bootstrap:
+    hooks:
+      pre-build: flutter pub get
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"

@@ -1,0 +1,1991 @@
+[
+    {
+        "model_label": "Cassava Bacterial Blight (CBB)",
+        "culture": "Manioc",
+        "display_name": "Brûlure bactérienne du manioc",
+        "description": "La brûlure bactérienne (Xanthomonas axonopodis pv. manihotis) est la maladie bactérienne la plus importante du manioc en Afrique. Elle provoque des taches angulaires sur les feuilles, un flétrissement et un dessèchement des tiges. Peut réduire le rendement de 60-80% si non traitée.",
+        "severity": "critique",
+        "symptoms": [
+            "Taches angulaires brunes sur les feuilles, délimitées par les nervures",
+            "Exsudat bactérien jaunâtre sur la face inférieure des feuilles",
+            "Flétrissement et dessèchement des feuilles en partant du sommet",
+            "Tiges avec stries brunes et exsudat",
+            "Dépérissement progressif de la plante"
+        ],
+        "treatments": [
+            {
+                "method": "Traitement au cuivre + assainissement",
+                "description": "Combiner traitement préventif et mesures sanitaires pour limiter la propagation.",
+                "steps": [
+                    "Couper et brûler les parties infectées",
+                    "Désinfecter les outils avec de l'eau de javel entre chaque plant",
+                    "Appliquer un traitement à base de cuivre en préventif sur les plants sains",
+                    "Ne pas travailler dans le champ quand les feuilles sont mouillées"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "300-400 g de cuivre/100L d'eau",
+                "precautions": "Traitement préventif. Ne pas appliquer en plein soleil.",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            },
+            {
+                "name": "Eau de javel diluée",
+                "dosage": "10 mL/L pour désinfection des outils",
+                "precautions": "Uniquement pour les outils. Rincer après usage.",
+                "priceXof": 1500,
+                "sku": "DGA-1002",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Utiliser des boutures saines de plants résistants",
+            "Rotation des cultures (2-3 ans sans manioc)",
+            "Détruire les plants infectés par le feu",
+            "Espacement adéquat (1m x 1m minimum)"
+        ]
+    },
+    {
+        "model_label": "Cassava Brown Streak Disease (CBSD)",
+        "culture": "Manioc",
+        "display_name": "Maladie des stries brunes du manioc",
+        "description": "La CBSD est une maladie virale transmise par les aleurodes (Bemisia tabaci) et par les boutures infectées. Elle cause des stries brunes sur les tiges et une pourriture brune interne des racines. Les racines atteintes sont impropres à la consommation. Très destructrice en Afrique de l'Est et de l'Ouest.",
+        "severity": "critique",
+        "symptoms": [
+            "Stries brunes allongées sur les tiges",
+            "Jaunissement chlorotique entre les nervures des feuilles",
+            "Nécrose des racines (pourriture brune interne visible à la coupe)",
+            "Racines dures et fibreuses, impropres à la consommation",
+            "Dépérissement lent de la plante"
+        ],
+        "treatments": [
+            {
+                "method": "Gestion sanitaire (pas de traitement curatif)",
+                "description": "Aucun produit ne guérit un virus. La gestion repose sur l'arrachage et la prévention.",
+                "steps": [
+                    "Arracher et brûler tous les plants infectés",
+                    "Ne jamais utiliser de boutures de plants malades",
+                    "Contrôler les aleurodes avec des pièges jaunes",
+                    "Replanter avec des variétés résistantes"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Pièges jaunes collants",
+                "dosage": "20-30 pièges/ha",
+                "precautions": "Disposer en bordure de parcelle à hauteur des plants.",
+                "priceXof": 4500,
+                "sku": "DGA-2001",
+                "vendor": "DoctAgri Shop"
+            },
+            {
+                "name": "Huile de neem",
+                "dosage": "5 mL/L d'eau",
+                "precautions": "Répulsif naturel contre les aleurodes. Traiter le soir.",
+                "priceXof": 3800,
+                "sku": "DGA-2002",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes (NASE 3, NAROCASS 1, Mkuzi)",
+            "Boutures saines certifiées uniquement",
+            "Rotation avec des cultures non-hôtes",
+            "Élimination des aleurodes vecteurs"
+        ]
+    },
+    {
+        "model_label": "Cassava Green Mottle (CGM)",
+        "culture": "Manioc",
+        "display_name": "Marbrure verte du manioc",
+        "description": "La marbrure verte est causée par le virus de la marbrure verte du manioc (Cassava green mottle virus). Elle provoque une mosaïque verte sur les feuilles et réduit la croissance. Moins destructrice que la CBSD ou la CMD mais impacte le rendement.",
+        "severity": "modéré",
+        "symptoms": [
+            "Marbrures vert clair / vert foncé sur les jeunes feuilles",
+            "Déformation légère des feuilles",
+            "Réduction de la taille des feuilles",
+            "Ralentissement de la croissance",
+            "Rendement réduit de 20-40%"
+        ],
+        "treatments": [
+            {
+                "method": "Gestion sanitaire",
+                "description": "Pas de traitement curatif contre le virus. Limiter la propagation.",
+                "steps": [
+                    "Arracher les plants fortement infectés",
+                    "Contrôler les insectes vecteurs",
+                    "Utiliser des boutures saines pour la replantation",
+                    "Surveiller régulièrement l'évolution"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Huile de neem",
+                "dosage": "5 mL/L d'eau",
+                "precautions": "Répulsif contre les insectes vecteurs. Traiter le soir.",
+                "priceXof": 3800,
+                "sku": "DGA-2002",
+                "vendor": "DoctAgri Shop"
+            },
+            {
+                "name": "Savon insecticide",
+                "dosage": "10-20 mL/L d'eau",
+                "precautions": "Contre les insectes vecteurs. Rincer si température > 35°C.",
+                "priceXof": 2800,
+                "sku": "DGA-3001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Boutures saines de plants résistants",
+            "Contrôle des insectes vecteurs",
+            "Rotation des cultures",
+            "Élimination des plants infectés"
+        ]
+    },
+    {
+        "model_label": "Cassava Mosaic Disease (CMD)",
+        "culture": "Manioc",
+        "display_name": "Mosaïque du manioc",
+        "description": "La mosaïque du manioc (African Cassava Mosaic Virus) est la maladie virale la plus répandue du manioc en Afrique. Transmise par les aleurodes et les boutures infectées. Elle provoque une mosaïque jaune-vert sur les feuilles, un rabougrissement et une réduction drastique du rendement (jusqu'à 80%).",
+        "severity": "critique",
+        "symptoms": [
+            "Mosaïque jaune-vert sur les feuilles (taches irrégulières)",
+            "Déformation et réduction de la taille des feuilles",
+            "Feuilles froissées et tordues",
+            "Rabougrissement de la plante",
+            "Tiges courtes et fines",
+            "Réduction sévère du rendement des racines"
+        ],
+        "treatments": [
+            {
+                "method": "Gestion sanitaire urgente",
+                "description": "Pas de traitement curatif. Agir rapidement pour protéger la parcelle.",
+                "steps": [
+                    "Arracher et brûler immédiatement les plants infectés",
+                    "Ne jamais composter les plants malades",
+                    "Replanter avec des variétés résistantes",
+                    "Contrôler les aleurodes vecteurs du virus"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Pièges jaunes collants",
+                "dosage": "20-30 pièges/ha",
+                "precautions": "Pour capturer les aleurodes vecteurs. Remplacer quand saturés.",
+                "priceXof": 4500,
+                "sku": "DGA-2001",
+                "vendor": "DoctAgri Shop"
+            },
+            {
+                "name": "Huile de neem",
+                "dosage": "5 mL/L d'eau",
+                "precautions": "Répulsif naturel. Appliquer le soir pour éviter la photodégradation.",
+                "priceXof": 3800,
+                "sku": "DGA-2002",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes (TMS 30572, TMS 4(2)1425, TME 419)",
+            "Boutures saines certifiées uniquement",
+            "Arrachage systématique des plants malades",
+            "Rotation avec des cultures non-hôtes (maïs, arachide)"
+        ]
+    },
+    {
+        "model_label": "Cassava___healthy",
+        "culture": "Manioc",
+        "display_name": "Manioc sain",
+        "description": "Votre manioc ne présente aucun signe visible de maladie. Il semble en bonne santé. Continuez les bonnes pratiques culturales pour maintenir sa santé jusqu'à la récolte.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Entretien préventif",
+                "description": "Continuez à surveiller régulièrement vos plants de manioc.",
+                "steps": [
+                    "Désherber régulièrement, surtout les 3 premiers mois",
+                    "Surveiller l'apparition de taches ou décolorations sur les feuilles",
+                    "Vérifier l'absence d'aleurodes sous les feuilles",
+                    "Maintenir un bon espacement entre les plants"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Utiliser des boutures saines de variétés résistantes",
+            "Rotation des cultures tous les 2-3 ans",
+            "Bon drainage du sol",
+            "Espacement 1m x 1m minimum"
+        ]
+    },
+    {
+        "model_label": "Cassava___unknown",
+        "culture": "Manioc",
+        "display_name": "État non identifié",
+        "description": "Le modèle n'a pas pu identifier clairement l'état de votre plante. Cela peut être dû à une photo de mauvaise qualité, un angle inapproprié, ou un symptôme atypique. Prenez une nouvelle photo en suivant les conseils ci-dessous.",
+        "severity": "inconnu",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Reprendre une photo",
+                "description": "Pour un meilleur diagnostic, suivez ces recommandations.",
+                "steps": [
+                    "Prenez la photo en plein jour, à la lumière naturelle",
+                    "Photographiez une feuille bien visible, ni trop proche ni trop loin",
+                    "Évitez les ombres et les reflets sur la feuille",
+                    "Montrez la face supérieure ET la face inférieure de la feuille",
+                    "Si le problème persiste, consultez un agronome ou un agent agricole"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière des plants",
+            "Consulter un expert en cas de doute"
+        ]
+    },
+    {
+        "model_label": "Background_without_leaves",
+        "culture": "Inconnu",
+        "display_name": "Image inutilisable",
+        "description": "L'image ne contient pas de feuille bien visible. Reprenez la photo avec une feuille bien centrée, à plat, et avec un éclairage suffisant.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Reprendre une photo",
+                "description": "Pour un meilleur diagnostic.",
+                "steps": [
+                    "Prendre la photo en plein jour, lumière naturelle",
+                    "Cadrer une feuille seule, à plat",
+                    "Distance d'environ 20 centimètres",
+                    "Éviter les ombres et les reflets"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [],
+        "display_name_i18n": {
+            "ee": "Foto megblɔ nu o",
+            "kab": "Foto megblɔ nu o"
+        },
+        "description_i18n": {
+            "ee": "Foto la mefia ati ƒe lãme aɖeke o. Tsɔ foto bubu, da lãme la ɖe titina, eye nàwɔ kekeli nyuie.",
+            "kab": "Foto la mefia lãme aɖeke o. Tsɔ foto bubu lè kekeli nyuie me."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Photo inutilisable. Reprenez avec une feuille bien visible au centre, lumière naturelle.",
+            "ee": "Foto la megblɔ nu o. Wɔ foto yeye, da lãme ɖe titina, kekeli nyuie.",
+            "kab": "Foto la mèfia nu o. Wɔ foto yeye lè kekeli nyuie me."
+        }
+    },
+    {
+        "model_label": "Tomato___Bacterial_spot",
+        "culture": "Tomate",
+        "display_name": "Tache bactérienne de la tomate",
+        "description": "La tache bactérienne (Xanthomonas) provoque de petites taches sombres sur les feuilles, fruits et tiges. Elle peut détruire 50 % de la récolte si elle n'est pas contrôlée tôt.",
+        "severity": "grave",
+        "symptoms": [
+            "Petites taches noires ou brun foncé sur les feuilles",
+            "Taches concentriques sur les fruits, parfois fissurées",
+            "Jaunissement progressif et chute des feuilles",
+            "Lésions humides sur les tiges"
+        ],
+        "treatments": [
+            {
+                "method": "Bouillie cuprique + assainissement",
+                "description": "Combiner cuivre et hygiène culturale.",
+                "steps": [
+                    "Retirer et brûler toutes les feuilles infectées",
+                    "Désinfecter les outils avec de l'eau de javel diluée",
+                    "Pulvériser de la bouillie bordelaise tous les 7-10 jours",
+                    "Ne jamais arroser le feuillage : irriguer au pied"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "200 g pour 20 L d'eau",
+                "precautions": "Ne pas appliquer en plein soleil.",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Semences saines certifiées",
+            "Rotation des cultures (3 ans sans solanacées)",
+            "Espacement suffisant pour aérer le feuillage",
+            "Paillage pour limiter les éclaboussures"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe dɔmegblẽ bacteria",
+            "kab": "Tomati ƒe dɔmegblẽ bacteria"
+        },
+        "description_i18n": {
+            "ee": "Dɔmegblẽ bacteria sia daa atsɔ̃ yibɔ ɖe lãme kple atsiame, eye wòawu rendement la ƒe afa ne mèkpɔe nu kaba o.",
+            "kab": "Dɔmegblẽ bacteria sia daa atsɔ̃ yibɔ ɖe lãme kple atsiame, eye wòawu rendement la ƒe afa."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie bactérienne grave de la tomate. Petites taches noires sur feuilles et fruits. Traitement au cuivre nécessaire.",
+            "ee": "Tomati ƒe dɔ sesẽ. Atsɔ̃ yibɔ sue ɖe lãme kple atsiame. Wɔ dɔ kple kɔpe.",
+            "kab": "Tomati ƒe dɔ sesẽ. Atsɔ̃ yibɔ sue ɖe lãme kple atsiame. Wɔ dɔ kple kɔpe."
+        }
+    },
+    {
+        "model_label": "Tomato___Early_blight",
+        "culture": "Tomate",
+        "display_name": "Alternariose de la tomate",
+        "description": "L'alternariose (Alternaria solani) est un champignon qui crée des taches brunes en cible sur les feuilles basses. Sans traitement, elle remonte et tue la plante.",
+        "severity": "grave",
+        "symptoms": [
+            "Taches brunes en cercles concentriques sur feuilles basses",
+            "Feuilles qui jaunissent puis sèchent du bas vers le haut",
+            "Taches noires en creux à la base des fruits",
+            "Tiges avec lésions sombres"
+        ],
+        "treatments": [
+            {
+                "method": "Fongicide cuivrique + retrait des feuilles atteintes",
+                "description": "Action rapide pour sauver la plante.",
+                "steps": [
+                    "Couper les feuilles malades, brûler hors du champ",
+                    "Pulvériser bouillie cuprique tous les 10 jours",
+                    "Pailler le sol pour bloquer les spores",
+                    "Ne pas mouiller le feuillage à l'arrosage"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "Pulvériser le matin tôt ou le soir.",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés tolérantes",
+            "Rotation 3 ans",
+            "Désinfection des outils",
+            "Paillage du sol"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe dɔmegblẽ kabakaba",
+            "kab": "Tomati ƒe dɔmegblẽ kabakaba"
+        },
+        "description_i18n": {
+            "ee": "Atsiame ɖe lãme megbe la dze, eye wòɖu lãmewo katã ne mèwɔ dɔ o.",
+            "kab": "Atsiame ɖe lãme megbe la dze, eye wòɖu lãmewo katã."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Champignon courant de la tomate. Taches brunes en cible sur les feuilles basses. Traiter vite au cuivre.",
+            "ee": "Tomati ƒe dɔ. Atsɔ̃ yibɔ ɖe lãme. Wɔ dɔ kple kɔpe kabakaba.",
+            "kab": "Tomati ƒe dɔ. Atsɔ̃ yibɔ ɖe lãme. Wɔ dɔ kple kɔpe kabakaba."
+        }
+    },
+    {
+        "model_label": "Tomato___Late_blight",
+        "culture": "Tomate",
+        "display_name": "Mildiou de la tomate",
+        "description": "Le mildiou (Phytophthora infestans) est extrêmement destructeur. Il peut anéantir un champ en 7 jours en saison humide. Les feuilles brunissent et un duvet blanc apparaît au revers.",
+        "severity": "critique",
+        "symptoms": [
+            "Taches huileuses gris-vert sur les feuilles",
+            "Duvet blanc cotonneux sous les feuilles humides",
+            "Tiges noircies",
+            "Fruits avec taches brunes dures"
+        ],
+        "treatments": [
+            {
+                "method": "Traitement urgent + arrachage",
+                "description": "Réagir dans les 24 h.",
+                "steps": [
+                    "Arracher et brûler toute plante très atteinte",
+                    "Pulvériser un fongicide cuprique sur les plants restants",
+                    "Renouveler tous les 5-7 jours",
+                    "Aérer la parcelle (couper les feuilles basses)"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "25 g/L",
+                "precautions": "En traitement curatif, doubler la fréquence.",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Espacement large",
+            "Éviter l'irrigation par aspersion",
+            "Surveillance quotidienne en saison humide"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe mildiou",
+            "kab": "Tomati ƒe mildiou"
+        },
+        "description_i18n": {
+            "ee": "Dɔmegblẽ sesẽ aɖe wòawu agble blibo le ŋkeke adre me ne tsi wɔ.",
+            "kab": "Dɔmegblẽ sesẽ aɖe wòawu agble blibo le ŋkeke adre me."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie très dangereuse. Peut tuer le champ en une semaine. Traiter immédiatement et arracher les plants atteints.",
+            "ee": "Dɔ sesẽ ŋutɔ. Aɖu agble le kwasiɖa ɖeka me. Wɔ dɔ enumake.",
+            "kab": "Dɔ sesẽ ŋutɔ. Aɖu agble le kwasiɖa ɖeka me. Wɔ dɔ enumake."
+        }
+    },
+    {
+        "model_label": "Tomato___Leaf_Mold",
+        "culture": "Tomate",
+        "display_name": "Cladosporiose de la tomate",
+        "description": "Maladie fongique qui apparaît surtout sous serre ou par humidité élevée. Crée des feutrages verts-jaunes au revers des feuilles.",
+        "severity": "modéré",
+        "symptoms": [
+            "Taches jaunes diffuses sur le dessus des feuilles",
+            "Feutrage vert olive au revers des feuilles",
+            "Feuilles qui se dessèchent et tombent"
+        ],
+        "treatments": [
+            {
+                "method": "Aération + fongicide",
+                "description": "Réduire l'humidité.",
+                "steps": [
+                    "Aérer la parcelle (couper feuilles basses)",
+                    "Réduire l'arrosage du feuillage",
+                    "Pulvériser bouillie cuprique tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "Tôt le matin de préférence.",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Aération",
+            "Variétés résistantes"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe dɔ tsia",
+            "kab": "Tomati ƒe dɔ tsia"
+        },
+        "description_i18n": {
+            "ee": "Dɔ aɖe wòdze le tsi gbɔ̃, ena wòana atsɔ̃ ɖe lãme megbe.",
+            "kab": "Dɔ aɖe wòdze le tsi gbɔ̃ me."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie fongique liée à l'humidité. Aérez la parcelle et traitez au cuivre.",
+            "ee": "Tsi gbɔ̃ ƒe dɔ. Wɔ ɖe agble la nu eye nàwɔ dɔ kple kɔpe.",
+            "kab": "Tsi gbɔ̃ ƒe dɔ. Wɔ dɔ kple kɔpe."
+        }
+    },
+    {
+        "model_label": "Tomato___Septoria_leaf_spot",
+        "culture": "Tomate",
+        "display_name": "Septoriose de la tomate",
+        "description": "Petites taches circulaires gris-clair entourées d'un halo brun. Provoque une chute massive des feuilles et baisse fortement le rendement.",
+        "severity": "grave",
+        "symptoms": [
+            "Petites taches circulaires gris-clair (2-5 mm)",
+            "Halo brun foncé autour des taches",
+            "Petits points noirs au centre (pycnides)",
+            "Défoliation rapide du bas vers le haut"
+        ],
+        "treatments": [
+            {
+                "method": "Fongicide + retrait feuilles atteintes",
+                "description": "",
+                "steps": [
+                    "Retirer feuilles infectées et brûler",
+                    "Bouillie bordelaise toutes les semaines",
+                    "Pailler le sol"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Rotation 3 ans",
+            "Variétés tolérantes"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe dɔ Septoria",
+            "kab": "Tomati ƒe dɔ Septoria"
+        },
+        "description_i18n": {
+            "ee": "Atsɔ̃ sue ɣi ɖe lãme. Lãmewo dzudzɔna kabakaba.",
+            "kab": "Atsɔ̃ sue ɣi ɖe lãme."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Petites taches grises sur les feuilles. Retirer feuilles atteintes et traiter au cuivre.",
+            "ee": "Atsɔ̃ sue ɣi ɖe lãme. Ɖe lãmewo ɖa nàwɔ dɔ.",
+            "kab": "Atsɔ̃ sue ɣi ɖe lãme. Wɔ dɔ kple kɔpe."
+        }
+    },
+    {
+        "model_label": "Tomato___Spider_mites Two-spotted_spider_mite",
+        "culture": "Tomate",
+        "display_name": "Acariens (tétranyques) de la tomate",
+        "description": "Petits acariens rouges qui sucent la sève. Provoquent un jaunissement piqueté et de fines toiles. Préfèrent la chaleur sèche.",
+        "severity": "modéré",
+        "symptoms": [
+            "Petits points jaunes sur les feuilles",
+            "Toiles fines au revers",
+            "Feuilles qui jaunissent puis brunissent",
+            "Plante affaiblie, fruits petits"
+        ],
+        "treatments": [
+            {
+                "method": "Acaricide + brumisation",
+                "description": "Augmenter l'humidité fait fuir les acariens.",
+                "steps": [
+                    "Pulvériser de l'eau sur les feuilles le matin",
+                    "Appliquer huile de neem 5 mL/L",
+                    "Renouveler tous les 5 jours",
+                    "Lâcher des prédateurs (Phytoseiulus) si possible"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Huile de neem",
+                "dosage": "5 mL/L",
+                "precautions": "Le soir.",
+                "priceXof": 3800,
+                "sku": "DGA-2002",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Brumisation régulière",
+            "Pas d'excès d'azote"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe lã sue dzĩ",
+            "kab": "Tomati ƒe lã sue dzĩ"
+        },
+        "description_i18n": {
+            "ee": "Lã sue dzĩ ƒo lãme ƒu, ena wòhena tsitsi.",
+            "kab": "Lã sue dzĩ ƒo lãme ƒu."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Acariens rouges. Vaporiser eau le matin et traiter à l'huile de neem.",
+            "ee": "Lã sue dzĩ. Hlɔ tsi ɖe lãme nàwɔ dɔ kple amĩ neem.",
+            "kab": "Lã sue dzĩ. Hlɔ tsi ɖe lãme nàwɔ dɔ kple amĩ neem."
+        }
+    },
+    {
+        "model_label": "Tomato___Target_Spot",
+        "culture": "Tomate",
+        "display_name": "Tache cible de la tomate",
+        "description": "Champignon qui crée des taches en cible (cercles concentriques) sur feuilles et fruits. Fréquent en saison humide.",
+        "severity": "modéré",
+        "symptoms": [
+            "Taches en cible sur feuilles",
+            "Taches sombres sur les fruits",
+            "Défoliation progressive"
+        ],
+        "treatments": [
+            {
+                "method": "Fongicide cuprique",
+                "description": "",
+                "steps": [
+                    "Bouillie bordelaise toutes les semaines",
+                    "Retirer feuilles atteintes"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Aération",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe dɔ atsɔ̃ kotokpe",
+            "kab": "Tomati ƒe dɔ atsɔ̃ kotokpe"
+        },
+        "description_i18n": {
+            "ee": "Atsɔ̃ kotokpe ɖe lãme kple atsiame.",
+            "kab": "Atsɔ̃ kotokpe ɖe lãme kple atsiame."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Taches en cible sur la tomate. Traiter au cuivre.",
+            "ee": "Atsɔ̃ kotokpe ɖe tomati. Wɔ dɔ kple kɔpe.",
+            "kab": "Atsɔ̃ kotokpe ɖe tomati. Wɔ dɔ kple kɔpe."
+        }
+    },
+    {
+        "model_label": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+        "culture": "Tomate",
+        "display_name": "TYLCV : Virus du jaunissement et frisolée de la tomate",
+        "description": "Virus très grave transmis par les aleurodes (Bemisia tabaci). Provoque l'enroulement et le jaunissement des jeunes feuilles, et un nanisme sévère. Les plants infectés tôt ne produisent pas de fruits.",
+        "severity": "critique",
+        "symptoms": [
+            "Jeunes feuilles enroulées vers le haut",
+            "Jaunissement et rabougrissement",
+            "Plante naine",
+            "Très peu de fruits, fruits déformés"
+        ],
+        "treatments": [
+            {
+                "method": "Lutte contre les aleurodes (pas de cure du virus)",
+                "description": "Aucun produit ne soigne le virus.",
+                "steps": [
+                    "Arracher et brûler les plants très atteints",
+                    "Poser des pièges jaunes contre les aleurodes",
+                    "Pulvériser huile de neem le soir",
+                    "Replanter avec variétés résistantes"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Pièges jaunes collants",
+                "dosage": "20-30 pièges/ha",
+                "precautions": "",
+                "priceXof": 4500,
+                "sku": "DGA-2001",
+                "vendor": "DoctAgri Shop"
+            },
+            {
+                "name": "Huile de neem",
+                "dosage": "5 mL/L",
+                "precautions": "Soir.",
+                "priceXof": 3800,
+                "sku": "DGA-2002",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes (Tylka, etc.)",
+            "Filets anti-insectes en pépinière",
+            "Élimination des mauvaises herbes hôtes"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe dɔmegblẽ ƒe enrolement",
+            "kab": "Tomati ƒe dɔmegblẽ ƒe enrolement"
+        },
+        "description_i18n": {
+            "ee": "Virus sesẽ ŋutɔ. Lãmewo melena, atia mediena o.",
+            "kab": "Virus sesẽ ŋutɔ. Lãmewo melena, atia mediena o."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Virus très grave transmis par les aleurodes. Pas de cure. Arracher et planter une variété résistante.",
+            "ee": "Virus sesẽ. Hopo plant si dze, dzra atikomeli sesẽ.",
+            "kab": "Virus sesẽ. Hopo plant si dze, dzra atikomeli sesẽ."
+        }
+    },
+    {
+        "model_label": "Tomato___Tomato_mosaic_virus",
+        "culture": "Tomate",
+        "display_name": "Virus de la mosaïque de la tomate (ToMV)",
+        "description": "Virus transmis par contact (mains, outils, semences). Provoque mosaïque verte/jaune, déformation et baisse de rendement.",
+        "severity": "grave",
+        "symptoms": [
+            "Mosaïque vert clair / vert foncé sur les feuilles",
+            "Feuilles déformées, en filament",
+            "Fruits petits, parfois marbrés"
+        ],
+        "treatments": [
+            {
+                "method": "Hygiène stricte (pas de cure)",
+                "description": "",
+                "steps": [
+                    "Se laver les mains avant et après manipulation",
+                    "Désinfecter les outils à l'eau de javel",
+                    "Arracher et brûler les plants atteints",
+                    "Ne jamais fumer près des plants"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Semences certifiées",
+            "Variétés résistantes",
+            "Désinfection des outils"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati ƒe virus mosaïque",
+            "kab": "Tomati ƒe virus mosaïque"
+        },
+        "description_i18n": {
+            "ee": "Virus sia tsɔna kple asi kple dɔwɔnu. Hopo plant si dze.",
+            "kab": "Virus sia tsɔna kple asi kple dɔwɔnu."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Virus contagieux par contact. Hygiène stricte des mains et outils. Arracher les plants atteints.",
+            "ee": "Virus tsɔna kple asi. Klɔ asi kple dɔwɔnu. Hopo plant si dze.",
+            "kab": "Virus tsɔna kple asi. Klɔ asi kple dɔwɔnu. Hopo plant si dze."
+        }
+    },
+    {
+        "model_label": "Tomato___healthy",
+        "culture": "Tomate",
+        "display_name": "Tomate en bonne santé",
+        "description": "Votre tomate ne présente aucun signe visible de maladie. La plante semble saine. Continuez vos bonnes pratiques agricoles.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Entretien préventif",
+                "description": "Continuez à surveiller régulièrement vos plants.",
+                "steps": [
+                    "Surveiller chaque semaine l'apparition de taches sur les feuilles",
+                    "Maintenir un bon espacement entre les plants",
+                    "Arroser tôt le matin pour éviter l'humidité prolongée sur les feuilles",
+                    "Désherber régulièrement"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Utiliser des semences saines",
+            "Rotation des cultures",
+            "Bon drainage du sol",
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Tomati le lãmesẽ me",
+            "kab": "Tomati le lãmesẽ me"
+        },
+        "description_i18n": {
+            "ee": "Wò tomati la le lãmesẽ me. Yi edzi nàwɔ wò agble nyuie.",
+            "kab": "Wò tomati la le lãmesẽ me. Yi edzi nàwɔ wò agble nyuie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Tomate en bonne santé. Continuez la surveillance et les bonnes pratiques.",
+            "ee": "Tomati la le lãmesẽ me. Yi edzi.",
+            "kab": "Tomati la le lãmesẽ me. Yi edzi."
+        }
+    },
+    {
+        "model_label": "Corn___Cercospora_leaf_spot Gray_leaf_spot",
+        "culture": "Maïs",
+        "display_name": "Cercosporiose grise du maïs",
+        "description": "Champignon qui crée des taches grises rectangulaires entre les nervures. Très destructeur en culture de maïs en Afrique de l'Ouest.",
+        "severity": "grave",
+        "symptoms": [
+            "Taches grises rectangulaires entre les nervures",
+            "Lésions qui s'allongent et fusionnent",
+            "Feuilles qui sèchent à partir du bas",
+            "Réduction nette du rendement"
+        ],
+        "treatments": [
+            {
+                "method": "Fongicide + résidus",
+                "description": "",
+                "steps": [
+                    "Brûler les résidus de récolte",
+                    "Pulvériser fongicide à base de cuivre",
+                    "Rotation avec légumineuses"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation",
+            "Brûler résidus"
+        ],
+        "display_name_i18n": {
+            "ee": "Agblɛ ƒe dɔmegblẽ ɣi",
+            "kab": "Agblɛ ƒe dɔmegblẽ ɣi"
+        },
+        "description_i18n": {
+            "ee": "Atsɔ̃ ɣi ɖe lãme me. Wòawu agbe la sesẽ.",
+            "kab": "Atsɔ̃ ɣi ɖe lãme me."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie grise du maïs. Brûler les résidus, traiter au cuivre, faire la rotation.",
+            "ee": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple kɔpe.",
+            "kab": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple kɔpe."
+        }
+    },
+    {
+        "model_label": "Corn___Common_rust",
+        "culture": "Maïs",
+        "display_name": "Rouille commune du maïs",
+        "description": "Champignon (Puccinia sorghi) qui produit des pustules rouille (orange-brun) sur les deux faces des feuilles. Affaiblit la plante.",
+        "severity": "modéré",
+        "symptoms": [
+            "Pustules rouge-brun sur les feuilles",
+            "Pustules au revers et au-dessus",
+            "Feuilles affaiblies, jaunissement"
+        ],
+        "treatments": [
+            {
+                "method": "Fongicide si infestation forte",
+                "description": "",
+                "steps": [
+                    "Surveiller dès les premiers stades",
+                    "Pulvériser bouillie cuprique si > 20 % feuilles atteintes"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Semis précoces"
+        ],
+        "display_name_i18n": {
+            "ee": "Agblɛ ƒe rouille",
+            "kab": "Agblɛ ƒe rouille"
+        },
+        "description_i18n": {
+            "ee": "Atsɔ̃ dzĩ-yibɔ ɖe lãme. Mesesẽ akpa o.",
+            "kab": "Atsɔ̃ dzĩ-yibɔ ɖe lãme. Mesesẽ akpa o."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Rouille du maïs. Surveiller et traiter au cuivre si l'attaque est forte.",
+            "ee": "Agblɛ ƒe dɔmegblẽ dzĩ. Kpɔe nyuie, wɔ dɔ ne edze.",
+            "kab": "Agblɛ ƒe dɔmegblẽ dzĩ. Kpɔe nyuie, wɔ dɔ ne edze."
+        }
+    },
+    {
+        "model_label": "Corn___Northern_Leaf_Blight",
+        "culture": "Maïs",
+        "display_name": "Helminthosporiose du maïs",
+        "description": "Champignon (Setosphaeria turcica) qui crée de longues lésions grises en forme de cigare sur les feuilles. Peut causer 50 % de pertes.",
+        "severity": "grave",
+        "symptoms": [
+            "Lésions allongées en forme de cigare (5-15 cm)",
+            "Couleur gris-vert puis brun clair",
+            "Apparition d'abord sur les feuilles basses"
+        ],
+        "treatments": [
+            {
+                "method": "Fongicide + résidus",
+                "description": "",
+                "steps": [
+                    "Brûler résidus de récolte",
+                    "Pulvériser bouillie cuprique tous les 10 jours",
+                    "Variétés tolérantes pour la prochaine saison"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Rotation",
+            "Variétés résistantes"
+        ],
+        "display_name_i18n": {
+            "ee": "Agblɛ ƒe dɔ legble",
+            "kab": "Agblɛ ƒe dɔ legble"
+        },
+        "description_i18n": {
+            "ee": "Atsɔ̃ legble ɣi-yibɔ ɖe lãme. Sesẽ ŋutɔ.",
+            "kab": "Atsɔ̃ legble ɣi-yibɔ ɖe lãme. Sesẽ ŋutɔ."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie grave du maïs. Longues taches en cigare. Brûler résidus et traiter au cuivre.",
+            "ee": "Agblɛ ƒe dɔ sesẽ. Atsɔ̃ legble. Tɔ dzo ɣe, wɔ dɔ.",
+            "kab": "Agblɛ ƒe dɔ sesẽ. Atsɔ̃ legble. Tɔ dzo ɣe, wɔ dɔ."
+        }
+    },
+    {
+        "model_label": "Corn___healthy",
+        "culture": "Maïs",
+        "display_name": "Maïs en bonne santé",
+        "description": "Votre maïs ne présente aucun signe visible de maladie. La plante semble saine. Continuez vos bonnes pratiques agricoles.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Entretien préventif",
+                "description": "Continuez à surveiller régulièrement vos plants.",
+                "steps": [
+                    "Surveiller chaque semaine l'apparition de taches sur les feuilles",
+                    "Maintenir un bon espacement entre les plants",
+                    "Arroser tôt le matin pour éviter l'humidité prolongée sur les feuilles",
+                    "Désherber régulièrement"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Utiliser des semences saines",
+            "Rotation des cultures",
+            "Bon drainage du sol",
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Agblɛ le lãmesẽ me",
+            "kab": "Agblɛ le lãmesẽ me"
+        },
+        "description_i18n": {
+            "ee": "Wò agblɛ la le lãmesẽ me. Yi edzi nàwɔ wò agble nyuie.",
+            "kab": "Wò agblɛ la le lãmesẽ me. Yi edzi."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maïs en bonne santé. Continuez la surveillance.",
+            "ee": "Agblɛ la le lãmesẽ me. Yi edzi.",
+            "kab": "Agblɛ la le lãmesẽ me. Yi edzi."
+        }
+    },
+    {
+        "model_label": "Potato___Early_blight",
+        "culture": "Pomme de terre",
+        "display_name": "Alternariose de la pomme de terre",
+        "description": "Champignon (Alternaria solani) provoquant des taches en cible sur les feuilles. Apparaît surtout en fin de saison sur plants stressés.",
+        "severity": "grave",
+        "symptoms": [
+            "Taches brunes en cercles concentriques",
+            "Feuilles basses qui jaunissent et sèchent",
+            "Tubercules avec lésions sombres"
+        ],
+        "treatments": [
+            {
+                "method": "Fongicide cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer feuilles atteintes",
+                    "Bouillie bordelaise tous les 10 jours",
+                    "Bonne fertilisation N-K"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Rotation 3 ans",
+            "Variétés tolérantes"
+        ],
+        "display_name_i18n": {
+            "ee": "Kaklo ƒe dɔ kabakaba",
+            "kab": "Kaklo ƒe dɔ kabakaba"
+        },
+        "description_i18n": {
+            "ee": "Atsɔ̃ kotokpe ɖe lãme. Wòawu kaklo la.",
+            "kab": "Atsɔ̃ kotokpe ɖe lãme. Wòawu kaklo la."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Champignon courant. Taches en cible sur les feuilles. Traiter au cuivre.",
+            "ee": "Kaklo ƒe dɔ. Atsɔ̃ ɖe lãme. Wɔ dɔ kple kɔpe.",
+            "kab": "Kaklo ƒe dɔ. Atsɔ̃ ɖe lãme. Wɔ dɔ kple kɔpe."
+        }
+    },
+    {
+        "model_label": "Potato___Late_blight",
+        "culture": "Pomme de terre",
+        "display_name": "Mildiou de la pomme de terre",
+        "description": "Phytophthora infestans, le même responsable de la grande famine irlandaise. Maladie la plus destructrice de la pomme de terre.",
+        "severity": "critique",
+        "symptoms": [
+            "Taches huileuses gris-vert puis brunes",
+            "Duvet blanc cotonneux au revers humide",
+            "Tubercules avec pourriture brun-rouge",
+            "Plant qui se flétrit en quelques jours"
+        ],
+        "treatments": [
+            {
+                "method": "Traitement urgent",
+                "description": "",
+                "steps": [
+                    "Pulvériser fongicide cuprique tous les 5 jours",
+                    "Couper les fanes 2 semaines avant la récolte",
+                    "Récolter par temps sec",
+                    "Détruire les plants gravement atteints"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "25 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Buttage haut",
+            "Pas d'arrosage du feuillage"
+        ],
+        "display_name_i18n": {
+            "ee": "Kaklo ƒe mildiou",
+            "kab": "Kaklo ƒe mildiou"
+        },
+        "description_i18n": {
+            "ee": "Dɔ sesẽ ŋutɔ. Aɖu agble blibo le ŋkeke ʋee me.",
+            "kab": "Dɔ sesẽ ŋutɔ. Aɖu agble blibo le ŋkeke ʋee me."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Mildiou très dangereux. Réagir vite : fongicide cuprique tous les 5 jours.",
+            "ee": "Mildiou sesẽ. Wɔ dɔ enumake.",
+            "kab": "Mildiou sesẽ. Wɔ dɔ enumake."
+        }
+    },
+    {
+        "model_label": "Potato___healthy",
+        "culture": "Pomme de terre",
+        "display_name": "Pomme de terre en bonne santé",
+        "description": "Votre pomme de terre ne présente aucun signe visible de maladie. La plante semble saine. Continuez vos bonnes pratiques agricoles.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Entretien préventif",
+                "description": "Continuez à surveiller régulièrement vos plants.",
+                "steps": [
+                    "Surveiller chaque semaine l'apparition de taches sur les feuilles",
+                    "Maintenir un bon espacement entre les plants",
+                    "Arroser tôt le matin pour éviter l'humidité prolongée sur les feuilles",
+                    "Désherber régulièrement"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Utiliser des semences saines",
+            "Rotation des cultures",
+            "Bon drainage du sol",
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Kaklo le lãmesẽ me",
+            "kab": "Kaklo le lãmesẽ me"
+        },
+        "description_i18n": {
+            "ee": "Wò kaklo la le lãmesẽ me. Yi edzi.",
+            "kab": "Wò kaklo la le lãmesẽ me. Yi edzi."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Pomme de terre saine. Continuez la surveillance.",
+            "ee": "Kaklo la le lãmesẽ me. Yi edzi.",
+            "kab": "Kaklo la le lãmesẽ me. Yi edzi."
+        }
+    },
+    {
+        "model_label": "Pepper,_bell___Bacterial_spot",
+        "culture": "Piment",
+        "display_name": "Tache bactérienne du piment",
+        "description": "Bactérie (Xanthomonas euvesicatoria) qui cause de petites taches d'eau, puis brunes, sur feuilles et fruits.",
+        "severity": "grave",
+        "symptoms": [
+            "Petites taches translucides sur jeunes feuilles",
+            "Évolution en taches brunes nécrotiques",
+            "Taches rugueuses sur les fruits",
+            "Défoliation"
+        ],
+        "treatments": [
+            {
+                "method": "Cuivre + assainissement",
+                "description": "",
+                "steps": [
+                    "Retirer feuilles atteintes, brûler",
+                    "Désinfecter les outils",
+                    "Bouillie bordelaise tous les 7 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Semences saines",
+            "Rotation 3 ans"
+        ],
+        "display_name_i18n": {
+            "ee": "Ɖoku ƒe dɔmegblẽ bacteria",
+            "kab": "Ɖoku ƒe dɔmegblẽ bacteria"
+        },
+        "description_i18n": {
+            "ee": "Bacteria ɖe lãme kple atsiame. Wɔna nɛ kɔpe.",
+            "kab": "Bacteria ɖe lãme kple atsiame."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie bactérienne du piment. Retirer feuilles atteintes et traiter au cuivre.",
+            "ee": "Ɖoku ƒe dɔ bacteria. Wɔ dɔ kple kɔpe.",
+            "kab": "Ɖoku ƒe dɔ bacteria. Wɔ dɔ kple kɔpe."
+        }
+    },
+    {
+        "model_label": "Pepper,_bell___healthy",
+        "culture": "Piment",
+        "display_name": "Piment en bonne santé",
+        "description": "Votre piment ne présente aucun signe visible de maladie. La plante semble saine. Continuez vos bonnes pratiques agricoles.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Entretien préventif",
+                "description": "Continuez à surveiller régulièrement vos plants.",
+                "steps": [
+                    "Surveiller chaque semaine l'apparition de taches sur les feuilles",
+                    "Maintenir un bon espacement entre les plants",
+                    "Arroser tôt le matin pour éviter l'humidité prolongée sur les feuilles",
+                    "Désherber régulièrement"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Utiliser des semences saines",
+            "Rotation des cultures",
+            "Bon drainage du sol",
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Ɖoku le lãmesẽ me",
+            "kab": "Ɖoku le lãmesẽ me"
+        },
+        "description_i18n": {
+            "ee": "Wò ɖoku la le lãmesẽ me. Yi edzi.",
+            "kab": "Wò ɖoku la le lãmesẽ me. Yi edzi."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Piment en bonne santé. Continuez la surveillance.",
+            "ee": "Ɖoku la le lãmesẽ me. Yi edzi.",
+            "kab": "Ɖoku la le lãmesẽ me. Yi edzi."
+        }
+    },
+    {
+        "model_label": "Apple___Apple_scab",
+        "culture": "Pomme",
+        "display_name": "Tavelure du pommier",
+        "description": "Champignon qui crée des taches noires veloutées sur feuilles et fruits.",
+        "severity": "grave",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Tavelure du pommier",
+            "kab": "Tavelure du pommier"
+        },
+        "description_i18n": {
+            "ee": "Champignon qui crée des taches noires veloutées sur feuilles et fruits.",
+            "kab": "Champignon qui crée des taches noires veloutées sur feuilles et fruits."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Champignon qui crée des taches noires veloutées sur feuilles et fruits.",
+            "ee": "Champignon qui crée des taches noires veloutées sur feuilles et fruits.",
+            "kab": "Champignon qui crée des taches noires veloutées sur feuilles et fruits."
+        }
+    },
+    {
+        "model_label": "Apple___Black_rot",
+        "culture": "Pomme",
+        "display_name": "Pourriture noire du pommier",
+        "description": "Maladie fongique grave qui pourrit les fruits.",
+        "severity": "grave",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Pourriture noire du pommier",
+            "kab": "Pourriture noire du pommier"
+        },
+        "description_i18n": {
+            "ee": "Maladie fongique grave qui pourrit les fruits.",
+            "kab": "Maladie fongique grave qui pourrit les fruits."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie fongique grave qui pourrit les fruits.",
+            "ee": "Maladie fongique grave qui pourrit les fruits.",
+            "kab": "Maladie fongique grave qui pourrit les fruits."
+        }
+    },
+    {
+        "model_label": "Apple___Cedar_apple_rust",
+        "culture": "Pomme",
+        "display_name": "Rouille du pommier-cèdre",
+        "description": "Champignon créant des taches orange sur les feuilles.",
+        "severity": "modéré",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Rouille du pommier-cèdre",
+            "kab": "Rouille du pommier-cèdre"
+        },
+        "description_i18n": {
+            "ee": "Champignon créant des taches orange sur les feuilles.",
+            "kab": "Champignon créant des taches orange sur les feuilles."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Champignon créant des taches orange sur les feuilles.",
+            "ee": "Champignon créant des taches orange sur les feuilles.",
+            "kab": "Champignon créant des taches orange sur les feuilles."
+        }
+    },
+    {
+        "model_label": "Apple___healthy",
+        "culture": "Pomme",
+        "display_name": "Pommier en bonne santé",
+        "description": "Aucun signe de maladie. Continuez la surveillance.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Pommier en bonne santé",
+            "kab": "Pommier en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie. Continuez la surveillance.",
+            "kab": "Aucun signe de maladie. Continuez la surveillance."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie. Continuez la surveillance.",
+            "ee": "Aucun signe de maladie. Continuez la surveillance.",
+            "kab": "Aucun signe de maladie. Continuez la surveillance."
+        }
+    },
+    {
+        "model_label": "Blueberry___healthy",
+        "culture": "Myrtille",
+        "display_name": "Myrtille en bonne santé",
+        "description": "Aucun signe de maladie.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Myrtille en bonne santé",
+            "kab": "Myrtille en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie.",
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        }
+    },
+    {
+        "model_label": "Cherry___Powdery_mildew",
+        "culture": "Cerise",
+        "display_name": "Oïdium du cerisier",
+        "description": "Feutrage blanc sur les feuilles. Traiter au soufre.",
+        "severity": "modéré",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Oïdium du cerisier",
+            "kab": "Oïdium du cerisier"
+        },
+        "description_i18n": {
+            "ee": "Feutrage blanc sur les feuilles. Traiter au soufre.",
+            "kab": "Feutrage blanc sur les feuilles. Traiter au soufre."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Feutrage blanc sur les feuilles. Traiter au soufre.",
+            "ee": "Feutrage blanc sur les feuilles. Traiter au soufre.",
+            "kab": "Feutrage blanc sur les feuilles. Traiter au soufre."
+        }
+    },
+    {
+        "model_label": "Cherry___healthy",
+        "culture": "Cerise",
+        "display_name": "Cerisier en bonne santé",
+        "description": "Aucun signe de maladie.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Cerisier en bonne santé",
+            "kab": "Cerisier en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie.",
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        }
+    },
+    {
+        "model_label": "Grape___Black_rot",
+        "culture": "Vigne",
+        "display_name": "Pourriture noire de la vigne",
+        "description": "Champignon dévastateur sur grappes et feuilles.",
+        "severity": "grave",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Pourriture noire de la vigne",
+            "kab": "Pourriture noire de la vigne"
+        },
+        "description_i18n": {
+            "ee": "Champignon dévastateur sur grappes et feuilles.",
+            "kab": "Champignon dévastateur sur grappes et feuilles."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Champignon dévastateur sur grappes et feuilles.",
+            "ee": "Champignon dévastateur sur grappes et feuilles.",
+            "kab": "Champignon dévastateur sur grappes et feuilles."
+        }
+    },
+    {
+        "model_label": "Grape___Esca_(Black_Measles)",
+        "culture": "Vigne",
+        "display_name": "Esca de la vigne",
+        "description": "Maladie complexe du bois. Tailler les ceps atteints.",
+        "severity": "grave",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Esca de la vigne",
+            "kab": "Esca de la vigne"
+        },
+        "description_i18n": {
+            "ee": "Maladie complexe du bois. Tailler les ceps atteints.",
+            "kab": "Maladie complexe du bois. Tailler les ceps atteints."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie complexe du bois. Tailler les ceps atteints.",
+            "ee": "Maladie complexe du bois. Tailler les ceps atteints.",
+            "kab": "Maladie complexe du bois. Tailler les ceps atteints."
+        }
+    },
+    {
+        "model_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+        "culture": "Vigne",
+        "display_name": "Brûlure des feuilles de la vigne",
+        "description": "Champignon qui brunit les feuilles.",
+        "severity": "modéré",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Brûlure des feuilles de la vigne",
+            "kab": "Brûlure des feuilles de la vigne"
+        },
+        "description_i18n": {
+            "ee": "Champignon qui brunit les feuilles.",
+            "kab": "Champignon qui brunit les feuilles."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Champignon qui brunit les feuilles.",
+            "ee": "Champignon qui brunit les feuilles.",
+            "kab": "Champignon qui brunit les feuilles."
+        }
+    },
+    {
+        "model_label": "Grape___healthy",
+        "culture": "Vigne",
+        "display_name": "Vigne en bonne santé",
+        "description": "Aucun signe de maladie.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Vigne en bonne santé",
+            "kab": "Vigne en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie.",
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        }
+    },
+    {
+        "model_label": "Orange___Haunglongbing_(Citrus_greening)",
+        "culture": "Orange",
+        "display_name": "HLB / Greening des agrumes",
+        "description": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints.",
+        "severity": "critique",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "HLB / Greening des agrumes",
+            "kab": "HLB / Greening des agrumes"
+        },
+        "description_i18n": {
+            "ee": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints.",
+            "kab": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints.",
+            "ee": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints.",
+            "kab": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints."
+        }
+    },
+    {
+        "model_label": "Peach___Bacterial_spot",
+        "culture": "Pêche",
+        "display_name": "Tache bactérienne du pêcher",
+        "description": "Petites taches sur feuilles et fruits.",
+        "severity": "grave",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Tache bactérienne du pêcher",
+            "kab": "Tache bactérienne du pêcher"
+        },
+        "description_i18n": {
+            "ee": "Petites taches sur feuilles et fruits.",
+            "kab": "Petites taches sur feuilles et fruits."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Petites taches sur feuilles et fruits.",
+            "ee": "Petites taches sur feuilles et fruits.",
+            "kab": "Petites taches sur feuilles et fruits."
+        }
+    },
+    {
+        "model_label": "Peach___healthy",
+        "culture": "Pêche",
+        "display_name": "Pêcher en bonne santé",
+        "description": "Aucun signe de maladie.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Pêcher en bonne santé",
+            "kab": "Pêcher en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie.",
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        }
+    },
+    {
+        "model_label": "Raspberry___healthy",
+        "culture": "Framboise",
+        "display_name": "Framboise en bonne santé",
+        "description": "Aucun signe de maladie.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Framboise en bonne santé",
+            "kab": "Framboise en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie.",
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        }
+    },
+    {
+        "model_label": "Soybean___healthy",
+        "culture": "Soja",
+        "display_name": "Soja en bonne santé",
+        "description": "Aucun signe de maladie.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Soja en bonne santé",
+            "kab": "Soja en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie.",
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        }
+    },
+    {
+        "model_label": "Squash___Powdery_mildew",
+        "culture": "Courge",
+        "display_name": "Oïdium de la courge",
+        "description": "Feutrage blanc sur les feuilles.",
+        "severity": "modéré",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Oïdium de la courge",
+            "kab": "Oïdium de la courge"
+        },
+        "description_i18n": {
+            "ee": "Feutrage blanc sur les feuilles.",
+            "kab": "Feutrage blanc sur les feuilles."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Feutrage blanc sur les feuilles.",
+            "ee": "Feutrage blanc sur les feuilles.",
+            "kab": "Feutrage blanc sur les feuilles."
+        }
+    },
+    {
+        "model_label": "Strawberry___Leaf_scorch",
+        "culture": "Fraise",
+        "display_name": "Brûlure des feuilles du fraisier",
+        "description": "Champignon qui brunit le bord des feuilles.",
+        "severity": "modéré",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Traitement cuprique",
+                "description": "",
+                "steps": [
+                    "Retirer parties atteintes",
+                    "Bouillie bordelaise tous les 10 jours"
+                ]
+            }
+        ],
+        "products": [
+            {
+                "name": "Bouillie bordelaise",
+                "dosage": "20 g/L",
+                "precautions": "",
+                "priceXof": 6500,
+                "sku": "DGA-1001",
+                "vendor": "DoctAgri Shop"
+            }
+        ],
+        "prevention": [
+            "Variétés résistantes",
+            "Rotation"
+        ],
+        "display_name_i18n": {
+            "ee": "Brûlure des feuilles du fraisier",
+            "kab": "Brûlure des feuilles du fraisier"
+        },
+        "description_i18n": {
+            "ee": "Champignon qui brunit le bord des feuilles.",
+            "kab": "Champignon qui brunit le bord des feuilles."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Champignon qui brunit le bord des feuilles.",
+            "ee": "Champignon qui brunit le bord des feuilles.",
+            "kab": "Champignon qui brunit le bord des feuilles."
+        }
+    },
+    {
+        "model_label": "Strawberry___healthy",
+        "culture": "Fraise",
+        "display_name": "Fraisier en bonne santé",
+        "description": "Aucun signe de maladie.",
+        "severity": "aucune",
+        "symptoms": [],
+        "treatments": [
+            {
+                "method": "Surveillance",
+                "description": "",
+                "steps": [
+                    "Continuer la surveillance"
+                ]
+            }
+        ],
+        "products": [],
+        "prevention": [
+            "Surveillance régulière"
+        ],
+        "display_name_i18n": {
+            "ee": "Fraisier en bonne santé",
+            "kab": "Fraisier en bonne santé"
+        },
+        "description_i18n": {
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        },
+        "plain_explanation_i18n": {
+            "fr": "Aucun signe de maladie.",
+            "ee": "Aucun signe de maladie.",
+            "kab": "Aucun signe de maladie."
+        }
+    }
+]

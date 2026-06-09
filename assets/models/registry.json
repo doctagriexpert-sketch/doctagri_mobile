@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cassava",
+    "version": "cassava-1.0",
+    "display_name": "Manioc (spécialisé)",
+    "asset_path": "assets/models/model.tflite",
+    "labels_path": "assets/models/labels.txt",
+    "input_size": 224,
+    "num_classes": 6,
+    "released_at": "2025-03-05T00:00:00Z",
+    "min_app_version": "1.0.0",
+    "source": "DoctAgri internal training",
+    "cultures": ["Manioc"]
+  },
+  {
+    "id": "plantvillage",
+    "version": "plantvillage-int8-39",
+    "display_name": "Multi-cultures (général)",
+    "asset_path": "assets/models/plantvillage/model_int8.tflite",
+    "labels_path": "assets/models/plantvillage/class_names.json",
+    "input_size": 160,
+    "num_classes": 39,
+    "released_at": "2026-05-01T00:00:00Z",
+    "min_app_version": "1.0.0",
+    "source": "huggingface.co/Ashish094562/Plant-Disease-INT8-model",
+    "license": "MIT",
+    "cultures": [
+      "Tomate", "Maïs", "Pomme de terre", "Piment",
+      "Pomme", "Cerise", "Vigne", "Orange", "Pêche",
+      "Fraise", "Soja", "Courge", "Framboise", "Myrtille"
+    ],
+    "sha256": "2332938836c4d6a87b9a8730ee8941a3e4747dda060a3ebc691933d24d7956df"
+  }
+]
