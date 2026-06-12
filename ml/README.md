@@ -14,6 +14,18 @@ This directory contains the reproducible ML pipeline for model quantization and 
 | 5 | `05_benchmark_device.py` | Benchmark latency on reference devices |
 | 6 | `06_package_artifact.py` | Package with metadata + SHA256 + registry |
 
+### Analysis tools (no labels required)
+
+| Script | Purpose |
+|--------|---------|
+| `07_field_domain_analysis.py` | Unsupervised lab→field domain-shift analysis: compares model output distributions (confidence/entropy/margin) on field vs lab images, quantifies the gap (KS distance), recommends abstention thresholds. No ground-truth labels needed. |
+
+### Shared module — `app_inference.py`
+
+`app_inference.py` is the **single source of truth** for pre/post-processing,
+aligned with the Flutter app. Scripts 04 and 07 import it. Do NOT reimplement
+preprocessing inline — that reopens the validation↔production drift bug.
+
 ## Usage
 
 ```bash
@@ -61,21 +73,32 @@ make all           # Run full pipeline
 | Target Accuracy | > 92% |
 | Target Latency | < 50ms |
 
-## Preprocessing (ImageNet normalization)
+## Preprocessing — depends on the model's INPUT dtype
+
+⚠️ Read the input dtype from the model; do not assume. Both bundled models are
+full-integer quantized → **uint8 input**, fed RAW 0-255 (this is what INT8
+calibration in step 2 expects). ImageNet normalization applies ONLY to
+float-input models.
 
 ```python
+# Resize: bilinear, to the size read from the model (160 or 224 — NOT hardcoded)
+# uint8-input model:  feed raw pixels 0-255  (cassava, plantvillage)
+# float-input model:  pixel = (pixel - mean) / std
 mean = [123.675, 116.28, 103.53]
-std = [58.395, 57.12, 57.375]
-pixel = (pixel - mean) / std
+std  = [58.395, 57.12, 57.375]
 ```
 
-## Output Dequantization
+## Output — these models output PROBABILITIES, not logits
 
-For quantized models, output must be dequantized:
+⚠️ Both bundled models include a final softmax (dequantized output sums to ~1,
+scale 1/256, zero 0). Applying `softmax` again is a **double softmax** that
+crushes confidence (99% → ~7% on 39 classes). Dequantize, then renormalize —
+do NOT re-softmax. `app_inference.to_probabilities` handles both cases.
 
 ```python
-logit = (raw_uint8 - zero_point) * scale
-confidence = softmax(logits)[argmax]
+prob = (raw_uint8 - zero_point) * scale   # already a probability for these models
+probs = prob / prob.sum()                  # renormalize, NO softmax
+confidence = probs[argmax]
 ```
 
 ## Registry
