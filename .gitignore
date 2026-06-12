@@ -10,6 +10,12 @@ assets/models/model_backup.tflite
 .venv*/
 .venv_tf/
 
+# Python (pipeline ML)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
 # Analysis & Logs
 analysis*.txt
 analyze*.txt

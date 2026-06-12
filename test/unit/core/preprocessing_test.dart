@@ -99,14 +99,14 @@ void main() {
         expect(result.width, 224);
         expect(result.height, 224);
       } else {
-        print('Skipping: test fixture not found');
+        markTestSkipped('Fixture dummy_224x224.png absente');
       }
     });
 
     test('float32Input is normalized with ImageNet mean/std', () {
       final dummyPath = 'test/fixtures/dummy_224x224.png';
       if (!File(dummyPath).existsSync()) {
-        print('Skipping: test fixture not found');
+        markTestSkipped('Fixture dummy_224x224.png absente');
         return;
       }
 
@@ -130,7 +130,7 @@ void main() {
     test('uint8Pixels are clamped to 0-255', () {
       final dummyPath = 'test/fixtures/dummy_224x224.png';
       if (!File(dummyPath).existsSync()) {
-        print('Skipping: test fixture not found');
+        markTestSkipped('Fixture dummy_224x224.png absente');
         return;
       }
 

@@ -84,12 +84,12 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
         // Le chargement des modèles est différé en background depuis main.dart.
         // On attend jusqu'à 6 s pour couvrir la race condition rare où
         // l'utilisateur lance un diagnostic très rapidement après le démarrage.
-        const _step = Duration(milliseconds: 250);
-        const _maxWait = Duration(seconds: 6);
+        const step = Duration(milliseconds: 250);
+        const maxWait = Duration(seconds: 6);
         var waited = Duration.zero;
-        while (!modelManager.isReady && waited < _maxWait) {
-          await Future.delayed(_step);
-          waited += _step;
+        while (!modelManager.isReady && waited < maxWait) {
+          await Future.delayed(step);
+          waited += step;
         }
         if (!modelManager.isReady) {
           return const Left(

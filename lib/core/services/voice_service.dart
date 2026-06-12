@@ -106,9 +106,11 @@ class VoiceService extends ChangeNotifier {
         notifyListeners();
       },
       localeId: sttLocale,
-      listenMode: stt.ListenMode.confirmation,
-      cancelOnError: true,
-      partialResults: true,
+      listenOptions: stt.SpeechListenOptions(
+        listenMode: stt.ListenMode.confirmation,
+        cancelOnError: true,
+        partialResults: true,
+      ),
     );
 
     _startAudioLevelSimulation();

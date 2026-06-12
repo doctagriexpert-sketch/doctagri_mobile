@@ -11,12 +11,12 @@ DoctAgri est une application mobile de diagnostic des maladies des cultures par 
 
 ## Fonctionnalités
 
-- 📷 **Diagnostic par caméra** — Identification des maladies du manioc en quelques secondes
-- 🤖 **IA embarquée** — Modèle MobileNetV3 quantifié INT8 (< 3 Mo)
+- 📷 **Diagnostic par caméra** — Identification des maladies des cultures en quelques secondes
+- 🤖 **IA embarquée multi-modèle** — Modèle spécialisé manioc + modèle PlantVillage multi-cultures (39 classes), quantifiés INT8, fusion avec détection de culture
 - 📴 **Hors-ligne** — Fonctionne sans connexion internet
-- 🔄 **Sync intelligente** — Synchronisation automatique quand connection disponible
+- 🔄 **Sync intelligente** — Synchronisation automatique quand connexion disponible
 - 👩‍🔬 **Validation experte** — Possibilité de demander confirmation à un agronome
-- 🌍 **Multi-langues** — Français, English, Español, Português, Swahili
+- 🌍 **Multi-langues** — Français, Ewe (Èʋegbe), Kabyè — avec lecture vocale (TTS)
 
 ## Architecture
 
@@ -126,7 +126,7 @@ make all  # Run full pipeline
 
 | Environment | URL | Deploy Trigger |
 |-------------|-----|---------------|
-| Development | localhost |每次 push |
+| Development | localhost | chaque push |
 | Staging | staging.doctagri.com | PR merge |
 | Production | doctagri.com | Tag `v*` |
 
