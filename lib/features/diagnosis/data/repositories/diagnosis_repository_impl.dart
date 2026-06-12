@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:typed_data';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
@@ -22,18 +23,60 @@ const double kConfidenceThreshold = 0.5;
 /// une validation humaine.
 const double kAmbiguityMargin = 0.1;
 
+/// Entropie de Shannon NORMALISÉE maximale tolérée pour un diagnostic
+/// considéré comme fiable. Au-dessus, on demande une validation humaine.
+///
+/// L'entropie (∈ [0, 1] après normalisation) mesure l'étalement GLOBAL de la
+/// distribution sur toutes les classes, là où [kConfidenceThreshold] et
+/// [kAmbiguityMargin] ne regardent que les deux premières. C'est précisément
+/// le signal utile face au risque hors-distribution : PlantVillage est
+/// entraîné en laboratoire (feuilles détachées, fond uniforme) et, sur une
+/// photo de terrain éloignée de ce domaine, le modèle répartit souvent sa
+/// probabilité sur de nombreuses classes — un top-1 à 0.55 « gagne » avec une
+/// marge correcte mais une distribution diffuse derrière. L'entropie attrape
+/// ce cas que les seuils locaux laissent passer.
+///
+/// 0.6 est volontairement CONSERVATEUR (on n'abstient que sur des
+/// distributions vraiment étalées) et n'a pas été calibré empiriquement —
+/// à affiner avec un jeu de photos terrain étiquetées. Le sens du compromis
+/// est sûr : au pire on demande une validation experte de trop.
+const double kMaxEntropyForConfidentDiagnosis = 0.6;
+
+/// Entropie de Shannon normalisée d'une distribution de probabilités, dans
+/// [0, 1]. `0` = certitude (one-hot), `1` = ignorance totale (uniforme).
+///
+/// Normalisée par `log(n)` pour être comparable entre modèles au nombre de
+/// classes différent (cassava 6 vs plantvillage 39). Retourne `0` pour une
+/// distribution dégénérée (< 2 classes).
+double normalizedEntropy(List<double> probs) {
+  if (probs.length < 2) return 0.0;
+  double h = 0.0;
+  for (final p in probs) {
+    if (p > 0) h -= p * math.log(p);
+  }
+  return (h / math.log(probs.length)).clamp(0.0, 1.0);
+}
+
 /// Règle pure de décision de validation, extraite pour pouvoir être
 /// testée sans avoir à monter tout le pipeline d'inférence.
 ///
 /// Une validation humaine est demandée si :
 ///   - la confiance du top-1 est en dessous de [kConfidenceThreshold], OU
 ///   - la marge top-1 − top-2 est en dessous de [kAmbiguityMargin]
-///     (le modèle hésite entre deux classes proches).
+///     (le modèle hésite entre deux classes proches), OU
+///   - l'entropie normalisée dépasse [kMaxEntropyForConfidentDiagnosis]
+///     (distribution diffuse, signal d'entrée hors-distribution).
+///
+/// [entropy] est optionnel (défaut 0.0 = jamais déclenchant) pour préserver
+/// les appelants historiques ; le pipeline réel passe l'entropie mesurée.
 bool shouldRequestValidation({
   required double confidence,
   required double margin,
+  double entropy = 0.0,
 }) =>
-    confidence < kConfidenceThreshold || margin < kAmbiguityMargin;
+    confidence < kConfidenceThreshold ||
+    margin < kAmbiguityMargin ||
+    entropy > kMaxEntropyForConfidentDiagnosis;
 
 /// Seuil de probabilité au-dessus duquel on rejette l'image comme
 /// inexploitable (« pas de feuille bien visible »), même si la classe
@@ -169,6 +212,7 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
           rawLabel: result.topLabel,
           confidence: result.topConfidence,
           margin: result.margin,
+          entropy: result.entropy,
           info: knownInfo,
           modelId: loaded.profile.id,
           modelDomainPrefixes: loaded.domainPrefixes,
@@ -222,6 +266,7 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
       final needsValidation = shouldRequestValidation(
         confidence: best.confidence,
         margin: best.margin,
+        entropy: best.entropy,
       );
 
       // Filet de sécurité : rejet aussi si Background est carrément
@@ -395,6 +440,8 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
       return null;
     }
 
+    final entropy = normalizedEntropy(probs);
+
     final rawLabel = labels[topIdx];
     if (kDebugMode) {
       final marginPct = ((topProb - secondProb) * 100).toStringAsFixed(1);
@@ -403,7 +450,8 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
           : '';
       debugPrint(
         '🏷️ ${loaded.profile.id}: $rawLabel '
-        '(${(topProb * 100).toStringAsFixed(1)}%, marge $marginPct pts$bgStr)',
+        '(${(topProb * 100).toStringAsFixed(1)}%, marge $marginPct pts, '
+        'H ${entropy.toStringAsFixed(2)}$bgStr)',
       );
     }
     return _InferenceOutput(
@@ -411,6 +459,7 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
       topConfidence: topProb,
       secondConfidence: secondProb,
       backgroundProb: backgroundProb,
+      entropy: entropy,
     );
   }
 
@@ -518,6 +567,11 @@ class _Best {
   /// produit ce candidat. Utilisé pour détecter les diagnostics ambigus
   /// même quand la confiance brute est au-dessus du seuil.
   final double margin;
+
+  /// Entropie normalisée de la distribution du modèle qui a produit ce
+  /// candidat. Signal d'incertitude global (cf. [normalizedEntropy]).
+  final double entropy;
+
   final DiseaseInfo? info;
   final String modelId;
 
@@ -530,6 +584,7 @@ class _Best {
     required this.rawLabel,
     required this.confidence,
     required this.margin,
+    required this.entropy,
     required this.info,
     required this.modelId,
     required this.modelDomainPrefixes,
@@ -552,10 +607,15 @@ class _InferenceOutput {
   /// modèle la possède (PlantVillage), sinon `null` (cassava).
   final double? backgroundProb;
 
+  /// Entropie normalisée de la distribution complète (cf. [normalizedEntropy]).
+  /// Signal d'incertitude global, complémentaire de [margin].
+  final double entropy;
+
   const _InferenceOutput({
     required this.topLabel,
     required this.topConfidence,
     required this.secondConfidence,
+    required this.entropy,
     this.backgroundProb,
   });
 
