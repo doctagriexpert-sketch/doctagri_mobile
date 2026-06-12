@@ -45,6 +45,53 @@ List<double> calibratedSoftmax(
   return exps.map((e) => e / sumExps).toList(growable: false);
 }
 
+/// Recalibre une distribution de probabilités **déjà normalisée** (sortie d'un
+/// modèle qui inclut sa propre couche softmax) avec une température, SANS la
+/// ré-écraser par un second softmax.
+///
+/// La plupart des modèles TFLite quantifiés de ce projet exportent une couche
+/// softmax finale : leur sortie est déjà une distribution de probabilités
+/// (valeurs dans [0, 1], somme ≈ 1). Leur appliquer [calibratedSoftmax]
+/// reviendrait à faire un **double softmax**, ce qui aplatit dramatiquement la
+/// confiance — une prédiction réelle à 99 % tombe à ~35 % sur 6 classes et
+/// ~7 % sur 39 classes. Cette fonction est la voie correcte pour ces modèles.
+///
+/// Mathématiquement : `p_i^(1/T) / Σ_j p_j^(1/T)`, soit `softmax(log(p) / T)`.
+/// Préserve l'argmax pour tout `T > 0`.
+///
+/// - `T = 1.0` (défaut) : simple renormalisation. La sortie déquantifiée somme
+///   rarement EXACTEMENT à 1 (ex. 255/256), donc on renormalise toujours.
+/// - `T > 1.0` : aplatit la distribution. `T < 1.0` : la pique.
+///
+/// Retourne une liste vide pour une entrée vide.
+List<double> temperatureScaleProbabilities(
+  List<double> probs, {
+  double temperature = 1.0,
+}) {
+  if (probs.isEmpty) return const [];
+  assert(temperature > 0, 'temperature doit être strictement positif');
+
+  if (temperature == 1.0) {
+    final sum = probs.fold<double>(0.0, (a, b) => a + b);
+    if (sum <= 0) {
+      return List<double>.filled(probs.length, 1.0 / probs.length);
+    }
+    return probs.map((p) => p / sum).toList(growable: false);
+  }
+
+  // p^(1/T) renormalisé. On traite p <= 0 (bruit de quantification) comme 0
+  // pour éviter NaN via pow.
+  final invT = 1.0 / temperature;
+  final scaled = probs
+      .map((p) => p <= 0 ? 0.0 : math.pow(p, invT).toDouble())
+      .toList(growable: false);
+  final sum = scaled.fold<double>(0.0, (a, b) => a + b);
+  if (sum <= 0) {
+    return List<double>.filled(probs.length, 1.0 / probs.length);
+  }
+  return scaled.map((s) => s / sum).toList(growable: false);
+}
+
 /// Profil d'un modèle de diagnostic (taille d'entrée, labels, normalisation).
 ///
 /// Chaque modèle TFLite peut avoir des contraintes différentes (taille
@@ -60,8 +107,11 @@ class ModelProfile {
   final List<double> std;
   final List<String> cultures;
 
-  /// Température de calibration appliquée AVANT le softmax sur les
-  /// logits du modèle : `probs = softmax(logits / temperature)`.
+  /// Température de calibration. Selon [outputsProbabilities], elle est
+  /// appliquée soit sur les logits via [calibratedSoftmax]
+  /// (`softmax(logits / T)`), soit sur les probabilités via
+  /// [temperatureScaleProbabilities] (`p^(1/T)` renormalisé). Dans les deux
+  /// cas l'argmax est préservé.
   ///
   /// - `T = 1.0` (défaut) → aucune transformation, comportement
   ///   historique préservé.
@@ -77,6 +127,20 @@ class ModelProfile {
   /// la calibration.
   final double temperature;
 
+  /// La sortie brute du modèle est-elle déjà une distribution de probabilités
+  /// (couche softmax incluse dans le `.tflite`) plutôt que des logits ?
+  ///
+  /// - `true`  → on applique [temperatureScaleProbabilities] (pas de softmax).
+  /// - `false` → on applique [calibratedSoftmax] (le modèle sort des logits).
+  /// - `null` (défaut) → auto-détection à l'inférence (somme ≈ 1 et valeurs
+  ///   ≥ 0 ⇒ probabilités). Le filet de sécurité qui empêche le bug de
+  ///   double softmax de réapparaître si un nouveau modèle est ajouté sans
+  ///   renseigner ce champ.
+  ///
+  /// Les deux modèles embarqués (cassava, plantvillage) exportent un softmax
+  /// final : leur sortie déquantifiée somme à ~1 (scale 1/256, zero 0).
+  final bool? outputsProbabilities;
+
   const ModelProfile({
     required this.id,
     required this.displayName,
@@ -87,6 +151,7 @@ class ModelProfile {
     this.std = kImageNetStd,
     this.cultures = const [],
     this.temperature = 1.0,
+    this.outputsProbabilities,
   }) : assert(temperature > 0, 'temperature doit être strictement positif');
 }
 
@@ -105,6 +170,7 @@ class ModelCatalog {
     labelsAssetPath: 'assets/models/labels.txt',
     inputSize: 224,
     cultures: ['Manioc'],
+    outputsProbabilities: true,
   );
 
   static const ModelProfile plantVillage = ModelProfile(
@@ -129,6 +195,7 @@ class ModelCatalog {
       'Framboise',
       'Myrtille',
     ],
+    outputsProbabilities: true,
   );
 
   /// Profil par défaut. Le modèle multi-cultures couvre plus de cas.

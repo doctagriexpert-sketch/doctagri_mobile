@@ -50,6 +50,27 @@ const double kBackgroundRejectThreshold = 0.25;
 bool shouldRejectAsBackground(double backgroundProb) =>
     backgroundProb > kBackgroundRejectThreshold;
 
+/// Heuristique : la sortie brute d'un modèle ressemble-t-elle à une
+/// distribution de probabilités (toutes valeurs ≥ ~0 et somme ≈ 1) plutôt
+/// qu'à des logits ?
+///
+/// Utilisé en repli quand [ModelProfile.outputsProbabilities] est `null`
+/// (profil n'ayant pas déclaré explicitement le type de sortie). Empêche le
+/// bug de double softmax de réapparaître silencieusement si un nouveau modèle
+/// à softmax intégré est ajouté sans configuration.
+///
+/// La tolérance sur la somme (0.9–1.1) absorbe le bruit de quantification
+/// (une sortie uint8 somme typiquement à 255/256 ≈ 0.996).
+bool looksLikeProbabilities(List<double> values) {
+  if (values.isEmpty) return false;
+  double sum = 0.0;
+  for (final v in values) {
+    if (v < -1e-3) return false;
+    sum += v;
+  }
+  return sum > 0.9 && sum < 1.1;
+}
+
 /// Reconnait le label `Background_without_leaves` de PlantVillage avec
 /// une tolérance aux variantes de casse / séparateurs.
 bool isBackgroundLabel(String label) {
@@ -309,26 +330,38 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
 
     interpreter.run(input, output);
 
-    final List<double> logits;
+    final List<double> rawValues;
     if (outputType == TensorType.uint8) {
       final quantParams = outputTensor.params;
       final rawOutput = (output as ByteBuffer).asUint8List();
-      logits = List<double>.generate(
+      rawValues = List<double>.generate(
         numClasses,
         (i) => (rawOutput[i] - quantParams.zeroPoint) * quantParams.scale,
       );
     } else {
       final rawList = output[0];
-      logits = rawList
+      rawValues = rawList
           .map<num>((e) => e as num)
           .map((e) => e.toDouble())
           .toList();
     }
 
-    final probs = calibratedSoftmax(
-      logits,
-      temperature: loaded.profile.temperature,
-    );
+    // Les modèles embarqués exportent une couche softmax finale : leur sortie
+    // est DÉJÀ une distribution de probabilités. Leur ré-appliquer un softmax
+    // (calibratedSoftmax) serait un double softmax qui écrase la confiance
+    // (99 % → ~35 % sur 6 classes, ~7 % sur 39). On route donc selon le type
+    // de sortie déclaré par le profil, avec auto-détection en repli.
+    final outputsProbabilities = loaded.profile.outputsProbabilities ??
+        looksLikeProbabilities(rawValues);
+    final probs = outputsProbabilities
+        ? temperatureScaleProbabilities(
+            rawValues,
+            temperature: loaded.profile.temperature,
+          )
+        : calibratedSoftmax(
+            rawValues,
+            temperature: loaded.profile.temperature,
+          );
     if (probs.isEmpty) return null;
 
     // Top-1, top-2 et prob(Background) en un seul pas (O(n)) plutôt
