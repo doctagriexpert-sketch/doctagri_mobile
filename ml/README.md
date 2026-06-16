@@ -19,6 +19,7 @@ This directory contains the reproducible ML pipeline for model quantization and 
 | Script | Purpose |
 |--------|---------|
 | `07_field_domain_analysis.py` | Unsupervised lab→field domain-shift analysis: compares model output distributions (confidence/entropy/margin) on field vs lab images, quantifies the gap (KS distance), recommends abstention thresholds. No ground-truth labels needed. |
+| `08_vlm_label.py` | VLM-assisted labeling of unlabeled field photos (Claude vision). Proposes crop + disease + severity + photo quality, grounded in the app's taxonomy (registry + knowledge base); outputs a resumable CSV a non-expert verifies. `--validate_dir` first measures VLM reliability against a labeled set (PlantVillage) before trusting it. Needs `pip install anthropic` + `ANTHROPIC_API_KEY`. |
 
 ### Shared module — `app_inference.py`
 
