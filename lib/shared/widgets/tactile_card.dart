@@ -11,11 +11,7 @@ import '../../core/constants/curves.dart';
 /// - Border-radius asymétriques selon le variant
 /// - Ombre contextuelle
 
-enum CardVariant {
-  flat,
-  elevated,
-  outlined,
-}
+enum CardVariant { flat, elevated, outlined }
 
 class TactileCard extends StatefulWidget {
   final Widget child;

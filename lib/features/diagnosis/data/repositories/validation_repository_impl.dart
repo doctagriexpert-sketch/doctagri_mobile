@@ -14,7 +14,8 @@ import '../../domain/repositories/validation_repository.dart';
 class ValidationRepositoryImpl implements ValidationRepository {
   final Box<String> _box;
 
-  ValidationRepositoryImpl({@Named('validationBox') required Box<String> box}) : _box = box;
+  ValidationRepositoryImpl({@Named('validationBox') required Box<String> box})
+    : _box = box;
 
   @override
   Future<void> submitValidation(ValidationRequest request) async {

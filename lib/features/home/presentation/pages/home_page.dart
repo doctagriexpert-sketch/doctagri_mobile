@@ -38,7 +38,9 @@ class _HomePageState extends State<HomePage> {
       // Les modèles se chargent en background — on attend la fin pour
       // mettre à jour l'indicateur sans bloquer l'UI.
       ModelManager.instance.initialize().then((_) {
-        if (mounted) setState(() => _modelReady = ModelManager.instance.isReady);
+        if (mounted) {
+          setState(() => _modelReady = ModelManager.instance.isReady);
+        }
       });
     }
   }
@@ -286,10 +288,7 @@ class _HomePageState extends State<HomePage> {
           pressedScale: 0.97,
           child: _buildScanCard(langService),
         ),
-        if (!_modelReady) ...[
-          Gaps.v7,
-          _buildModelLoadingBar(),
-        ],
+        if (!_modelReady) ...[Gaps.v7, _buildModelLoadingBar()],
       ],
     );
   }
@@ -318,66 +317,63 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildScanCard(LanguageService langService) {
     return Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 21, vertical: 24),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [AppColors.primary, AppColors.primary.withAlpha(200)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 21, vertical: 24),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [AppColors.primary, AppColors.primary.withAlpha(200)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: AppRadius.cardMain,
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primary.withAlpha(60),
+            blurRadius: 14,
+            offset: const Offset(0, 6),
           ),
-          borderRadius: AppRadius.cardMain,
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.primary.withAlpha(60),
-              blurRadius: 14,
-              offset: const Offset(0, 6),
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 64,
+            height: 64,
+            decoration: BoxDecoration(
+              color: Colors.white.withAlpha(30),
+              shape: BoxShape.circle,
             ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 64,
-              height: 64,
-              decoration: BoxDecoration(
-                color: Colors.white.withAlpha(30),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.camera_alt_rounded,
-                size: 32,
-                color: Colors.white,
-              ),
+            child: const Icon(
+              Icons.camera_alt_rounded,
+              size: 32,
+              color: Colors.white,
             ),
-            Gaps.h21,
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    langService.t('scan_plant'),
-                    style: AppTypography.h2Light,
+          ),
+          Gaps.h21,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(langService.t('scan_plant'), style: AppTypography.h2Light),
+                Gaps.v5,
+                Text(
+                  langService.t('scan_description'),
+                  style: TextStyle(
+                    color: Colors.white.withAlpha(200),
+                    fontSize: 13,
+                    height: 1.4,
                   ),
-                  Gaps.v5,
-                  Text(
-                    langService.t('scan_description'),
-                    style: TextStyle(
-                      color: Colors.white.withAlpha(200),
-                      fontSize: 13,
-                      height: 1.4,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: Colors.white.withAlpha(150),
-              size: 20,
-            ),
-          ],
-        ),
+          ),
+          Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Colors.white.withAlpha(150),
+            size: 20,
+          ),
+        ],
+      ),
     );
   }
 

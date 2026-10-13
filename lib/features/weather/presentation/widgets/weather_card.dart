@@ -50,11 +50,7 @@ class _WeatherCardState extends State<WeatherCard> {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildHeader(provider),
-          Gaps.v11,
-          _buildBody(provider),
-        ],
+        children: [_buildHeader(provider), Gaps.v11, _buildBody(provider)],
       ),
     );
   }
@@ -145,7 +141,8 @@ class _WeatherCardState extends State<WeatherCard> {
             scrollDirection: Axis.horizontal,
             itemCount: days.length,
             separatorBuilder: (context, index) => const SizedBox(width: 8),
-            itemBuilder: (context, i) => _DayChip(day: days[i], isToday: i == 0),
+            itemBuilder: (context, i) =>
+                _DayChip(day: days[i], isToday: i == 0),
           ),
         ),
         if (days.isNotEmpty) ...[

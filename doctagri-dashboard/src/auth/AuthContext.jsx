@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 
-const AuthContext = createContext(null);
+import { AuthContext } from './useAuth';
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
@@ -9,6 +9,17 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        async function fetchProfile(userId) {
+            const { data, error } = await supabase
+                .from('profiles')
+                .select('*')
+                .eq('id', userId)
+                .single();
+
+            if (!error && data) setProfile(data);
+            setLoading(false);
+        }
+
         supabase.auth.getSession().then(({ data: { session } }) => {
             setUser(session?.user ?? null);
             if (session?.user) fetchProfile(session.user.id);
@@ -28,17 +39,6 @@ export function AuthProvider({ children }) {
 
         return () => subscription.unsubscribe();
     }, []);
-
-    async function fetchProfile(userId) {
-        const { data, error } = await supabase
-            .from('profiles')
-            .select('*')
-            .eq('id', userId)
-            .single();
-
-        if (!error && data) setProfile(data);
-        setLoading(false);
-    }
 
     async function signIn(email, password) {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -63,10 +63,4 @@ export function AuthProvider({ children }) {
     };
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-
-export function useAuth() {
-    const context = useContext(AuthContext);
-    if (!context) throw new Error('useAuth must be used within AuthProvider');
-    return context;
 }

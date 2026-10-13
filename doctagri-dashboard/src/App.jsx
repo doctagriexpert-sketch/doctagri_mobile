@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, Navigate, NavLink, useLocation } from 'react-router-dom';
-import { AuthProvider, useAuth } from './auth/AuthContext';
+import { BrowserRouter, Routes, Route, Navigate, NavLink } from 'react-router-dom';
+import { AuthProvider } from './auth/AuthContext';
+import { useAuth } from './auth/useAuth';
 import { Toaster } from 'react-hot-toast';
 import LoginPage from './pages/LoginPage';
 import OverviewPage from './pages/OverviewPage';
@@ -15,7 +16,7 @@ import {
 } from 'lucide-react';
 
 function AppShell() {
-  const { user, profile, loading, signOut, isSenior, isAdmin } = useAuth();
+  const { user, profile, loading, signOut, isSenior } = useAuth();
 
   if (loading) {
     return (
@@ -78,7 +79,8 @@ function AppShell() {
   );
 }
 
-function SidebarLink({ to, icon: Icon, label }) {
+function SidebarLink({ to, icon, label }) {
+  const Icon = icon;
   return (
     <li>
       <NavLink

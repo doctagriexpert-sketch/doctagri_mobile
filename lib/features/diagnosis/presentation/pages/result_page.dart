@@ -74,7 +74,8 @@ class _ResultPageState extends State<ResultPage> {
     try {
       await Share.shareXFiles(
         [XFile(result.imagePath)],
-        subject: 'Diagnostic DoctAgri — ${info?.displayName ?? result.diseaseName ?? result.label}',
+        subject:
+            'Diagnostic DoctAgri — ${info?.displayName ?? result.diseaseName ?? result.label}',
         text: _buildExpertMessage(result, info),
       );
     } catch (e) {
@@ -84,8 +85,8 @@ class _ResultPageState extends State<ResultPage> {
 
   static String _buildExpertMessage(DiagnosisResult result, DiseaseInfo? info) {
     final name = info?.displayName ?? result.diseaseName ?? result.label;
-    final pct  = (result.confidence * 100).round();
-    final sev  = info?.severity ?? result.severity ?? '';
+    final pct = (result.confidence * 100).round();
+    final sev = info?.severity ?? result.severity ?? '';
     final crop = info?.culture ?? '';
     final date = DateFormat('dd/MM/yyyy à HH:mm').format(result.timestamp);
 

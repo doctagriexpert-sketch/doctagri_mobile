@@ -9,16 +9,16 @@ export default function OverviewPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        async function loadStats() {
+            const { data, error } = await supabase.rpc('get_overview_stats');
+            if (!error && data) setStats(data);
+            setLoading(false);
+        }
+
         loadStats();
         const interval = setInterval(loadStats, 30000); // Refresh every 30s
         return () => clearInterval(interval);
     }, []);
-
-    async function loadStats() {
-        const { data, error } = await supabase.rpc('get_overview_stats');
-        if (!error && data) setStats(data);
-        setLoading(false);
-    }
 
     if (loading) {
         return (
@@ -66,17 +66,20 @@ export default function OverviewPage() {
             </div>
 
             <div className="stats-grid">
-                {statCards.map(({ label, value, icon: Icon, variant }) => (
-                    <div className="stat-card" key={label}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                            <Icon size={16} style={{ color: 'var(--text-muted)' }} />
-                            <span className="stat-card__label">{label}</span>
+                {statCards.map(({ label, value, icon, variant }) => {
+                    const Icon = icon;
+                    return (
+                        <div className="stat-card" key={label}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                <Icon size={16} style={{ color: 'var(--text-muted)' }} />
+                                <span className="stat-card__label">{label}</span>
+                            </div>
+                            <span className={`stat-card__value ${variant ? `stat-card__value--${variant}` : ''}`}>
+                                {value}
+                            </span>
                         </div>
-                        <span className={`stat-card__value ${variant ? `stat-card__value--${variant}` : ''}`}>
-                            {value}
-                        </span>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
             {/* Distribution par classe */}

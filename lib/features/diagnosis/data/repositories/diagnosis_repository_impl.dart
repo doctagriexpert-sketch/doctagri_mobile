@@ -199,24 +199,29 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
           maxBackgroundProb = result.backgroundProb!;
         }
 
-        evidences.add(ModelEvidence(
-          modelId: loaded.profile.id,
-          topLabel: result.topLabel,
-          topConfidence: result.topConfidence,
-          backgroundProb: result.backgroundProb,
-        ));
+        evidences.add(
+          ModelEvidence(
+            modelId: loaded.profile.id,
+            topLabel: result.topLabel,
+            topConfidence: result.topConfidence,
+            backgroundProb: result.backgroundProb,
+          ),
+        );
 
-        final knownInfo =
-            knowledgeRepository.getDiseaseByLabel(result.topLabel);
-        candidates.add(_Best(
-          rawLabel: result.topLabel,
-          confidence: result.topConfidence,
-          margin: result.margin,
-          entropy: result.entropy,
-          info: knownInfo,
-          modelId: loaded.profile.id,
-          modelDomainPrefixes: loaded.domainPrefixes,
-        ));
+        final knownInfo = knowledgeRepository.getDiseaseByLabel(
+          result.topLabel,
+        );
+        candidates.add(
+          _Best(
+            rawLabel: result.topLabel,
+            confidence: result.topConfidence,
+            margin: result.margin,
+            entropy: result.entropy,
+            info: knownInfo,
+            modelId: loaded.profile.id,
+            modelDomainPrefixes: loaded.domainPrefixes,
+          ),
+        );
       }
 
       if (candidates.isEmpty) {
@@ -258,9 +263,7 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
       // modèle, indépendamment de qui a gagné la fusion. Évite les
       // faux diagnostics sur des photos majoritairement hors-sujet.
       if (shouldRejectAsBackground(maxBackgroundProb)) {
-        return Right(
-          _buildBackgroundRejection(imagePath, maxBackgroundProb),
-        );
+        return Right(_buildBackgroundRejection(imagePath, maxBackgroundProb));
       }
 
       final needsValidation = shouldRequestValidation(
@@ -406,17 +409,15 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
     // (calibratedSoftmax) serait un double softmax qui écrase la confiance
     // (99 % → ~35 % sur 6 classes, ~7 % sur 39). On route donc selon le type
     // de sortie déclaré par le profil, avec auto-détection en repli.
-    final outputsProbabilities = loaded.profile.outputsProbabilities ??
+    final outputsProbabilities =
+        loaded.profile.outputsProbabilities ??
         looksLikeProbabilities(rawValues);
     final probs = outputsProbabilities
         ? temperatureScaleProbabilities(
             rawValues,
             temperature: loaded.profile.temperature,
           )
-        : calibratedSoftmax(
-            rawValues,
-            temperature: loaded.profile.temperature,
-          );
+        : calibratedSoftmax(rawValues, temperature: loaded.profile.temperature);
     if (probs.isEmpty) return null;
 
     // Top-1, top-2 et prob(Background) en un seul pas (O(n)) plutôt

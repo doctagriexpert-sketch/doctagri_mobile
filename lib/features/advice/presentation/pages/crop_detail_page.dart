@@ -86,15 +86,15 @@ class _CropDetailPageState extends State<CropDetailPage> {
                   ),
                   Gaps.v21,
                   ...crop.tips.asMap().entries.map(
-                        (e) => Padding(
-                          padding: const EdgeInsets.only(bottom: 14),
-                          child: _TipCard(
-                            index: e.key + 1,
-                            tip: e.value,
-                            langCode: lang.languageCode,
-                          ),
-                        ),
+                    (e) => Padding(
+                      padding: const EdgeInsets.only(bottom: 14),
+                      child: _TipCard(
+                        index: e.key + 1,
+                        tip: e.value,
+                        langCode: lang.languageCode,
                       ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -202,7 +202,9 @@ class _TipCard extends StatelessWidget {
                     }
                   },
                   icon: Icon(
-                    isThisSpeaking ? Icons.stop_rounded : Icons.volume_up_rounded,
+                    isThisSpeaking
+                        ? Icons.stop_rounded
+                        : Icons.volume_up_rounded,
                     size: 18,
                     color: isThisSpeaking
                         ? AppColors.danger

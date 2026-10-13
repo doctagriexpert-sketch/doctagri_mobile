@@ -22,8 +22,7 @@ void main() {
 
     test('sortie somme toujours à 1, quel que soit T', () {
       for (final t in [0.5, 1.0, 1.5, 2.0, 5.0, 10.0]) {
-        final probs =
-            calibratedSoftmax([0.5, 1.5, 2.5, 3.5], temperature: t);
+        final probs = calibratedSoftmax([0.5, 1.5, 2.5, 3.5], temperature: t);
         final sum = probs.reduce((a, b) => a + b);
         expect(sum, closeTo(1.0, 1e-6), reason: 'T=$t');
       }
@@ -85,10 +84,12 @@ void main() {
 
     test('T très grand → distribution quasi-uniforme', () {
       // Limite T → ∞ : softmax converge vers 1/N pour chaque classe.
-      final probs = calibratedSoftmax(
-        [0.0, 5.0, 10.0, 15.0],
-        temperature: 1000.0,
-      );
+      final probs = calibratedSoftmax([
+        0.0,
+        5.0,
+        10.0,
+        15.0,
+      ], temperature: 1000.0);
       const uniform = 0.25;
       for (final p in probs) {
         expect(p, closeTo(uniform, 1e-2));
@@ -98,10 +99,7 @@ void main() {
     test('T → 0+ : distribution quasi one-hot sur l\'argmax', () {
       // Limite T → 0 : softmax devient un argmax dur (1 sur le max,
       // 0 ailleurs). Avec T très petit on doit s'en approcher.
-      final probs = calibratedSoftmax(
-        [1.0, 5.0, 2.0],
-        temperature: 0.01,
-      );
+      final probs = calibratedSoftmax([1.0, 5.0, 2.0], temperature: 0.01);
       expect(probs[1], closeTo(1.0, 1e-6));
       expect(probs[0], closeTo(0.0, 1e-6));
       expect(probs[2], closeTo(0.0, 1e-6));

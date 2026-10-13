@@ -16,7 +16,8 @@ pas de personne ou d'échéance fictive.
 | PAY-01 | P1 avant paiement réel | PSP/webhook absent | Confirmation serveur authentifiée et test des reprises ; aucun succès fictif |
 | MOD-01 | P2 | Packages Melos largement vides | Extraire seulement les modules utiles avec tests/consommateurs, ou retirer les squelettes |
 | OBS-01 | P2 | Monitoring annoncé mais non démontré | Outil choisi, événements minimaux, accès et alertes vérifiés |
-| QA-01 | P1 pour CI verte | Suites et lint hérités à mesurer | Rapport daté, corrections ciblées, contrôles complets verts sans désactivation |
+| QA-01 | Résolue localement | Contrôles locaux complets réussis le 13 octobre 2026 | Voir le rapport de correction ; CI distante non exécutée |
+| QA-02 | P2 | Avertissement React Compiler pour TanStack Virtual et bundle dashboard de 517 ko | Compatibilité de la virtualisation vérifiée avant activation du compilateur ; découpage du bundle mesuré |
 
 Pour ajouter une dette : fournir une preuve (fichier, test ou mesure), l'impact,
 un critère de résolution et le lien de tâche/PR s'il existe. Lorsqu'elle est
@@ -25,3 +26,6 @@ résolue, consigner la preuve ; ne pas la fermer parce qu'un fichier a été cr�
 QA-01 est désormais mesurée : 112 tests Flutter et 8 tests React réussis,
 5 diagnostics Flutter, formatage à reprendre et 13 erreurs ESLint / 2 avertissements.
 Voir [le rapport initial](verification/2026-10-02-engineering-foundation.md).
+
+QA-01 : les erreurs bloquantes sont corrigées sans désactivation de règle.
+Voir [la vérification du correctif](verification/2026-10-13-pre-push-fixes.md).

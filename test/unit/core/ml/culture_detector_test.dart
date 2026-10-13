@@ -56,10 +56,7 @@ void main() {
     });
 
     test('avec évidence Tomato à 80 % : exclut les autres cultures', () {
-      const d = DomainEvidence(
-        plausibleCultures: {'Tomato'},
-        confidence: 0.8,
-      );
+      const d = DomainEvidence(plausibleCultures: {'Tomato'}, confidence: 0.8);
       expect(d.supportsCulture('Tomato'), isTrue);
       expect(d.supportsCulture('Cassava'), isFalse);
       expect(d.excludesCulture('Tomato'), isFalse);
@@ -68,10 +65,7 @@ void main() {
 
     test('confiance < 0.5 : n\'exclut PAS, mais ne supporte que les '
         'cultures listées (cas limite peu utilisé)', () {
-      const d = DomainEvidence(
-        plausibleCultures: {'Tomato'},
-        confidence: 0.3,
-      );
+      const d = DomainEvidence(plausibleCultures: {'Tomato'}, confidence: 0.3);
       expect(d.supportsCulture('Tomato'), isTrue);
       expect(d.supportsCulture('Cassava'), isFalse);
       // Pas assez confiant pour EXCLURE
@@ -214,8 +208,10 @@ void main() {
       expect(isCultureSupported('Apple___Apple_scab'), isFalse);
       expect(isCultureSupported('Apple___healthy'), isFalse);
       expect(isCultureSupported('Grape___Black_rot'), isFalse);
-      expect(isCultureSupported('Orange___Haunglongbing_(Citrus_greening)'),
-          isFalse);
+      expect(
+        isCultureSupported('Orange___Haunglongbing_(Citrus_greening)'),
+        isFalse,
+      );
       expect(isCultureSupported('Peach___Bacterial_spot'), isFalse);
       expect(isCultureSupported('Cherry___Powdery_mildew'), isFalse);
       expect(isCultureSupported('Strawberry___Leaf_scorch'), isFalse);
@@ -239,15 +235,17 @@ void main() {
       expect(isCultureSupported(''), isFalse);
     });
 
-    test('kSupportedCultures contient exactement les 5 cultures de l\'option C',
-        () {
-      expect(kSupportedCultures, {
-        'Tomato',
-        'Potato',
-        'Pepper,_bell',
-        'Squash',
-        'Corn',
-      });
-    });
+    test(
+      'kSupportedCultures contient exactement les 5 cultures de l\'option C',
+      () {
+        expect(kSupportedCultures, {
+          'Tomato',
+          'Potato',
+          'Pepper,_bell',
+          'Squash',
+          'Corn',
+        });
+      },
+    );
   });
 }

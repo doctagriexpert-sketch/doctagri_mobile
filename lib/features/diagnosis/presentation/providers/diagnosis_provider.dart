@@ -115,8 +115,10 @@ class DiagnosisProvider extends ChangeNotifier {
     // Apply cached NLLB Ewe translation if available (Kabyè not in NLLB-200)
     final langCode = languageService.languageCode;
     if (_diseaseInfo != null && langCode == 'ee') {
-      final cached =
-          translationService.getCached(_diseaseInfo!.modelLabel, 'ee');
+      final cached = translationService.getCached(
+        _diseaseInfo!.modelLabel,
+        'ee',
+      );
       if (cached != null) {
         _diseaseInfo = _diseaseInfo!.withPlainExplanationOverride('ee', cached);
       }
@@ -160,8 +162,10 @@ class DiagnosisProvider extends ChangeNotifier {
           if (translated != null &&
               _diseaseInfo?.modelLabel == info.modelLabel &&
               _result != null) {
-            _diseaseInfo =
-                _diseaseInfo!.withPlainExplanationOverride('ee', translated);
+            _diseaseInfo = _diseaseInfo!.withPlainExplanationOverride(
+              'ee',
+              translated,
+            );
             _explanation = _explanationBuilder.build(
               result: _result!,
               info: _diseaseInfo,

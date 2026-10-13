@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
-import { useAuth } from '../auth/AuthContext';
+import { useAuth } from '../auth/useAuth';
 import {
     Plus, Edit3, CheckCircle, Clock, FileText, ChevronDown, ChevronUp, Search,
 } from 'lucide-react';
@@ -14,17 +14,18 @@ export default function DiseaseSheetsPage() {
     const [expandedId, setExpandedId] = useState(null);
     const [filter, setFilter] = useState('');
 
-    useEffect(() => { loadSheets(); }, []);
-
-    async function loadSheets() {
-        const { data, error } = await supabase
+    const loadSheets = useCallback(() => {
+        return supabase
             .from('disease_sheets')
             .select('*, creator:profiles!disease_sheets_created_by_fkey(full_name)')
             .order('culture')
-            .order('local_name');
-        if (!error) setSheets(data || []);
-        setLoading(false);
-    }
+            .order('local_name').then(({ data, error }) => {
+            if (!error) setSheets(data || []);
+            setLoading(false);
+        });
+    }, []);
+
+    useEffect(() => { loadSheets(); }, [loadSheets]);
 
     const filtered = sheets.filter(s =>
         s.local_name.toLowerCase().includes(filter.toLowerCase()) ||

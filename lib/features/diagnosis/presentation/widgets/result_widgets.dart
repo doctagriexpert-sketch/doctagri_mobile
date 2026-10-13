@@ -212,13 +212,14 @@ class SuccessState extends StatelessWidget {
   Widget build(BuildContext context) {
     final confidence = result.confidence;
     final lang = context.watch<LanguageService>();
-    final localizedName = diseaseInfo?.localizedDisplayName(lang.languageCode) ??
+    final localizedName =
+        diseaseInfo?.localizedDisplayName(lang.languageCode) ??
         result.diseaseName ??
         result.label;
     final localizedDescription =
         diseaseInfo?.localizedDescription(lang.languageCode) ??
-            result.diseaseDescription ??
-            '';
+        result.diseaseDescription ??
+        '';
 
     return Column(
       children: [
@@ -892,9 +893,7 @@ class ProductCard extends StatelessWidget {
                   backgroundColor: AppColors.accent,
                   foregroundColor: AppColors.secondary,
                   padding: const EdgeInsets.symmetric(vertical: 11),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: AppRadius.medium,
-                  ),
+                  shape: RoundedRectangleBorder(borderRadius: AppRadius.medium),
                 ),
               ),
             ),
@@ -1136,28 +1135,28 @@ class VoiceControls extends StatelessWidget {
   });
 
   String _replayLabel(LanguageService lang) => switch (lang.languageCode) {
-        'ee' => 'Gase',
-        'kab' => 'Gase',
-        _ => 'Écouter à nouveau',
-      };
+    'ee' => 'Gase',
+    'kab' => 'Gase',
+    _ => 'Écouter à nouveau',
+  };
 
   String _detailLabel(LanguageService lang) => switch (lang.languageCode) {
-        'ee' => 'Se nyateƒe blibo',
-        'kab' => 'Se nyateƒe blibo',
-        _ => 'Écouter en détail',
-      };
+    'ee' => 'Se nyateƒe blibo',
+    'kab' => 'Se nyateƒe blibo',
+    _ => 'Écouter en détail',
+  };
 
   String _stopLabel(LanguageService lang) => switch (lang.languageCode) {
-        'ee' => 'Tɔ',
-        'kab' => 'Tɔ',
-        _ => 'Arrêter',
-      };
+    'ee' => 'Tɔ',
+    'kab' => 'Tɔ',
+    _ => 'Arrêter',
+  };
 
   String _autoLabel(LanguageService lang) => switch (lang.languageCode) {
-        'ee' => 'Lecture automatique',
-        'kab' => 'Lecture automatique',
-        _ => 'Lecture automatique',
-      };
+    'ee' => 'Lecture automatique',
+    'kab' => 'Lecture automatique',
+    _ => 'Lecture automatique',
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -1174,8 +1173,8 @@ class VoiceControls extends StatelessWidget {
                 onPressed: voiceService.isSpeaking
                     ? () => voiceService.stopSpeaking()
                     : explanation == null
-                        ? null
-                        : () => provider.speakPlain(),
+                    ? null
+                    : () => provider.speakPlain(),
                 icon: Icon(
                   voiceService.isSpeaking
                       ? Icons.stop

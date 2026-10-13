@@ -90,8 +90,13 @@ class WeatherService {
     final codes = (daily['weathercode'] as List).cast<num>();
 
     final days = <WeatherDay>[];
-    final len = [dates.length, tMax.length, tMin.length, precip.length, codes.length]
-        .reduce((a, b) => a < b ? a : b);
+    final len = [
+      dates.length,
+      tMax.length,
+      tMin.length,
+      precip.length,
+      codes.length,
+    ].reduce((a, b) => a < b ? a : b);
     for (var i = 0; i < len; i++) {
       days.add(
         WeatherDay(

@@ -18,51 +18,54 @@ import 'features/diagnosis/domain/entities/diagnosis_result.dart';
 import 'features/diagnosis/domain/repositories/disease_knowledge_repository.dart';
 
 void main() async {
-  await runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    unawaited(InstallationRegistrationService.initialize());
+  await runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      unawaited(InstallationRegistrationService.initialize());
 
-    FlutterError.onError = (details) {
-      if (kDebugMode) FlutterError.presentError(details);
+      FlutterError.onError = (details) {
+        if (kDebugMode) FlutterError.presentError(details);
+        // TODO Phase 3 : Sentry/Crashlytics
+      };
+
+      // ── Chemin critique : uniquement ce qui est nécessaire AVANT l'UI ──
+      final sw = Stopwatch()..start();
+
+      await Hive.initFlutter();
+      Hive.registerAdapter(DiagnosisResultAdapter());
+      await di.configureDependencies();
+
+      final languageService = di.sl<LanguageService>();
+      await languageService.initialize();
+
+      final voiceService = di.sl<VoiceService>();
+
+      if (kDebugMode) {
+        debugPrint('⚡ UI prête en ${sw.elapsedMilliseconds} ms');
+      }
+
+      // ── Afficher l'app immédiatement ──
+      runApp(
+        MultiProvider(
+          providers: [
+            ChangeNotifierProvider.value(value: voiceService),
+            ChangeNotifierProvider.value(value: languageService),
+            ChangeNotifierProvider(create: (_) => di.sl<DiagnosisProvider>()),
+          ],
+          child: const DoctAgriApp(),
+        ),
+      );
+
+      // ── Tout le reste en arrière-plan (ne bloque plus l'UI) ──
+      unawaited(_initBackground(languageService, voiceService));
+    },
+    (error, stack) {
+      if (kDebugMode) {
+        debugPrint('UNCAUGHT ERROR: $error\n$stack');
+      }
       // TODO Phase 3 : Sentry/Crashlytics
-    };
-
-    // ── Chemin critique : uniquement ce qui est nécessaire AVANT l'UI ──
-    final sw = Stopwatch()..start();
-
-    await Hive.initFlutter();
-    Hive.registerAdapter(DiagnosisResultAdapter());
-    await di.configureDependencies();
-
-    final languageService = di.sl<LanguageService>();
-    await languageService.initialize();
-
-    final voiceService = di.sl<VoiceService>();
-
-    if (kDebugMode) {
-      debugPrint('⚡ UI prête en ${sw.elapsedMilliseconds} ms');
-    }
-
-    // ── Afficher l'app immédiatement ──
-    runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider.value(value: voiceService),
-          ChangeNotifierProvider.value(value: languageService),
-          ChangeNotifierProvider(create: (_) => di.sl<DiagnosisProvider>()),
-        ],
-        child: const DoctAgriApp(),
-      ),
-    );
-
-    // ── Tout le reste en arrière-plan (ne bloque plus l'UI) ──
-    unawaited(_initBackground(languageService, voiceService));
-  }, (error, stack) {
-    if (kDebugMode) {
-      debugPrint('UNCAUGHT ERROR: $error\n$stack');
-    }
-    // TODO Phase 3 : Sentry/Crashlytics
-  });
+    },
+  );
 }
 
 /// Initialisation différée — s'exécute pendant que l'utilisateur
@@ -89,9 +92,7 @@ Future<void> _initBackground(
     debugPrint('⚠️ Base de connaissances non chargée');
   }
   if (!ModelManager.instance.isReady && kDebugMode) {
-    debugPrint(
-      '⚠️ Modèle ML non chargé : ${ModelManager.instance.error}',
-    );
+    debugPrint('⚠️ Modèle ML non chargé : ${ModelManager.instance.error}');
   }
 
   // Supabase (réseau) — après le reste pour ne pas ralentir les assets

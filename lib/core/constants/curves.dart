@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 /// Courbes d'animation DoctAgri – Calme & Professionnel
-/// 
+///
 /// Pas de Curves.easeInOut partout. Chaque type d'interaction
 /// a sa propre courbe.
-/// 
+///
 /// Philosophie: les animations sont au service de l'UX, pas du spectacle.
 /// Durées courtes (150-250ms), pas de bounce excessif.
 
@@ -58,7 +58,7 @@ class TapAnimation extends StatefulWidget {
     super.key,
     required this.child,
     this.onTap,
-    this.pressedScale = 0.97,  // très subtil, pas 0.9
+    this.pressedScale = 0.97, // très subtil, pas 0.9
     this.pressedOpacity = 0.85,
   });
 

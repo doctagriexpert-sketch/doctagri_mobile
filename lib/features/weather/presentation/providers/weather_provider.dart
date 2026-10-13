@@ -10,7 +10,7 @@ class WeatherProvider extends ChangeNotifier {
   final WeatherService _service;
 
   WeatherProvider({WeatherService? service})
-      : _service = service ?? WeatherService();
+    : _service = service ?? WeatherService();
 
   WeatherStatus _status = WeatherStatus.idle;
   List<WeatherDay> _days = const [];

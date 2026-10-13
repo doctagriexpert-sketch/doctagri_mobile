@@ -16,8 +16,9 @@ class PaymentSuccessPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fmt = NumberFormat.decimalPattern('fr_FR');
-    final orderRef =
-        order.id != null ? order.id!.substring(0, 8).toUpperCase() : '—';
+    final orderRef = order.id != null
+        ? order.id!.substring(0, 8).toUpperCase()
+        : '—';
 
     return Scaffold(
       backgroundColor: AppColors.surface,
@@ -114,10 +115,7 @@ class PaymentSuccessPage extends StatelessWidget {
                   icon: const Icon(Icons.home_rounded, size: 20),
                   label: const Text(
                     "Retour à l'accueil",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primary,

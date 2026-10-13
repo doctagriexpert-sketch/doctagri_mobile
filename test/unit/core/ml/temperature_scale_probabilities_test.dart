@@ -22,21 +22,24 @@ void main() {
       expect(out[0], closeTo(1.0, 1e-3));
     });
 
-    test('contraste avec le bug : softmax-sur-proba écraserait la confiance',
-        () {
-      final raw = [0.9961, 0.0, 0.0, 0.0, 0.0, 0.0];
-      final correct = temperatureScaleProbabilities(raw);
-      final buggy = calibratedSoftmax(raw); // l'ancien comportement
-      expect(correct[0], greaterThan(0.99));
-      expect(buggy[0], lessThan(0.40)); // ~0.35 : la preuve du bug
-    });
+    test(
+      'contraste avec le bug : softmax-sur-proba écraserait la confiance',
+      () {
+        final raw = [0.9961, 0.0, 0.0, 0.0, 0.0, 0.0];
+        final correct = temperatureScaleProbabilities(raw);
+        final buggy = calibratedSoftmax(raw); // l'ancien comportement
+        expect(correct[0], greaterThan(0.99));
+        expect(buggy[0], lessThan(0.40)); // ~0.35 : la preuve du bug
+      },
+    );
 
     test('sortie somme toujours à 1, quel que soit T', () {
       for (final t in [0.5, 1.0, 1.5, 2.0, 5.0]) {
-        final out = temperatureScaleProbabilities(
-          [0.7, 0.2, 0.1],
-          temperature: t,
-        );
+        final out = temperatureScaleProbabilities([
+          0.7,
+          0.2,
+          0.1,
+        ], temperature: t);
         expect(out.reduce((a, b) => a + b), closeTo(1.0, 1e-9), reason: 'T=$t');
       }
     });
@@ -72,10 +75,11 @@ void main() {
     });
 
     test('robuste aux valeurs négatives de bruit de quantification', () {
-      final out = temperatureScaleProbabilities(
-        [0.99, -0.001, 0.011],
-        temperature: 2.0,
-      );
+      final out = temperatureScaleProbabilities([
+        0.99,
+        -0.001,
+        0.011,
+      ], temperature: 2.0);
       expect(out.length, 3);
       expect(out.reduce((a, b) => a + b), closeTo(1.0, 1e-9));
       for (final p in out) {

@@ -16,7 +16,7 @@ class PaymentProvider extends ChangeNotifier {
   final OrderRepository _repo;
 
   PaymentProvider({OrderRepository? repository})
-      : _repo = repository ?? OrderRepository();
+    : _repo = repository ?? OrderRepository();
 
   PaymentState _state = PaymentState.idle;
   Order? _confirmedOrder;
@@ -45,8 +45,10 @@ class PaymentProvider extends ChangeNotifier {
       _errorMessage = f.message;
       _state = PaymentState.error;
       if (kDebugMode) {
-        debugPrint('[PaymentProvider] PaymentFailure: ${f.message} '
-            '(${f.originalError})');
+        debugPrint(
+          '[PaymentProvider] PaymentFailure: ${f.message} '
+          '(${f.originalError})',
+        );
       }
     } catch (e) {
       _errorMessage = 'Erreur inattendue. Réessaie.';

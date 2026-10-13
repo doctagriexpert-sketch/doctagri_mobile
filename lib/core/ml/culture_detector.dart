@@ -65,10 +65,8 @@ class DomainEvidence {
   });
 
   /// Pas d'information sur le domaine (cas par défaut).
-  factory DomainEvidence.unknown() => const DomainEvidence(
-        plausibleCultures: {},
-        confidence: 0.0,
-      );
+  factory DomainEvidence.unknown() =>
+      const DomainEvidence(plausibleCultures: {}, confidence: 0.0);
 
   /// True si rien ne s'oppose à ce que l'image soit de cette culture.
   /// Si on n'a aucune évidence, on dit toujours `true` (bénéfice du doute).
@@ -118,10 +116,7 @@ class HeuristicCultureDetector implements CultureDetector {
 
   @override
   DomainEvidence detect(List<ModelEvidence> evidences) {
-    final pv = _firstOrNull(
-      evidences,
-      (e) => e.modelId == _plantvillageId,
-    );
+    final pv = _firstOrNull(evidences, (e) => e.modelId == _plantvillageId);
     if (pv == null) return DomainEvidence.unknown();
 
     final bg = pv.backgroundProb;

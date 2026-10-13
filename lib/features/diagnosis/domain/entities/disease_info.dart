@@ -101,27 +101,31 @@ class DiseaseInfo {
       displayName: json['display_name'] as String,
       description: json['description'] as String,
       severity: json['severity'] as String? ?? 'inconnu',
-      symptoms: (json['symptoms'] as List<dynamic>?)
+      symptoms:
+          (json['symptoms'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           [],
-      treatments: (json['treatments'] as List<dynamic>?)
+      treatments:
+          (json['treatments'] as List<dynamic>?)
               ?.map((e) => Treatment.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      products: (json['products'] as List<dynamic>?)
-              ?.map(
-                  (e) => TreatmentProduct.fromJson(e as Map<String, dynamic>))
+      products:
+          (json['products'] as List<dynamic>?)
+              ?.map((e) => TreatmentProduct.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
-      prevention: (json['prevention'] as List<dynamic>?)
+      prevention:
+          (json['prevention'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           [],
       displayNameTranslations: _readStringMap(json['display_name_i18n']),
       descriptionTranslations: _readStringMap(json['description_i18n']),
-      plainExplanationTranslations:
-          _readStringMap(json['plain_explanation_i18n']),
+      plainExplanationTranslations: _readStringMap(
+        json['plain_explanation_i18n'],
+      ),
     );
   }
 
@@ -132,8 +136,7 @@ class DiseaseInfo {
 
   /// Vérifie si la plante est saine (pas de maladie)
   bool get isHealthy =>
-      modelLabel.toLowerCase().contains('healthy') ||
-      severity == 'aucune';
+      modelLabel.toLowerCase().contains('healthy') || severity == 'aucune';
 
   /// Retourne la couleur sémantique de gravité
   /// (utilisé côté présentation pour le badge)
@@ -169,9 +172,8 @@ class Treatment {
     return Treatment(
       method: json['method'] as String,
       description: json['description'] as String? ?? '',
-      steps: (json['steps'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
+      steps:
+          (json['steps'] as List<dynamic>?)?.map((e) => e as String).toList() ??
           [],
     );
   }
@@ -217,13 +219,13 @@ class TreatmentProduct {
   }
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'dosage': dosage,
-        'precautions': precautions,
-        if (priceXof != null) 'priceXof': priceXof,
-        if (sku != null) 'sku': sku,
-        if (vendor != null) 'vendor': vendor,
-      };
+    'name': name,
+    'dosage': dosage,
+    'precautions': precautions,
+    if (priceXof != null) 'priceXof': priceXof,
+    if (sku != null) 'sku': sku,
+    if (vendor != null) 'vendor': vendor,
+  };
 
   TreatmentProduct copyWith({
     String? name,

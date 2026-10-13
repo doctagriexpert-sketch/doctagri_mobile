@@ -75,16 +75,14 @@ class _CropAdviceListPageState extends State<CropAdviceListPage> {
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 12,
-                      childAspectRatio: 1.0,
-                    ),
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                          childAspectRatio: 1.0,
+                        ),
                     itemCount: crops.length,
-                    itemBuilder: (context, i) => _CropTile(
-                      crop: crops[i],
-                      langCode: lang.languageCode,
-                    ),
+                    itemBuilder: (context, i) =>
+                        _CropTile(crop: crops[i], langCode: lang.languageCode),
                   ),
                 ],
               ),

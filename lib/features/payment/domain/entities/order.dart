@@ -13,9 +13,9 @@ enum PaymentMethod {
   const PaymentMethod(this.apiValue, this.displayName);
 
   static PaymentMethod fromApi(String value) => values.firstWhere(
-        (m) => m.apiValue == value,
-        orElse: () => PaymentMethod.mixxByYas,
-      );
+    (m) => m.apiValue == value,
+    orElse: () => PaymentMethod.mixxByYas,
+  );
 }
 
 /// Statut du paiement (cycle de vie de la commande).
@@ -29,9 +29,9 @@ enum OrderStatus {
   String get apiValue => name;
 
   static OrderStatus fromApi(String value) => values.firstWhere(
-        (s) => s.name == value,
-        orElse: () => OrderStatus.pending,
-      );
+    (s) => s.name == value,
+    orElse: () => OrderStatus.pending,
+  );
 }
 
 /// Commande utilisateur (achat Mobile Money simulé).
@@ -63,46 +63,41 @@ class Order extends Equatable {
   double get totalXof => priceXof * quantity;
 
   Map<String, dynamic> toSupabaseJson() => {
-        if (userId != null) 'user_id': userId,
-        'product_sku': productSku,
-        'product_name': productName,
-        'price_xof': priceXof,
-        'quantity': quantity,
-        'phone_number': phoneNumber,
-        'payment_method': paymentMethod.apiValue,
-        'status': status.apiValue,
-        'created_at': createdAt.toIso8601String(),
-      };
+    if (userId != null) 'user_id': userId,
+    'product_sku': productSku,
+    'product_name': productName,
+    'price_xof': priceXof,
+    'quantity': quantity,
+    'phone_number': phoneNumber,
+    'payment_method': paymentMethod.apiValue,
+    'status': status.apiValue,
+    'created_at': createdAt.toIso8601String(),
+  };
 
-  Order copyWith({
-    String? id,
-    String? userId,
-    OrderStatus? status,
-  }) =>
-      Order(
-        id: id ?? this.id,
-        userId: userId ?? this.userId,
-        productSku: productSku,
-        productName: productName,
-        priceXof: priceXof,
-        quantity: quantity,
-        phoneNumber: phoneNumber,
-        paymentMethod: paymentMethod,
-        status: status ?? this.status,
-        createdAt: createdAt,
-      );
+  Order copyWith({String? id, String? userId, OrderStatus? status}) => Order(
+    id: id ?? this.id,
+    userId: userId ?? this.userId,
+    productSku: productSku,
+    productName: productName,
+    priceXof: priceXof,
+    quantity: quantity,
+    phoneNumber: phoneNumber,
+    paymentMethod: paymentMethod,
+    status: status ?? this.status,
+    createdAt: createdAt,
+  );
 
   @override
   List<Object?> get props => [
-        id,
-        userId,
-        productSku,
-        productName,
-        priceXof,
-        quantity,
-        phoneNumber,
-        paymentMethod,
-        status,
-        createdAt,
-      ];
+    id,
+    userId,
+    productSku,
+    productName,
+    priceXof,
+    quantity,
+    phoneNumber,
+    paymentMethod,
+    status,
+    createdAt,
+  ];
 }

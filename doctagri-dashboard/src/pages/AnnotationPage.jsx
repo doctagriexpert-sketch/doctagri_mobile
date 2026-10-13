@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { useAuth } from '../auth/AuthContext';
+import { useAuth } from '../auth/useAuth';
 import {
     ZoomIn, ZoomOut, RotateCcw, Check, X, ChevronRight,
     MapPin, Calendar, Smartphone, Cloud, Hash, Leaf, AlertTriangle,
@@ -18,7 +18,7 @@ export default function AnnotationPage() {
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [zoom, setZoom] = useState(1);
-    const [startTime] = useState(Date.now());
+    const [startTime] = useState(() => Date.now());
     const formRef = useRef(null);
 
     // Annotation state
@@ -56,24 +56,6 @@ export default function AnnotationPage() {
         load();
     }, [id]);
 
-    // Keyboard shortcuts
-    useEffect(() => {
-        function handleKeyDown(e) {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
-            switch (e.key) {
-                case '+': case '=': setZoom(z => Math.min(z + 0.25, 4)); break;
-                case '-': setZoom(z => Math.max(z - 0.25, 0.25)); break;
-                case '0': setZoom(1); break;
-                case 'Enter':
-                    if (e.ctrlKey) handleSubmit();
-                    break;
-                case 'Escape': navigate('/queue'); break;
-            }
-        }
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [annotation, navigate]);
-
     const handleFieldChange = useCallback((field, value) => {
         setAnnotation(prev => ({ ...prev, [field]: value }));
     }, []);
@@ -97,7 +79,18 @@ export default function AnnotationPage() {
         }, 100);
     }
 
-    async function handleSubmit() {
+    const handleNext = useCallback(async () => {
+        const { data, error } = await supabase.rpc('get_next_image', {
+            p_expert_id: profile.id,
+        });
+        if (!error && data) {
+            navigate(`/annotation/${data}`, { replace: true });
+        } else {
+            navigate('/queue');
+        }
+    }, [navigate, profile]);
+
+    const handleSubmit = useCallback(async () => {
         if (!annotation.disease_label && !annotation.is_unusable) {
             toast.error('Veuillez sélectionner un diagnostic ou marquer l\'image comme non exploitable.');
             return;
@@ -141,22 +134,29 @@ export default function AnnotationPage() {
         toast.success("Annotation enregistrée avec succès !");
         setSaving(false);
         handleNext();
-    }
-
-    async function handleNext() {
-        const { data, error } = await supabase.rpc('get_next_image', {
-            p_expert_id: profile.id,
-        });
-        if (!error && data) {
-            navigate(`/annotation/${data}`, { replace: true });
-        } else {
-            navigate('/queue');
-        }
-    }
+    }, [annotation, id, profile, startTime, handleNext]);
 
     function handleSkip() {
         handleNext();
     }
+
+    // Keyboard shortcuts
+    useEffect(() => {
+        function handleKeyDown(e) {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+            switch (e.key) {
+                case '+': case '=': setZoom(z => Math.min(z + 0.25, 4)); break;
+                case '-': setZoom(z => Math.max(z - 0.25, 0.25)); break;
+                case '0': setZoom(1); break;
+                case 'Enter':
+                    if (e.ctrlKey) handleSubmit();
+                    break;
+                case 'Escape': navigate('/queue'); break;
+            }
+        }
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [handleSubmit, navigate]);
 
     if (loading) {
         return (

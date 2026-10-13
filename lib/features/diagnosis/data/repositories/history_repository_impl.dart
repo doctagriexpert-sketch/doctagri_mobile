@@ -8,7 +8,9 @@ class HistoryRepositoryImpl implements HistoryRepository {
   static const String boxName = 'diagnosis_history';
   final Box<DiagnosisResult> _box;
 
-  HistoryRepositoryImpl({@Named('diagnosisBox') required Box<DiagnosisResult> box}) : _box = box;
+  HistoryRepositoryImpl({
+    @Named('diagnosisBox') required Box<DiagnosisResult> box,
+  }) : _box = box;
 
   @override
   Future<void> saveDiagnosis(DiagnosisResult result) async {
@@ -40,4 +42,3 @@ class HistoryRepositoryImpl implements HistoryRepository {
     }
   }
 }
-

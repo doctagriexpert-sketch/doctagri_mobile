@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
-import { useAuth } from '../auth/AuthContext';
+import { useAuth } from '../auth/useAuth';
 import { Database, Lock, Download, Archive, Tag } from 'lucide-react';
 
 export default function DatasetPage() {
@@ -8,13 +8,14 @@ export default function DatasetPage() {
     const [versions, setVersions] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => { loadVersions(); }, []);
+    const loadVersions = useCallback(() => {
+        return supabase.from('dataset_versions').select('*').order('created_at', { ascending: false }).then(({ data }) => {
+            if (data) setVersions(data);
+            setLoading(false);
+        });
+    }, []);
 
-    async function loadVersions() {
-        const { data } = await supabase.from('dataset_versions').select('*').order('created_at', { ascending: false });
-        if (data) setVersions(data);
-        setLoading(false);
-    }
+    useEffect(() => { loadVersions(); }, [loadVersions]);
 
     async function handleFreeze() {
         const tag = prompt('Tag de version (ex: v1.2.0):');

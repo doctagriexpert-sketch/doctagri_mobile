@@ -97,17 +97,17 @@ class DiagnosisResult extends Equatable {
 
   @override
   List<Object?> get props => [
-        label,
-        confidence,
-        imagePath,
-        treatmentAdvice,
-        timestamp,
-        diseaseName,
-        diseaseDescription,
-        severity,
-        needsValidation,
-        validationStatus,
-        rawModelLabel,
-        pendingSync,
-      ];
+    label,
+    confidence,
+    imagePath,
+    treatmentAdvice,
+    timestamp,
+    diseaseName,
+    diseaseDescription,
+    severity,
+    needsValidation,
+    validationStatus,
+    rawModelLabel,
+    pendingSync,
+  ];
 }

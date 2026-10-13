@@ -35,8 +35,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
     super.dispose();
   }
 
-  double get _total =>
-      (widget.product.priceXof ?? 0) * _quantity;
+  double get _total => (widget.product.priceXof ?? 0) * _quantity;
 
   String? _validatePhone(String? v) {
     if (v == null || v.trim().isEmpty) return 'Numéro requis';
@@ -116,7 +115,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: AppRadius.medium,
-                      borderSide: BorderSide(color: AppColors.primary, width: 2),
+                      borderSide: BorderSide(
+                        color: AppColors.primary,
+                        width: 2,
+                      ),
                     ),
                   ),
                 ),
@@ -196,7 +198,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 Gaps.v3,
                 Text(
                   p.dosage,
-                  style: TextStyle(fontSize: 12, color: AppColors.bark.withAlpha(180)),
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.bark.withAlpha(180),
+                  ),
                 ),
                 Gaps.v3,
                 if (p.vendor != null)
@@ -269,8 +274,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
   }
 
   // ── Couleurs de marque des opérateurs Togo ──────────────────────────────
-  static const _colorMixx  = Color(0xFF6B21A8); // Violet Yas
-  static const _colorMoov  = Color(0xFF0056B3); // Bleu Moov Africa
+  static const _colorMixx = Color(0xFF6B21A8); // Violet Yas
+  static const _colorMoov = Color(0xFF0056B3); // Bleu Moov Africa
 
   static Color _brandColor(PaymentMethod m) {
     return switch (m) {
@@ -288,7 +293,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
   Widget _buildMethodTile(PaymentMethod m) {
     final selected = _method == m;
-    final brand   = _brandColor(m);
+    final brand = _brandColor(m);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
@@ -331,7 +336,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       m.displayName,
                       style: TextStyle(
                         fontSize: 14,
-                        fontWeight: selected ? FontWeight.w700 : FontWeight.w600,
+                        fontWeight: selected
+                            ? FontWeight.w700
+                            : FontWeight.w600,
                         color: AppColors.bark,
                       ),
                     ),

@@ -26,9 +26,7 @@ class OrderRepository {
 
     final user = client.auth.currentUser;
     if (user == null) {
-      throw const PaymentFailure(
-        'Connecte-toi pour valider la commande.',
-      );
+      throw const PaymentFailure('Connecte-toi pour valider la commande.');
     }
 
     final payload = order

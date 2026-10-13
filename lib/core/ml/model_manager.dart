@@ -36,11 +36,14 @@ List<double> calibratedSoftmax(
   assert(temperature > 0, 'temperature doit être strictement positif');
 
   // Pas d'allocation si T = 1.0 (cas par défaut, hot path).
-  final Iterable<double> scaled =
-      temperature == 1.0 ? logits : logits.map((l) => l / temperature);
+  final Iterable<double> scaled = temperature == 1.0
+      ? logits
+      : logits.map((l) => l / temperature);
 
   final maxLogit = scaled.reduce((a, b) => a > b ? a : b);
-  final exps = scaled.map((l) => math.exp(l - maxLogit)).toList(growable: false);
+  final exps = scaled
+      .map((l) => math.exp(l - maxLogit))
+      .toList(growable: false);
   final sumExps = exps.reduce((a, b) => a + b);
   return exps.map((e) => e / sumExps).toList(growable: false);
 }
@@ -298,7 +301,9 @@ class ModelManager {
           if (kDebugMode) debugPrint('✅ Modèle "${profile.id}" chargé');
         } catch (e) {
           errors.add('${profile.id}: $e');
-          if (kDebugMode) debugPrint('⚠️ Modèle "${profile.id}" non chargé: $e');
+          if (kDebugMode) {
+            debugPrint('⚠️ Modèle "${profile.id}" non chargé: $e');
+          }
         }
       }),
     );

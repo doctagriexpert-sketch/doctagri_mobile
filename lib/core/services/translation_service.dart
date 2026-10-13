@@ -63,8 +63,9 @@ class TranslationService {
 
       for (var i = 0; i < uncached.length; i += 5) {
         final batch = uncached.skip(i).take(5).toList();
-        final texts =
-            batch.map((d) => d.localizedPlainExplanation('fr')).toList();
+        final texts = batch
+            .map((d) => d.localizedPlainExplanation('fr'))
+            .toList();
 
         try {
           final translations = await _supabaseService.invokeBatchTranslate(

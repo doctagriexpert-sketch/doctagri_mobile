@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Système de border-radius DoctAgri – Variation intentionnelle
-/// 
+///
 /// Pas de border-radius uniforme à 20px partout. C'est un red flag IA.
 /// Chaque contexte a son propre radius, et certains sont asymétriques.
 
@@ -24,7 +24,7 @@ class AppRadius {
   // Les cards ont souvent un top plus arrondi que le bottom
   static final BorderRadius cardMain = BorderRadius.only(
     topLeft: Radius.circular(lg),
-    topRight: Radius.circular(lg - 3),  // légère variation
+    topRight: Radius.circular(lg - 3), // légère variation
     bottomLeft: Radius.circular(md),
     bottomRight: Radius.circular(md),
   );
@@ -38,7 +38,7 @@ class AppRadius {
   // Pour les chips et petits éléments
   static final BorderRadius pill = BorderRadius.circular(50);
 
-  // Pour les images dans les cards (arrondi seulement en haut)  
+  // Pour les images dans les cards (arrondi seulement en haut)
   static final BorderRadius imageTop = BorderRadius.only(
     topLeft: Radius.circular(lg),
     topRight: Radius.circular(lg - 3),
@@ -47,13 +47,13 @@ class AppRadius {
   // Message bubbles chat – asymétrie sur les coins
   static final BorderRadius bubbleUser = BorderRadius.only(
     topLeft: Radius.circular(lg),
-    topRight: Radius.circular(xs),  // petit coin pour indiquer la direction
+    topRight: Radius.circular(xs), // petit coin pour indiquer la direction
     bottomLeft: Radius.circular(lg),
     bottomRight: Radius.circular(lg),
   );
 
   static final BorderRadius bubbleBot = BorderRadius.only(
-    topLeft: Radius.circular(xs),  
+    topLeft: Radius.circular(xs),
     topRight: Radius.circular(lg),
     bottomLeft: Radius.circular(lg),
     bottomRight: Radius.circular(lg),

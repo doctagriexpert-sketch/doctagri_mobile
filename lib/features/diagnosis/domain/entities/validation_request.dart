@@ -54,8 +54,7 @@ class ValidationRequest {
       predictedLabel: json['predicted_label'] as String,
       confidence: (json['confidence'] as num).toDouble(),
       metadata: json['metadata'] != null
-          ? DiagnosisMetadata.fromJson(
-              json['metadata'] as Map<String, dynamic>)
+          ? DiagnosisMetadata.fromJson(json['metadata'] as Map<String, dynamic>)
           : null,
       requestedAt: DateTime.parse(json['requested_at'] as String),
       status: json['status'] as String? ?? 'pending',

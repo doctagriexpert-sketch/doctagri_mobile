@@ -42,7 +42,8 @@ class DiagnosisExplanationBuilder {
   }) {
     final dict = _Dictionary.forLanguage(langCode);
 
-    final name = info?.localizedDisplayName(langCode) ??
+    final name =
+        info?.localizedDisplayName(langCode) ??
         result.diseaseName ??
         result.label;
 
@@ -95,7 +96,9 @@ class DiagnosisExplanationBuilder {
 
       // 2) Niveau de gravité (en mots simples)
       final severity = info.severity;
-      if (severity.isNotEmpty && severity != 'aucune' && severity != 'inconnu') {
+      if (severity.isNotEmpty &&
+          severity != 'aucune' &&
+          severity != 'inconnu') {
         buffer.write(dict.severityLabel);
         buffer.write(' : ');
         buffer.write(_severityWord(severity, dict));

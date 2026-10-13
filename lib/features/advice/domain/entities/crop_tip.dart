@@ -52,7 +52,8 @@ class Crop {
       cropId: json['cropId'] as String,
       emoji: json['emoji'] as String? ?? '🌱',
       name: _asStringMap(json['name']),
-      tips: (json['tips'] as List<dynamic>?)
+      tips:
+          (json['tips'] as List<dynamic>?)
               ?.map((e) => CropTip.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],

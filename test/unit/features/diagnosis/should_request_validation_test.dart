@@ -19,61 +19,40 @@ void main() {
   group('shouldRequestValidation', () {
     test('haute confiance + grande marge → false', () {
       // Cas "modèle confiant et tranché" : ne demande pas de validation.
-      expect(
-        shouldRequestValidation(confidence: 0.85, margin: 0.40),
-        isFalse,
-      );
+      expect(shouldRequestValidation(confidence: 0.85, margin: 0.40), isFalse);
     });
 
     test('haute confiance + marge faible → true (cas QW3)', () {
       // C'EST LE CAS QUE QW3 INTRODUIT.
       // Avant : 0.62 > 0.5 → needsValidation=false (faux confort).
       // Après : top-1 0.62 et top-2 0.55 → marge 0.07 < 0.1 → true.
-      expect(
-        shouldRequestValidation(confidence: 0.62, margin: 0.07),
-        isTrue,
-      );
+      expect(shouldRequestValidation(confidence: 0.62, margin: 0.07), isTrue);
     });
 
     test('basse confiance + grande marge → true (cas pré-existant)', () {
       // Comportement historique : confiance < 0.5 déclenche déjà la
       // validation. La marge ne change rien à ce cas.
-      expect(
-        shouldRequestValidation(confidence: 0.30, margin: 0.25),
-        isTrue,
-      );
+      expect(shouldRequestValidation(confidence: 0.30, margin: 0.25), isTrue);
     });
 
     test('basse confiance + marge faible → true', () {
-      expect(
-        shouldRequestValidation(confidence: 0.30, margin: 0.02),
-        isTrue,
-      );
+      expect(shouldRequestValidation(confidence: 0.30, margin: 0.02), isTrue);
     });
 
     test('au seuil exact (confiance = 0.5) → true', () {
       // Le seuil est strict (`< kConfidenceThreshold`), donc 0.5 pile
       // n'est PAS sous le seuil → seule la marge peut déclencher.
-      expect(
-        shouldRequestValidation(confidence: 0.5, margin: 0.40),
-        isFalse,
-      );
+      expect(shouldRequestValidation(confidence: 0.5, margin: 0.40), isFalse);
     });
 
     test('au seuil exact (marge = 0.1) → false', () {
       // Idem : `< kAmbiguityMargin` strict, donc 0.1 pile ne déclenche pas.
-      expect(
-        shouldRequestValidation(confidence: 0.85, margin: 0.1),
-        isFalse,
-      );
+      expect(shouldRequestValidation(confidence: 0.85, margin: 0.1), isFalse);
     });
 
     test('marge nulle (top-1 == top-2) → true même à haute confiance', () {
       // Cas limite : deux classes ex æquo. Confiance arbitraire élevée.
-      expect(
-        shouldRequestValidation(confidence: 0.95, margin: 0.0),
-        isTrue,
-      );
+      expect(shouldRequestValidation(confidence: 0.95, margin: 0.0), isTrue);
     });
 
     test('constantes exposées sont raisonnables', () {
@@ -113,10 +92,7 @@ void main() {
 
     test('entropie par défaut (0.0) ne déclenche jamais — rétrocompat', () {
       // Les appelants historiques (confidence, margin) restent inchangés.
-      expect(
-        shouldRequestValidation(confidence: 0.9, margin: 0.5),
-        isFalse,
-      );
+      expect(shouldRequestValidation(confidence: 0.9, margin: 0.5), isFalse);
     });
   });
 
@@ -127,10 +103,7 @@ void main() {
 
     test('distribution uniforme → 1 (ignorance totale)', () {
       expect(normalizedEntropy([0.25, 0.25, 0.25, 0.25]), closeTo(1.0, 1e-9));
-      expect(
-        normalizedEntropy(List.filled(39, 1 / 39)),
-        closeTo(1.0, 1e-9),
-      );
+      expect(normalizedEntropy(List.filled(39, 1 / 39)), closeTo(1.0, 1e-9));
     });
 
     test('quasi one-hot → entropie faible', () {
@@ -153,10 +126,7 @@ void main() {
     test('valeur connue : softmax([1,2,3]) ≈ 0.83', () {
       // Référence calculée : H = 0.8132 nats, /log(3)=1.0986 → 0.7402.
       final probs = [0.0900, 0.2447, 0.6652];
-      final h = -probs.fold<double>(
-        0.0,
-        (a, p) => a + p * math.log(p),
-      );
+      final h = -probs.fold<double>(0.0, (a, p) => a + p * math.log(p));
       expect(normalizedEntropy(probs), closeTo(h / math.log(3), 1e-3));
     });
 

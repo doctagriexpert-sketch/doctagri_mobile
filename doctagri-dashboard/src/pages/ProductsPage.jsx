@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { supabase } from '../lib/supabase';
-import { useAuth } from '../auth/AuthContext';
+import { useAuth } from '../auth/useAuth';
 import { Plus, Edit3, Package, Search } from 'lucide-react';
 
 export default function ProductsPage() {
@@ -11,13 +11,14 @@ export default function ProductsPage() {
     const [creating, setCreating] = useState(false);
     const [filter, setFilter] = useState('');
 
-    useEffect(() => { loadProducts(); }, []);
+    const loadProducts = useCallback(() => {
+        return supabase.from('products').select('*').order('commercial_name').then(({ data }) => {
+            if (data) setProducts(data);
+            setLoading(false);
+        });
+    }, []);
 
-    async function loadProducts() {
-        const { data } = await supabase.from('products').select('*').order('commercial_name');
-        if (data) setProducts(data);
-        setLoading(false);
-    }
+    useEffect(() => { loadProducts(); }, [loadProducts]);
 
     const filtered = products.filter(p =>
         p.commercial_name.toLowerCase().includes(filter.toLowerCase()) ||
