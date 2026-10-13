@@ -12,6 +12,7 @@ import 'core/services/sync_service.dart';
 import 'core/services/translation_service.dart';
 import 'core/services/voice_service.dart';
 import 'core/services/language_service.dart';
+import 'core/services/installation_registration_service.dart';
 import 'features/diagnosis/presentation/providers/diagnosis_provider.dart';
 import 'features/diagnosis/domain/entities/diagnosis_result.dart';
 import 'features/diagnosis/domain/repositories/disease_knowledge_repository.dart';
@@ -19,6 +20,7 @@ import 'features/diagnosis/domain/repositories/disease_knowledge_repository.dart
 void main() async {
   await runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
+    unawaited(InstallationRegistrationService.initialize());
 
     FlutterError.onError = (details) {
       if (kDebugMode) FlutterError.presentError(details);

@@ -1,20 +1,9 @@
-{
-  "hooks": {
-    "pre-commit": {
-      "commands": {
-        "analyze": {
-          "run": "dart analyze --no-fatal-warnings",
-          "name": "Dart analyzer"
-        },
-        "format": {
-          "run": "dart format --set-exit-if-changed .",
-          "name": "Dart formatter"
-        },
-        "test": {
-          "run": "dart test --no-pub",
-          "name": "Dart tests"
-        }
-      }
-    }
-  }
-}
+# Optional adapter: the same scripts as hooks/.
+pre-commit:
+  commands:
+    repository-guard:
+      run: python hooks/check.py --staged
+pre-push:
+  commands:
+    quality:
+      run: python scripts/quality.py all

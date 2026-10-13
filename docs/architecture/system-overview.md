@@ -1,177 +1,47 @@
-# DoctAgri Architecture
+# Architecture effective
 
-## System Context
+État observé le 2 octobre 2026, sans certification d'un déploiement distant.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        Farmer                               │
-│                    (Flutter App)                           │
-└─────────────────┬─────────────────────────────────────────┘
-                  │ HTTPS
-                  ▼
-┌─────────────────────────────────────────────────────────────┐
-│                     Supabase                                 │
-│  ┌─────────┐  ┌──────────┐  ┌─────────────┐  ┌──────────┐  │
-│  │ Auth    │  │ Postgres │  │ Storage    │  │ Edge     │  │
-│  │ (OTP)   │  │ + RLS    │  │ (Images)   │  │ Functions│  │
-│  └─────────┘  └──────────┘  └─────────────┘  └──────────┘  │
-└───────────────────────┬─────────────────────────────────────┘
-                        │
-                  ┌─────▼─────┐
-                  │ Dashboard │
-                  │  (React)  │
-                  └───────────┘
+```text
+Photo → Flutter → TFLite → règles de qualité → conseil + historique Hive
+                                                    │
+                                                file locale
+                                                    │ réseau + session
+                                                    ▼
+                                                 Supabase
+Dashboard React → Supabase (images, annotations, conflits, fiches, produits)
 ```
 
-## Flutter App Architecture
+## Mobile
 
-```
-lib/
-├── app.dart                    # App widget, theme
-├── main.dart                   # Entry point
-├── core/
-│   ├── constants/              # Colors, spacing, typography
-│   ├── errors/                # Failure classes
-│   ├── ml/                     # ModelManager, preprocessor
-│   ├── router/                 # go_router config
-│   ├── services/               # Supabase, sync, telemetry
-│   └── di/                    # Dependency injection
-├── features/
-│   ├── camera/                # Camera capture
-│   ├── diagnosis/              # Core feature
-│   │   ├── data/              # Repository implementations
-│   │   ├── domain/           # Entities, repository interfaces
-│   │   └── presentation/      # Pages, providers, widgets
-│   └── home/                  # Home page
-├── shared/
-│   └── widgets/              # Reusable widgets
-└── l10n/                      # Internationalization
-```
+lib/main.dart initialise Hive et l'injection puis affiche l'interface et charge
+les services/modèles. Provider gère l'état ; GoRouter, la navigation.
+lib/features/diagnosis/ sépare data/domain/presentation. Les autres fonctionnalités
+couvrent caméra, conseils, météo et commandes.
 
-## Package Architecture (Melos)
+Les modèles manioc et PlantVillage sont exécutés localement. Prétraitement selon
+type/dimensions du tenseur, déquantification, traitement des probabilités,
+filtrage de culture et abstention précèdent le conseil. Ne pas appliquer un
+second softmax à une sortie déjà probabiliste.
 
-```
-doctagri/
-├── melos.yaml
-├── packages/
-│   ├── doctagri_core/          # Failure, Either, utilities
-│   ├── doctagri_design_system/ # Tokens, atoms, molecules
-│   ├── doctagri_ml_engine/     # TFLite wrapper, preprocessor
-│   ├── doctagri_diagnosis/     # Feature module
-│   ├── doctagri_history/       # Feature module
-│   ├── doctagri_validation/    # Feature module
-│   ├── doctagri_knowledge/     # Disease database
-│   ├── doctagri_sync/         # Offline sync
-│   ├── doctagri_auth/         # Supabase auth
-│   └── doctagri_telemetry/    # Sentry, PostHog
-└── apps/
-    ├── doctagri_mobile/        # Flutter app
-    └── doctagri_dashboard/    # React dashboard
-```
+La synchronisation exige actuellement une session ; son contrat diffère du SQL
+versionné. Une demande experte locale ne prouve pas sa réception par le dashboard.
 
-## Data Flow
+## Recensement Android
 
-```
-Camera Capture
-    ↓
-preprocessImage() [Isolate]
-    ↓
-ModelManager.inference()
-    ↓
-Déquantification + Softmax
-    ↓
-DiseaseKnowledge lookup
-    ↓
-DiagnosisResult
-    ↓
-├── Display result
-├── Save to Hive (offline)
-└── Queue for Supabase sync
-        ↓ (when online)
-    Supabase.insertDiagnosis()
-```
+Un canal Flutter programme un Worker Kotlin WorkManager. Il conserve un UUID hors
+sauvegardes et envoie une inscription minimale sans compte, indépendamment du
+diagnostic. Voir [le contrat](../contracts/app-installations.md).
 
-## ML Pipeline
+## Dashboard et SQL
 
-```
-plant_disease_model.keras (TF 2.15)
-    ↓
-01_export_savedmodel.py → savedmodel/
-    ↓
-03_quantize_int8.py → model_int8.tflite
-    ↓ (calibration dataset)
-validate_accuracy.py → accuracy > 92%
-    ↓
-06_package_artifact.py
-    ├── assets/models/model.tflite
-    ├── ml/models/registry.json
-    └── SHA256 signature
-```
+React/Vite : doctagri-dashboard/. Historique d'annotation : dashboard/supabase/.
+Historique mobile : supabase/. Des tables communes diffèrent : leur convergence
+reste une décision explicite, pas une application automatique des deux ensembles.
 
-## Multi-Tenant Model
+## Croissance
 
-```
-organizations
-    ├── id
-    ├── name
-    ├── region
-    └── subscription_tier
-         │
-         └──► profiles
-              ├── id (FK auth.users)
-              ├── organization_id
-              └── role (farmer/expert/admin)
-                   │
-                   └──► diagnoses
-                        ├── user_id
-                        ├── organization_id (for RLS)
-                        └── image_path, predictions
-```
-
-## Security Model
-
-| Layer | Mechanism |
-|-------|-----------|
-| Auth | Supabase OTP (phone number) |
-| DB Access | RLS policies (organization isolation) |
-| Storage | Per-user folder access |
-| API | Signed URLs (1h expiry) |
-| App | Obfuscation + ProGuard |
-| Network | HTTPS only, cert pinning ready |
-
-## Observability Stack
-
-| Component | Tool | Purpose |
-|----------|------|---------|
-| Crash Reporting | Sentry | Errors, exceptions |
-| Analytics | PostHog | User events, funnels |
-| Metrics | Grafana | Latency, throughput |
-| Logs | Grafana Loki | Structured logs |
-| ML Monitoring | Supabase | Confidence drift, accuracy |
-| Uptime | Grafana | Availability SLO |
-
-## SLOs
-
-| Metric | Target | Alert Threshold |
-|--------|--------|----------------|
-| Availability | 99.5% | 99.0% |
-| Crash-free users | > 99.5% | 99.0% |
-| Inference latency p95 | < 100ms | < 200ms |
-| API latency p95 | < 500ms | < 1000ms |
-| Diagnosis success rate | > 95% | < 90% |
-
-## Deployment Regions
-
-| Region | Use Case |
-|--------|---------|
-| EU (Frankfurt) | Primary (RGPD compliant) |
-| US (optional) | Future expansion |
-
-## Disaster Recovery
-
-| Scenario | RTO | RPO |
-|----------|-----|-----|
-| App crash | < 30 min | N/A |
-| Model corruption | < 5 min | < 1 day |
-| Supabase outage | < 1 hour | < 1 day |
-| Full region failure | < 4 hours | < 1 hour |
+Les packages Melos ne portent pas encore toute l'application. Consolider les
+frontières dans lib/ avant d'extraire des modules réellement réutilisés.
+Performance, couverture, précision et charge doivent être mesurées.
+Voir [l'état du projet](../project-status.md).

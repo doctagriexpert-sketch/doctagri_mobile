@@ -294,6 +294,16 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
         );
       }
 
+      // Abstention hors-périmètre : l'app est focalisée sur les cultures
+      // maraîchères (cf. kSupportedCultures). Si le modèle a "gagné" sur
+      // une culture hors périmètre (pomme, vigne, orange…), on ne donne
+      // PAS le diagnostic associé — on invite à reprendre une photo d'une
+      // culture supportée. PlantVillage étant figé à 39 classes, c'est
+      // ici, en aval, qu'on restreint le périmètre métier.
+      if (!isCultureSupported(best.rawLabel)) {
+        return Right(_buildOutOfScopeAbstention(imagePath, best));
+      }
+
       if (best.info != null) {
         final info = best.info!;
         final treatmentText = _buildTreatmentText(info);
@@ -547,6 +557,37 @@ class DiagnosisRepositoryImpl implements DiagnosisRepository {
       severity: 'aucune',
       needsValidation: true,
       rawModelLabel: 'Background_without_leaves',
+    );
+  }
+
+  /// Construit le DiagnosisResult d'abstention "culture hors périmètre".
+  ///
+  /// Émis quand le modèle a bien identifié une plante, mais d'une culture
+  /// que l'app ne prend pas en charge (cf. [kSupportedCultures]). On ne
+  /// nomme PAS la culture détectée dans le message : si le modèle s'est
+  /// trompé (ex. tomate classée "pomme"), l'annoncer induirait l'agriculteur
+  /// en erreur. On conserve [best.rawLabel] dans `rawModelLabel` pour la
+  /// traçabilité / l'audit côté dashboard.
+  DiagnosisResult _buildOutOfScopeAbstention(String imagePath, _Best best) {
+    return DiagnosisResult(
+      label: 'Culture non prise en charge',
+      confidence: best.confidence,
+      imagePath: imagePath,
+      treatmentAdvice:
+          'Cette application diagnostique les cultures maraîchères : '
+          'tomate, pomme de terre, piment, courge et maïs.\n\n'
+          'La plante sur la photo ne semble pas en faire partie, ou la '
+          'photo n\'est pas assez nette pour en être sûr. Reprenez une '
+          'photo de l\'une de ces cultures, ou demandez l\'avis d\'un '
+          'agent agricole.',
+      diseaseName: 'Culture non prise en charge',
+      diseaseDescription:
+          'L\'IA a reconnu une plante, mais d\'une culture hors du '
+          'périmètre de l\'application (tomate, pomme de terre, piment, '
+          'courge, maïs).',
+      severity: 'aucune',
+      needsValidation: true,
+      rawModelLabel: best.rawLabel,
     );
   }
 

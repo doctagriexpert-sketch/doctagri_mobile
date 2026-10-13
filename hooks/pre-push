@@ -1,0 +1,5 @@
+#!/bin/sh
+if command -v python >/dev/null 2>&1; then
+  exec python scripts/quality.py all
+fi
+exec python3 scripts/quality.py all

@@ -167,6 +167,46 @@ String? extractCultureFromLabel(String label) {
   return null;
 }
 
+/// Cultures prises en charge par l'app (périmètre maraîcher, focus tomate).
+///
+/// Les valeurs sont les **préfixes anglais** tels qu'ils apparaissent dans
+/// les labels du modèle (cf. [extractCultureFromLabel]), pour permettre une
+/// comparaison directe :
+///   - `Tomato`       → tomate (priorité, 9 maladies couvertes)
+///   - `Potato`       → pomme de terre (2 maladies)
+///   - `Pepper,_bell` → piment / poivron (1 maladie)
+///   - `Squash`       → courge (1 maladie)
+///   - `Corn`         → maïs (3 maladies)
+///
+/// Toute prédiction dont la culture n'est PAS dans cet ensemble déclenche
+/// une abstention côté repository (« culture non prise en charge ») plutôt
+/// qu'un faux diagnostic sur une culture hors périmètre (pomme, vigne,
+/// orange…). PlantVillage étant un modèle figé à 39 classes, on ne peut
+/// pas lui « retirer » ces cultures : on filtre en aval.
+///
+/// **Pour changer le périmètre** (ex. ajouter la fraise) : éditer cet
+/// ensemble. C'est l'unique source de vérité du périmètre métier.
+const Set<String> kSupportedCultures = {
+  'Tomato',
+  'Potato',
+  'Pepper,_bell',
+  'Squash',
+  'Corn',
+};
+
+/// True si le label appartient à une culture du périmètre [kSupportedCultures].
+///
+/// Retourne `false` quand la culture ne peut pas être identifiée
+/// (`extractCultureFromLabel` → null), ce qui est le défaut sûr : on
+/// préfère abstenir que diagnostiquer une culture inconnue. Le label
+/// `Background_without_leaves` retourne donc `false` (mais il est déjà
+/// intercepté en amont par la règle de rejet d'image).
+bool isCultureSupported(String rawLabel) {
+  final culture = extractCultureFromLabel(rawLabel);
+  if (culture == null) return false;
+  return kSupportedCultures.contains(culture);
+}
+
 T? _firstOrNull<T>(List<T> items, bool Function(T) test) {
   for (final item in items) {
     if (test(item)) return item;

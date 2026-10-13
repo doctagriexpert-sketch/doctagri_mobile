@@ -1,66 +1,20 @@
-name: PR Quality Checks
-
+name: Repository guardrails
 on:
-  pull_request:
-    branches: [main, develop]
-  push:
-    branches: [main, develop]
-
+  workflow_call:
+permissions:
+  contents: read
 jobs:
-  analyze:
-    name: Dart analyzer
+  repository:
+    name: Repository
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: dart-lang/setup-dart@v1
         with:
-          sdk: '3.10.4'
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Run dart analyzer
-        run: dart analyze --no-fatal-warnings --no-fatal-infos
-
-  format:
-    name: Dart formatter
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: dart-lang/setup-dart@v1
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
         with:
-          sdk: '3.10.4'
-
-      - name: Check formatting
-        run: dart format --set-exit-if-changed .
-
-  test:
-    name: Unit tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: dart-lang/setup-dart@v1
-        with:
-          sdk: '3.10.4'
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Run tests
-        run: flutter test test/unit/
-
-  security:
-    name: Security audit
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: dart-lang/setup-dart@v1
-        with:
-          sdk: '3.10.4'
-
-      - name: Pub audit
-        run: dart pub audit --no-probably-safe
+          python-version: '3.12'
+      - run: python scripts/quality.py repository
+        env:
+          QUALITY_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+      - run: python scripts/quality.py python

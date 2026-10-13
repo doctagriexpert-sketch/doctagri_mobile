@@ -199,4 +199,55 @@ void main() {
       expect(d.plausibleCultures, isEmpty);
     });
   });
+
+  group('isCultureSupported (périmètre maraîcher, focus tomate)', () {
+    test('cultures in-scope : tomate, p. de terre, piment, courge, maïs', () {
+      expect(isCultureSupported('Tomato___Early_blight'), isTrue);
+      expect(isCultureSupported('Tomato___healthy'), isTrue);
+      expect(isCultureSupported('Potato___Late_blight'), isTrue);
+      expect(isCultureSupported('Pepper,_bell___Bacterial_spot'), isTrue);
+      expect(isCultureSupported('Squash___Powdery_mildew'), isTrue);
+      expect(isCultureSupported('Corn___Common_rust'), isTrue);
+    });
+
+    test('cultures hors-scope : arbres fruitiers + soja → false', () {
+      expect(isCultureSupported('Apple___Apple_scab'), isFalse);
+      expect(isCultureSupported('Apple___healthy'), isFalse);
+      expect(isCultureSupported('Grape___Black_rot'), isFalse);
+      expect(isCultureSupported('Orange___Haunglongbing_(Citrus_greening)'),
+          isFalse);
+      expect(isCultureSupported('Peach___Bacterial_spot'), isFalse);
+      expect(isCultureSupported('Cherry___Powdery_mildew'), isFalse);
+      expect(isCultureSupported('Strawberry___Leaf_scorch'), isFalse);
+      expect(isCultureSupported('Blueberry___healthy'), isFalse);
+      expect(isCultureSupported('Raspberry___healthy'), isFalse);
+      expect(isCultureSupported('Soybean___healthy'), isFalse);
+    });
+
+    test('cassava (désactivé) → false', () {
+      // Même si un label cassava remontait, le manioc est hors périmètre.
+      expect(isCultureSupported('Cassava___healthy'), isFalse);
+      expect(isCultureSupported('Cassava Mosaic Disease (CMD)'), isFalse);
+    });
+
+    test('Background → false (défaut sûr, déjà intercepté en amont)', () {
+      expect(isCultureSupported('Background_without_leaves'), isFalse);
+    });
+
+    test('label non identifiable → false (abstention par défaut)', () {
+      expect(isCultureSupported('SomeRandomLabel'), isFalse);
+      expect(isCultureSupported(''), isFalse);
+    });
+
+    test('kSupportedCultures contient exactement les 5 cultures de l\'option C',
+        () {
+      expect(kSupportedCultures, {
+        'Tomato',
+        'Potato',
+        'Pepper,_bell',
+        'Squash',
+        'Corn',
+      });
+    });
+  });
 }

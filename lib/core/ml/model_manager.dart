@@ -163,6 +163,13 @@ class ModelProfile {
 /// 3. Ajouter les entrées de connaissances correspondantes dans
 ///    `assets/data/diseases_knowledge.json`
 class ModelCatalog {
+  /// Profil du modèle manioc, **désactivé** (focus app = cultures
+  /// maraîchères, cf. choix produit). Il N'EST PAS dans [all], donc
+  /// [ModelManager] ne le charge pas. La const et le fichier `.tflite`
+  /// sont conservés : pour le réactiver, il suffit de le rajouter à
+  /// [all]. Le manioc n'étant aucune des cultures cibles, le garder
+  /// actif ne ferait que ré-introduire le faux positif "cassava gagne
+  /// sur une photo de tomate" décrit dans l'audit (C3).
   static const ModelProfile cassava = ModelProfile(
     id: 'cassava',
     displayName: 'Manioc (spécialisé)',
@@ -201,7 +208,10 @@ class ModelCatalog {
   /// Profil par défaut. Le modèle multi-cultures couvre plus de cas.
   static const ModelProfile defaultProfile = plantVillage;
 
-  static const List<ModelProfile> all = [plantVillage, cassava];
+  /// Modèles effectivement chargés au démarrage. `cassava` en est exclu
+  /// (désactivé, cf. doc ci-dessus). Pour le réactiver : `[plantVillage,
+  /// cassava]`.
+  static const List<ModelProfile> all = [plantVillage];
 
   static ModelProfile? findById(String id) {
     for (final p in all) {
