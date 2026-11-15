@@ -1,0 +1,554 @@
+list_name,name,label,order,regions,prefectures,communes
+regions,maritime,Maritime,1,,,
+regions,plateaux,Plateaux-Est,2,,,
+regions,plateaux-ouest,Plateaux-Ouest,3,,,
+regions,centrale,Centrale,4,,,
+regions,kara,Kara,5,,,
+regions,savanes,Savanes,6,,,
+prefectures,agoe–nyive,Agoè-Nyive,,maritime,,
+prefectures,ave,Avé,,maritime,,
+prefectures,bas–mono,Bas-Mono,,maritime,,
+prefectures,golfe,Golfe,,maritime,,
+prefectures,lacs,Lacs,,maritime,,
+prefectures,vo,Vô,,maritime,,
+prefectures,yoto,Yoto,,maritime,,
+prefectures,zio,Zio,,maritime,,
+prefectures,agou,Agou,,plateaux-ouest,,
+prefectures,akebou,Akébou,,plateaux-ouest,,
+prefectures,amou,Amou,,plateaux-ouest,,
+prefectures,danyi,Danyi,,plateaux-ouest,,
+prefectures,kloto,Kloto,,plateaux-ouest,,
+prefectures,kpele,Kpélé,,plateaux-ouest,,
+prefectures,wawa,Wawa,,plateaux-ouest,,
+prefectures,anie,Anié,,plateaux,,
+prefectures,est–mono,Est-Mono,,plateaux,,
+prefectures,haho,Haho,,plateaux,,
+prefectures,moyen–mono,Moyen-Môno,,plateaux,,
+prefectures,ogou,Ogou,,plateaux,,
+prefectures,blitta,Blitta,,centrale,,
+prefectures,mo,Mô,,centrale,,
+prefectures,sotouboua,Sotouboua,,centrale,,
+prefectures,tchamba,Tchamba,,centrale,,
+prefectures,tchaoudjo,Tchaoudjo,,centrale,,
+prefectures,assoli,Assoli,,kara,,
+prefectures,bassar,Bassar,,kara,,
+prefectures,binah,Binah,,kara,,
+prefectures,dankpen,Dankpen,,kara,,
+prefectures,doufelgou,Doufelgou,,kara,,
+prefectures,keran,Kéran,,kara,,
+prefectures,kozah,Kozah,,kara,,
+prefectures,cinkasse,Cinkasse,,savanes,,
+prefectures,kpendjal,Kpendjal,,savanes,,
+prefectures,kpendjal–ouest,Kpendjal-Ouest,,savanes,,
+prefectures,oti,Oti,,savanes,,
+prefectures,oti–sud,Oti-Sud,,savanes,,
+prefectures,tandjoare,Tandjoare,,savanes,,
+prefectures,tone,Tône,,savanes,,
+communes,golfe–1,Golfe 1,,,golfe,
+communes,golfe–2,Golfe 2,,,golfe,
+communes,golfe–3,Golfe 3,,,golfe,
+communes,golfe–4,Golfe 4,,,golfe,
+communes,golfe–5,Golfe 5,,,golfe,
+communes,golfe–6,Golfe 6,,,golfe,
+communes,golfe–7,Golfe 7,,,golfe,
+communes,agoe–nyive–1,Agoe Nyive 1,,,agoe–nyive,
+communes,agoe–nyive–2,Agoe Nyive 2,,,agoe–nyive,
+communes,agoe–nyive–3,Agoe Nyive 3,,,agoe–nyive,
+communes,agoe–nyive–4,Agoe Nyive 4,,,agoe–nyive,
+communes,agoe–nyive–5,Agoe Nyive 5,,,agoe–nyive,
+communes,agoe–nyive–6,Agoe Nyive 6,,,agoe–nyive,
+communes,ave–1,Avé 1,,,ave,
+communes,ave–2,Avé 2,,,ave,
+communes,bas–mono–1,Bas Mono 1,,,bas–mono,
+communes,bas–mono–2,Bas Mono 2,,,bas–mono,
+communes,lacs–1,Lacs 1,,,lacs,
+communes,lacs–2,Lacs 2,,,lacs,
+communes,lacs–3,Lacs 3,,,lacs,
+communes,lacs–4,Lacs 4,,,lacs,
+communes,vo–1,Vo 1,,,vo,
+communes,vo–2,Vo 2,,,vo,
+communes,vo–3,Vo 3,,,vo,
+communes,vo–4,Vo 4,,,vo,
+communes,yoto–1,Yoto 1,,,yoto,
+communes,yoto–2,Yoto 2,,,yoto,
+communes,yoto–3,Yoto 3,,,yoto,
+communes,zio–1,Zio 1,,,zio,
+communes,zio–2,Zio 2,,,zio,
+communes,zio–3,Zio 3,,,zio,
+communes,zio–4,Zio 4,,,zio,
+communes,agou–1,Agou 1,,,agou,
+communes,agou–2,Agou 2,,,agou,
+communes,akebou–1,Akebou 1,,,akebou,
+communes,akebou–2,Akebou 2,,,akebou,
+communes,amou–1,Amou 1,,,amou,
+communes,amou–2,Amou 2,,,amou,
+communes,amou–3,Amou 3,,,amou,
+communes,anie–1,Anie 1,,,anie,
+communes,anie–2,Anie 2,,,anie,
+communes,danyi–1,Danyi 1,,,danyi,
+communes,danyi–2,Danyi 2,,,danyi,
+communes,est–mono–1,Est-Mono 1,,,est–mono,
+communes,est–mono–2,Est-Mono 2,,,est–mono,
+communes,est–mono–3,Est-Mono 3,,,est–mono,
+communes,haho–1,Haho 1,,,haho,
+communes,haho–2,Haho 2,,,haho,
+communes,haho–3,Haho 3,,,haho,
+communes,haho–4,Haho 4,,,haho,
+communes,kloto–1,Kloto 1,,,kloto,
+communes,kloto–2,Kloto 2,,,kloto,
+communes,kloto–3,Kloto 3,,,kloto,
+communes,kpele–1,Kpele 1,,,kpele,
+communes,kpele–2,Kpele 2,,,kpele,
+communes,moyen–mono–1,Moyen-Mono 1,,,moyen–mono,
+communes,moyen–mono–2,Moyen-Mono 2,,,moyen–mono,
+communes,ogou–1,Ogou 1,,,ogou,
+communes,ogou–2,Ogou 2,,,ogou,
+communes,ogou–3,Ogou 3,,,ogou,
+communes,ogou–4,Ogou 4,,,ogou,
+communes,wawa–1,Wawa 1,,,wawa,
+communes,wawa–2,Wawa 2,,,wawa,
+communes,wawa–3,Wawa 3,,,wawa,
+communes,blitta–1,Blitta 1,,,blitta,
+communes,blitta–2,Blitta 2,,,blitta,
+communes,blitta–3,Blitta 3,,,blitta,
+communes,sotouboua–1,Sotouboua 1,,,sotouboua,
+communes,sotouboua–2,Sotouboua 2,,,sotouboua,
+communes,sotouboua–3,Sotouboua 3,,,sotouboua,
+communes,tchamba–1,Tchamba 1,,,tchamba,
+communes,tchamba–2,Tchamba 2,,,tchamba,
+communes,tchamba–3,Tchamba 3,,,tchamba,
+communes,tchaoudjo–1,Tchaoudjo 1,,,tchaoudjo,
+communes,tchaoudjo–2,Tchaoudjo 2,,,tchaoudjo,
+communes,tchaoudjo–3,Tchaoudjo 3,,,tchaoudjo,
+communes,tchaoudjo–4,Tchaoudjo 4,,,tchaoudjo,
+communes,mo–1,Mô 1,,,mo,
+communes,mo–2,Mô 2,,,mo,
+communes,assoli–1,Assoli 1,,,assoli,
+communes,assoli–2,Assoli 2,,,assoli,
+communes,assoli–3,Assoli 3,,,assoli,
+communes,bassar–1,Bassar 1,,,bassar,
+communes,bassar–2,Bassar 2,,,bassar,
+communes,bassar–3,Bassar 3,,,bassar,
+communes,bassar–4,Bassar 4,,,bassar,
+communes,binah–1,Binah 1,,,binah,
+communes,binah–2,Binah 2,,,binah,
+communes,dankpen–1,Dankpen 1,,,dankpen,
+communes,dankpen–2,Dankpen 2,,,dankpen,
+communes,dankpen–3,Dankpen 3,,,dankpen,
+communes,doufelgou–1,Doufelgou 1,,,doufelgou,
+communes,doufelgou–2,Doufelgou 2,,,doufelgou,
+communes,kozah–1,Kozah 1,,,kozah,
+communes,kozah–2,Kozah 2,,,kozah,
+communes,kozah–3,Kozah 3,,,kozah,
+communes,kozah–4,Kozah 4,,,kozah,
+communes,keran–1,Keran 1,,,keran,
+communes,keran–2,Keran 2,,,keran,
+communes,keran–3,Keran 3,,,keran,
+communes,oti–1,Oti 1,,,oti,
+communes,oti–2,Oti 2,,,oti,
+communes,oti–sud–1,Oti Sud 1,,,oti–sud,
+communes,oti–sud–2,Oti Sud 2,,,oti–sud,
+communes,tandjoare–1,Tandjoare 1,,,tandjoare,
+communes,tandjoare–2,Tandjoare 2,,,tandjoare,
+communes,tone–1,Tone 1,,,tone,
+communes,tone–2,Tone 2,,,tone,
+communes,tone–3,Tone 3,,,tone,
+communes,tone–4,Tone 4,,,tone,
+communes,cinkasse–1,Cinkasse 1,,,cinkasse,
+communes,cinkasse–2,Cinkasse 2,,,cinkasse,
+communes,kpendjal–1,Kpendjal 1,,,kpendjal,
+communes,kpendjal–2,Kpendjal 2,,,kpendjal,
+communes,kpendjal–ouest–1,Kpendjal Ouest 1,,,kpendjal–ouest,
+communes,kpendjal–ouest–2,Kpendjal Ouest 2,,,kpendjal–ouest,
+cantons,agoe–nyive,Agoé-Nyivé,,,,agoe–nyive–1
+cantons,legbassito,Légbassito,,,,agoe–nyive–2
+cantons,vakpossito,Vakpossito,,,,agoe–nyive–3
+cantons,togble,Togblé,,,,agoe–nyive–4
+cantons,zanguera,Zanguéra,,,,agoe–nyive–5
+cantons,adetikope,Adétikopé,,,,agoe–nyive–6
+cantons,be–est,Bè-Est,,,,golfe–1
+cantons,hedzranawoe,Bè-Centre,,,,golfe–2
+cantons,doumassesse,Bè-Ouest,,,,golfe–3
+cantons,amoutive,Amoutivé,,,,golfe–4
+cantons,aflao–gakli,Aflao-Gakli,,,,golfe–5
+cantons,baguida,Baguida,,,,golfe–6
+cantons,aflao–sagbado,Aflao-Sagbado,,,,golfe–7
+cantons,ando,Ando,,,,ave–1
+cantons,asahoun,Asahoun,,,,ave–1
+cantons,keve,Kévé,,,,ave–1
+cantons,tovegan,Tovégan,,,,ave–1
+cantons,zolo,Zolo,,,,ave–1
+cantons,akepe,Aképé,,,,ave–2
+cantons,badja,Badja,,,,ave–2
+cantons,noepe,Noépé,,,,ave–2
+cantons,afagnagan,Afagnagan,,,,bas–mono–1
+cantons,afagnan–gbleta,Afagnan-Gbléta,,,,bas–mono–1
+cantons,agomeglouzou,Agomé-Glouzou,,,,bas–mono–1
+cantons,kpetsou,Kpétsou,,,,bas–mono–1
+cantons,agbetiko,Agbétiko,,,,bas–mono–2
+cantons,attitongon,Attitongon,,,,bas–mono–2
+cantons,hompou,Hompou,,,,bas–mono–2
+cantons,aneho,Aného,,,,lacs–1
+cantons,glidji,Glidji,,,,lacs–1
+cantons,villeaneho,Ville Aného,,,,lacs–1
+cantons,agouegan,Agouégan,,,,lacs–2
+cantons,aklakou,Aklakou,,,,lacs–2
+cantons,agbedrafo,Agbodrafo,,,,lacs–3
+cantons,anfoin,Anfoin,,,,lacs–4
+cantons,fiata,Fiata,,,,lacs–4
+cantons,ganave,Ganavé,,,,lacs–4
+cantons,vogan,Vogan,,,,vo–1
+cantons,vo–koutime,Vo-Koutimé,,,,vo–1
+cantons,anyronkope,Anyronkopé,,,,vo–2
+cantons,togoville,Togoville,,,,vo–2
+cantons,dagbati,Dagbati,,,,vo–3
+cantons,dzrekpo,Dzrékpo,,,,vo–3
+cantons,mome,Momé,,,,vo–3
+cantons,akoumape,Akoumapé,,,,vo–4
+cantons,hahotoe,Hahotoé,,,,vo–4
+cantons,sevagan,Sévagan,,,,vo–4
+cantons,amoussime,Amoussime,,,,yoto–1
+cantons,kini–kondji,Kini Kondji,,,,yoto–1
+cantons,kouve,Kouvé,,,,yoto–1
+cantons,tabligbo,Tabligbo,,,,yoto–1
+cantons,zafi,Zafi,,,,yoto–2
+cantons,ahepe,Ahépé,,,,yoto–2
+cantons,tchekpo,Tchékpo,,,,yoto–2
+cantons,esse–godjin,Essé-Godjin,,,,yoto–3
+cantons,gboto,Gboto,,,,yoto–3
+cantons,sedome,Sédomé,,,,yoto–3
+cantons,tokpli,Tokpli,,,,yoto–3
+cantons,tomety–kondji,Tométy-Kondji,,,,yoto–3
+cantons,abobo,Abobo,,,,zio–1
+cantons,dalave,Dalavé,,,,zio–1
+cantons,davie,Davié,,,,zio–1
+cantons,djagble,Djagblé,,,,zio–1
+cantons,gbatope,Gbatopé,,,,zio–1
+cantons,gblainvie,Gblainvié,,,,zio–1
+cantons,kpogame,Kpomé,,,,zio–1
+cantons,tsevie,Tsevié,,,,zio–1
+cantons,bolou,Bolou,,,,zio–2
+cantons,kovie,Kovié,,,,zio–2
+cantons,mission–tove,Mission-Tové,,,,zio–2
+cantons,wli,Wli,,,,zio–2
+cantons,agbelouve,Agbélouvé,,,,zio–3
+cantons,game1,Gamé,,,,zio–3
+cantons,gape–centre,Gapé-Centre,,,,zio–4
+cantons,gape–kpodji,Gapé-Kpodji,,,,zio–4
+cantons,badou,Badou,,,,wawa–1
+cantons,kessibo,Késsibo,,,,wawa–1
+cantons,kpete–bena,Kpété-Bena,,,,wawa–1
+cantons,tomegbe,Tomégbé,,,,wawa–1
+cantons,eketo,Ekéto,,,,wawa–2
+cantons,gbadi–n’kougna,Gbadi-N’Kougna,,,,wawa–2
+cantons,gobe,Gobé,,,,wawa–2
+cantons,zogbegan,Zogbegan,,,,wawa–3
+cantons,doume,Doumé,,,,wawa–3
+cantons,klabe–efoukpa,Klabé-Efoukpa,,,,wawa–3
+cantons,okou,Okou,,,,wawa–3
+cantons,ounabe,Ounabé,,,,wawa–3
+cantons,ahassome,Ahassomè,,,,moyen–mono–1
+cantons,tado,Tado,,,,moyen–mono–1
+cantons,tohoun,Tohoun,,,,moyen–mono–1
+cantons,kpekpleme,Kpékplémé,,,,moyen–mono–2
+cantons,saligbe,Saligbé,,,,moyen–mono–2
+cantons,katome,Katomé,,,,moyen–mono–2
+cantons,djama,Djama,,,,ogou–1
+cantons,gnagna,Gnagna,,,,ogou–1
+cantons,woudou,Woudou,,,,ogou–1
+cantons,akpare,Akparé,,,,ogou–2
+cantons,datcha,Datcha,,,,ogou–2
+cantons,katore,Katoré,,,,ogou–2
+cantons,glei,Gléi,,,,ogou–3
+cantons,ountivou,Ountivou,,,,ogou–4
+cantons,kpele–akata,Kpélé-Akata,,,,kpele–1
+cantons,kpele–dawlotou,Kpélé-Dawlotou,,,,kpele–1
+cantons,kpele–novive,Kpélé-Novivé,,,,kpele–1
+cantons,kpele–govie,Kpélé-Govié,,,,kpele–1
+cantons,kpele–dutoe,Kpélé-Dutoé,,,,kpele–2
+cantons,kpele–centre,Kpélé-Centre,,,,kpele–2
+cantons,kpele–gbaledze,Kpélé-Gbalédzé,,,,kpele–2
+cantons,kpele–kame,Kpélé-Kamé,,,,kpele–2
+cantons,kpele–nord,Kpélé-Nord,,,,kpele–2
+cantons,kpalime,Kpalimé,,,,kloto–1
+cantons,hanyigba,Hanyigba,,,,kloto–1
+cantons,kpadape,Kpadapé,,,,kloto–1
+cantons,tome,Tomé,,,,kloto–1
+cantons,tove,Tové,,,,kloto–1
+cantons,wome,Womé,,,,kloto–1
+cantons,gbalave,Gbalavé,,,,kloto–1
+cantons,yokele,Yokélé,,,,kloto–1
+cantons,lavie,Lavié,,,,kloto–2
+cantons,lavie–apedome,Lavié-Apédomé,,,,kloto–2
+cantons,kpime,Kpimé,,,,kloto–2
+cantons,agometomegbe,Agomé-Tomégbé,,,,kloto–3
+cantons,agome–yoh,Agomé-Yoh,,,,kloto–3
+cantons,kuma,Kuma,,,,kloto–3
+cantons,atsave,Atsavé,,,,haho–1
+cantons,dalia,Dalia,,,,haho–1
+cantons,notse,Notsé,,,,haho–1
+cantons,asrama,Asrama,,,,haho–2
+cantons,djemeni,Djéméni,,,,haho–2
+cantons,akpakpakpe,Akpakpakpe,,,,haho–3
+cantons,kpedome,Kpédomé,,,,haho–3
+cantons,hahomegbe,Hahomegbe,,,,haho–3
+cantons,ayito,Ayito,,,,haho–4
+cantons,wahala,Wahala,,,,haho–4
+cantons,danyi–attigba,Danyi-Attigba,,,,danyi–1
+cantons,danyi–kakpa,Danyi-Kakpa,,,,danyi–1
+cantons,yikpa,Yikpa,,,,danyi–1
+cantons,ahlon,Ahlon,,,,danyi–2
+cantons,danyi–elavagno,Danyi-Elavagno,,,,danyi–2
+cantons,danyikpeto–evita,Danyi-Kpeto-Evita,,,,danyi–2
+cantons,elavagnon,Elavagnon,,,,est–mono–1
+cantons,gbadjahe,Gbadjahè,,,,est–mono–1
+cantons,badincope,Badin-Copé,,,,est–mono–2
+cantons,kamina,Kamina,,,,est–mono–2
+cantons,moretan,Morétan,,,,est–mono–2
+cantons,kpessi,Kpéssi,,,,est–mono–3
+cantons,nyamassila,Nyamassila,,,,est–mono–3
+cantons,agouagbetiko,Agou-Nyogbo-Agbetiko,,,,agou–1
+cantons,agou–akplolo,Agou-Akplolo,,,,agou–1
+cantons,agou–atigbe,Agou-Atigbé,,,,agou–1
+cantons,agou–iboe,Agou-Iboé,,,,agou–1
+cantons,agou–kebo,Agou-Kébo,,,,agou–1
+cantons,agou–nyogbo,Agou-Nyogbo,,,,agou–1
+cantons,agou–tavie,Agou-Tavié,,,,agou–1
+cantons,gadja,Gadja,,,,agou–1
+cantons,kati,Kati,,,,agou–1
+cantons,assahoun–fiagbe,Assahoun-Fiagbé,,,,agou–1
+cantons,klonou,Klonou,,,,agou–1
+cantons,agotime–nord,Agotime-Nord,,,,agou–2
+cantons,agotime–sud(adzakpa),Agotime-Sud(Adzakpa),,,,agou–2
+cantons,amoussoukope,Amoussoukopé,,,,agou–2
+cantons,djon,Djon,,,,akebou–1
+cantons,gbende,Gbendè,,,,akebou–1
+cantons,kougnohou,Kougnohou,,,,akebou–1
+cantons,veh,Veh,,,,akebou–1
+cantons,yala,Yala,,,,akebou–1
+cantons,kamina–akebou,Kamina-Akébou,,,,akebou–2
+cantons,kpalave,Kpalavé,,,,akebou–2
+cantons,seregbene,Sérégbénè,,,,akebou–2
+cantons,adiva,Adiva,,,,amou–1
+cantons,imle,Imlè,,,,amou–1
+cantons,ouma(amlame),Ouma(Amlamé),,,,amou–1
+cantons,amou–oblo,Amou-Oblo,,,,amou–2
+cantons,ekpegnon,Ekpégnon,,,,amou–2
+cantons,kpategan,Kpatégan,,,,amou–2
+cantons,sodo,Sodo,,,,amou–2
+cantons,avedji–itadji,Avédji-Itadji,,,,amou–3
+cantons,evou,Evou,,,,amou–3
+cantons,game,Gamé,,,,amou–3
+cantons,hiheatro,Hihéatro,,,,amou–3
+cantons,okpakoue,Okpahoé,,,,amou–3
+cantons,otadi,Otadi,,,,amou–3
+cantons,temedja,Témédja,,,,amou–3
+cantons,anie,Anié,,,,anie–1
+cantons,kolo–kope,Kolo-Kopé,,,,anie–1
+cantons,palakoko,Palakoko,,,,anie–1
+cantons,adogbenou,Adogbenou,,,,anie–2
+cantons,atchinedji,Atchinédji,,,,anie–2
+cantons,glitto,Glitto,,,,anie–2
+cantons,adjeide,Adjéidè,,,,tchamba–1
+cantons,affem,Affem,,,,tchamba–1
+cantons,alibii,Alibi 1,,,,tchamba–1
+cantons,larini,Larini,,,,tchamba–1
+cantons,tchamba,Tchamba,,,,tchamba–1
+cantons,bago,Bago,,,,tchamba–2
+cantons,koussountou,Koussountou,,,,tchamba–2
+cantons,balanka,Balanka,,,,tchamba–3
+cantons,goubi,Goubi,,,,tchamba–3
+cantons,kaboli,Kaboli,,,,tchamba–3
+cantons,kadambara,Kadambara,,,,tchaoudjo–1
+cantons,kpangalam,Kpangalam,,,,tchaoudjo–1
+cantons,sokode(komah),Sokodé (Komah),,,,tchaoudjo–1
+cantons,tchalo,Tchalo,,,,tchaoudjo–1
+cantons,kparatao,Kparatao,,,,tchaoudjo–1
+cantons,lama–tessi,Lama-Tessi,,,,tchaoudjo–2
+cantons,aleheride,Aléhéridè,,,,tchaoudjo–3
+cantons,amaide,Amaidè,,,,tchaoudjo–3
+cantons,kemeni,Kéméni,,,,tchaoudjo–3
+cantons,kolina,Kolina,,,,tchaoudjo–3
+cantons,agoulou,Agouloudè,,,,tchaoudjo–4
+cantons,kpassouade,Kpassouadè,,,,tchaoudjo–4
+cantons,wassarabo,Wassarabou,,,,tchaoudjo–4
+cantons,kaniamboua,Kaniamboua,,,,sotouboua–1
+cantons,sotouboua,Sotouboua,,,,sotouboua–1
+cantons,tabinde,Tabindè,,,,sotouboua–1
+cantons,adjengre,Adjengré,,,,sotouboua–2
+cantons,aouda,Aouda,,,,sotouboua–2
+cantons,fazao,Fazao,,,,sotouboua–2
+cantons,sessaro,Séssaro,,,,sotouboua–2
+cantons,titigbe,Titigbé,,,,sotouboua–2
+cantons,bodjonde,Bodjondè,,,,sotouboua–3
+cantons,kazaboua,Kazaboua,,,,sotouboua–3
+cantons,tchebebe,Tchébébé,,,,sotouboua–3
+cantons,blitta-gare,Blitta-Gare,,,,blitta–1
+cantons,pagala-gare,Pagala-Gare,,,,blitta–1
+cantons,waragni,Waragni,,,,blitta–1
+cantons,doufouli,Doufouli,,,,blitta–1
+cantons,blitta-village,Blitta-Village,,,,blitta–1
+cantons,tchaloude,Tchaloudè,,,,blitta–1
+cantons,yaloumbe,Yaloumbè,,,,blitta–1
+cantons,agbandi,Agbandi,,,,blitta–2
+cantons,langabou,Langabou,,,,blitta–2
+cantons,koffiti,Koffiti,,,,blitta–2
+cantons,tchare-baou,Tcharè-Baou,,,,blitta–2
+cantons,mpoti,M'poti,,,,blitta–3
+cantons,tintchro,Tintchro,,,,blitta–3
+cantons,atchintse,Atchintsè,,,,blitta–3
+cantons,diguengue,Diguengué,,,,blitta–3
+cantons,yegue,Yégué,,,,blitta–3
+cantons,tchifama,Tchifama,,,,blitta–3
+cantons,dikpeleou,Dikpéléou,,,,blitta–3
+cantons,katchenke,Katchenkè,,,,blitta–3
+cantons,pagala-village,Pagala-Village,,,,blitta–3
+cantons,welly,Welly,,,,blitta–3
+cantons,boulohou,Boulohou,,,,mo–1
+cantons,djarkpanga,Djarkpanga,,,,mo–1
+cantons,kagningbara,Kagningbara,,,,mo–1
+cantons,saiboude,Saïboudè,,,,mo–2
+cantons,tindjassi,Tindjassi,,,,mo–2
+cantons,bafilo,Bafilo,,,,assoli–1
+cantons,boulade,Bouladè,,,,assoli–1
+cantons,dako,Dako,,,,assoli–1
+cantons,aledjo,Alédjo,,,,assoli–2
+cantons,koumonde,Koumondè,,,,assoli–2
+cantons,soudou,Soudou,,,,assoli–3
+cantons,lama,Lama,,,,kozah–1
+cantons,landa,Landa,,,,kozah–1
+cantons,lassa,Lassa,,,,kozah–1
+cantons,soumdina,Soumdina,,,,kozah–1
+cantons,koumea,Kouméa,,,,kozah–2
+cantons,pya,Pya,,,,kozah–2
+cantons,sarakawa,Sarakawa,,,,kozah–2
+cantons,tchare,Tcharè,,,,kozah–2
+cantons,tchitchao,Tchitchao,,,,kozah–2
+cantons,yade,Yadè,,,,kozah–2
+cantons,bohou,Bohou,,,,kozah–2
+cantons,awandjelo,Awandjelo,,,,kozah–3
+cantons,kpinzinde,Kpinzindè,,,,kozah–3
+cantons,atchangbade,Atchangbadè,,,,kozah–4
+cantons,djamde,Djamdè,,,,kozah–4
+cantons,agbande–yaka,Agbandè-Yaka,,,,doufelgou–1
+cantons,baga,Baga,,,,doufelgou–1
+cantons,koka,Koka,,,,doufelgou–1
+cantons,massedena,Massédéna,,,,doufelgou–1
+cantons,niamtougou,Niamtougou,,,,doufelgou–1
+cantons,pouda,Pouda,,,,doufelgou–1
+cantons,siou,Siou,,,,doufelgou–1
+cantons,tenega,Ténéga,,,,doufelgou–1
+cantons,defale,Défalé,,,,doufelgou–2
+cantons,kpaha,Kpaha,,,,doufelgou–2
+cantons,alloum,Alloum,,,,doufelgou–2
+cantons,kadjala,Kadjala,,,,doufelgou–2
+cantons,leon,Léon,,,,doufelgou–2
+cantons,tchore,Tchoré,,,,doufelgou–2
+cantons,bassar,Bassar,,,,bassar–1
+cantons,kalanga,Kalanga,,,,bassar–1
+cantons,baghan,Baghan,,,,bassar–1
+cantons,bandjeli,Bandjeli,,,,bassar–2
+cantons,dimouri,Dimouri,,,,bassar–2
+cantons,kabou,Kabou,,,,bassar–3
+cantons,manga,Manga,,,,bassar–3
+cantons,sandaafowou,Sanda-Afowou,,,,bassar–4
+cantons,sanda–kagbanda,Sanda-Kagbanda,,,,bassar–4
+cantons,boufale,Boufalé,,,,binah–1
+cantons,lama–dessi,Lama-Dessi,,,,binah–1
+cantons,pagouda,Pagouda,,,,binah–1
+cantons,pessare,Pessaré,,,,binah–1
+cantons,pitikita,Pitikita,,,,binah–1
+cantons,solla,Solla,,,,binah–1
+cantons,kemerida,Kémérida,,,,binah–2
+cantons,ketao,Kétao,,,,binah–2
+cantons,sirka,Sirka,,,,binah–2
+cantons,guerin–kouka,Guerin-Kouka,,,,dankpen–1
+cantons,katchamba,Katchamba,,,,dankpen–1
+cantons,nampoch,Nampoch,,,,dankpen–1
+cantons,koulfeikou,Koulfeikou,,,,dankpen–1
+cantons,koutchitcheou,Koutchitchéou,,,,dankpen–2
+cantons,namon,Namon,,,,dankpen–2
+cantons,natchibore,Natchiboré,,,,dankpen–2
+cantons,natchitikpi,Natchitikpi,,,,dankpen–2
+cantons,kidjaboum,Kidjabou,,,,dankpen–3
+cantons,bapure,Bapuré,,,,dankpen–3
+cantons,nandouta,Nandouta,,,,dankpen–3
+cantons,naware,Nawaré,,,,dankpen–3
+cantons,atalote,Ataloté,,,,keran–2
+cantons,helota,Hélota,,,,keran–2
+cantons,ossacre,Ossacré,,,,keran–2
+cantons,kante,Kantè,,,,keran–1
+cantons,pesside,Pessidè,,,,keran–1
+cantons,akponte,Akpontè,,,,keran–1
+cantons,koutougou,Koutougou,,,,keran–3
+cantons,nadoba,Nadoba,,,,keran–3
+cantons,warengo,Warengo,,,,keran–3
+cantons,boade,Boadé,,,,cinkasse–1
+cantons,cinkasse,Cinkassé,,,,cinkasse–1
+cantons,gouloungoussi,Gouloungoussi,,,,cinkasse–1
+cantons,noaga,Noaga,,,,cinkasse–1
+cantons,biankouri,Biankouri,,,,cinkasse–2
+cantons,nadjoundi,Nadjoundi,,,,cinkasse–2
+cantons,sam–naba,Sam-Naba,,,,cinkasse–2
+cantons,timbou,Timbou,,,,cinkasse–2
+cantons,koundjoare,Koundjoaré,,,,kpendjal–1
+cantons,mandouri,Mandouri,,,,kpendjal–1
+cantons,tambigou,Tambigou,,,,kpendjal–1
+cantons,borgou,Borgou,,,,kpendjal–2
+cantons,namoundjoga,Namoundjoga,,,,kpendjal–ouest–2
+cantons,papri,Papri,,,,kpendjal–ouest–2
+cantons,pogno,Pogno,,,,kpendjal–ouest–2
+cantons,tambonga,Tambonga,,,,kpendjal–ouest–2
+cantons,naki–est,Naki Est,,,,kpendjal–ouest–1
+cantons,nayega,Nayega,,,,kpendjal–ouest–1
+cantons,ogaro,Ogaro,,,,kpendjal–ouest–1
+cantons,barkoissi,Barkoissi,,,,oti–2
+cantons,galangashie,Galangashie,,,,oti–2
+cantons,loko,Loko,,,,oti–2
+cantons,nagbeni,Nagbéni,,,,oti–2
+cantons,tchanaga,Tchanaga,,,,oti–2
+cantons,fare,Faré,,,,oti–1
+cantons,mango,Mango,,,,oti–1
+cantons,sadori,Sadori,,,,oti–1
+cantons,gando,Gando,,,,oti–sud–1
+cantons,mogou,Mogou,,,,oti–sud–1
+cantons,sagbiebou,Sagbiebou,,,,oti–sud–1
+cantons,tchamonga,Tchamonga,,,,oti–sud–1
+cantons,koumongou,Koumongou,,,,oti–sud–2
+cantons,kountoare,Kountoaré,,,,oti–sud–2
+cantons,nali,Nali,,,,oti–sud–2
+cantons,takpamba,Takpamba,,,,oti–sud–2
+cantons,bagou,Bagou,,,,tandjoare–2
+cantons,doukpergou,Doukpergou,,,,tandjoare–2
+cantons,lokpanou,Lokpanou,,,,tandjoare–2
+cantons,mamproug,Mamproug,,,,tandjoare–2
+cantons,nano,Nano,,,,tandjoare–2
+cantons,sangou,Sangou,,,,tandjoare–2
+cantons,sissiak,Sissiak,,,,tandjoare–2
+cantons,tampialime,Tampialime,,,,tandjoare–2
+cantons,bogou,Bogou,,,,tandjoare–1
+cantons,bombouaka,Bombouaka,,,,tandjoare–1
+cantons,boulogou,Boulogou,,,,tandjoare–1
+cantons,goundoga,Goundoga,,,,tandjoare–1
+cantons,loko1,Loko,,,,tandjoare–1
+cantons,nandoga,Nandoga,,,,tandjoare–1
+cantons,pligou,Pligou,,,,tandjoare–1
+cantons,tamongue,Tamongue,,,,tandjoare–1
+cantons,bidjenga,Bidjenga,,,,tone–1
+cantons,dapaong,Dapaong,,,,tone–1
+cantons,kourientre,Kourientre,,,,tone–1
+cantons,natigou,Natigou,,,,tone–1
+cantons,pana,Pana,,,,tone–1
+cantons,poissongui,Poissongui,,,,tone–1
+cantons,toaga,Toaga,,,,tone–1
+cantons,nanergou,Nanergou,,,,tone–2
+cantons,naki–ouest,Naki-Ouest,,,,tone–2
+cantons,namare,Namaré,,,,tone–2
+cantons,lotogou,Lotogou,,,,tone–3
+cantons,nioukpourma,Nioukpourma,,,,tone–3
+cantons,tami,Tami,,,,tone–3
+cantons,warkambou,Warkambou,,,,tone–3
+cantons,katindi,Kantindi,,,,tone–4
+cantons,korbongou,Korbongou,,,,tone–4
+cantons,louanga,Louanga,,,,tone–4
+cantons,sanfatoute,Sanfatoute,,,,tone–4

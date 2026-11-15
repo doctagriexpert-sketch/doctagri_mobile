@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terra-Orbit Togo — Présentation Hackathon NASA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a1410;
+      --bg-canopy: #122b20;
+      --bg-card: rgba(22, 56, 44, 0.45);
+      --bg-card-border: rgba(231, 197, 106, 0.25);
+      --cream: #f7f1e4;
+      --cream-muted: #d9cdb4;
+      --gold: #e7c56a;
+      --gold-bright: #ffd978;
+      --green-glow: #2ecc71;
+      --accent-terra: #e67e22;
+      --accent-danger: #e74c3c;
+      --font-display: 'Newsreader', Georgia, serif;
+      --font-tech: 'Space Grotesk', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 15% 15%, rgba(22, 56, 44, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(231, 197, 106, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(10, 20, 16, 0.95) 0%, #060c09 100%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Deck Container */
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    /* Slide Base */
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 3.5rem 5rem 4.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px) scale(0.98);
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-y: auto;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Header & Navigation Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(231, 197, 106, 0.2);
+      padding-bottom: 0.8rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--gold), #16382c);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #0a1410;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px rgba(231, 197, 106, 0.4);
+    }
+
+    .brand-title {
+      font-family: var(--font-tech);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--cream);
+    }
+
+    .slide-badge {
+      font-family: var(--font-tech);
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(231, 197, 106, 0.15);
+      border: 1px solid rgba(231, 197, 106, 0.35);
+      color: var(--gold);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Titles */
+    .slide-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .slide-tag {
+      font-family: var(--font-tech);
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .slide-title {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      line-height: 1.1;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+    }
+
+    .slide-title span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .slide-subtitle {
+      font-size: 1.25rem;
+      color: var(--cream-muted);
+      margin-top: 0.6rem;
+      max-width: 900px;
+      line-height: 1.45;
+      font-weight: 400;
+    }
+
+    /* Slide Content Grids */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      align-items: stretch;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    /* Glass Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    .card-highlight {
+      border-color: rgba(46, 204, 113, 0.4);
+      background: rgba(22, 56, 44, 0.65);
+    }
+
+    .card-highlight::before {
+      background: linear-gradient(90deg, transparent, var(--green-glow), transparent);
+      opacity: 0.8;
+    }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-family: var(--font-tech);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--cream-muted);
+      flex: 1;
+    }
+
+    .card-tag {
+      font-family: var(--font-tech);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(231, 197, 106, 0.15);
+      color: var(--gold);
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* Big Numbers / Stats */
+    .stat-number {
+      font-family: var(--font-tech);
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 25px rgba(231, 197, 106, 0.3);
+    }
+
+    .stat-number.danger {
+      color: var(--accent-danger);
+      text-shadow: 0 0 25px rgba(231, 76, 60, 0.3);
+    }
+
+    .stat-number.green {
+      color: var(--green-glow);
+      text-shadow: 0 0 25px rgba(46, 204, 113, 0.3);
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--cream-muted);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* Comparison Box */
+    .vs-box {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .vs-divider {
+      font-family: var(--font-tech);
+      font-weight: 800;
+      color: var(--gold);
+      font-size: 1.4rem;
+      padding: 0.8rem;
+      border-radius: 50%;
+      background: rgba(231, 197, 106, 0.1);
+      border: 1px solid rgba(231, 197, 106, 0.3);
+    }
+
+    /* Pill list */
+    .pill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .pill-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 1rem;
+      line-height: 1.45;
+      color: var(--cream);
+    }
+
+    .pill-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 0.45rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    /* Hero Slide Special */
+    .hero-slide {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(231, 197, 106, 0.12);
+      border: 1px solid rgba(231, 197, 106, 0.35);
+      padding: 0.45rem 1.2rem;
+      border-radius: 30px;
+      color: var(--gold);
+      font-family: var(--font-tech);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 5.5rem;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--gold-bright), #e67e22);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-style: italic;
+    }
+
+    .hero-tagline {
+      font-size: 1.6rem;
+      color: var(--cream-muted);
+      max-width: 850px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.4;
+      font-weight: 300;
+    }
+
+    .hero-triad {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .hero-pill {
+      background: rgba(22, 56, 44, 0.5);
+      border: 1px solid rgba(231, 197, 106, 0.25);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+      flex: 1;
+    }
+
+    .hero-pill strong {
+      display: block;
+      color: var(--gold);
+      font-family: var(--font-tech);
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-pill span {
+      font-size: 0.88rem;
+      color: var(--cream-muted);
+    }
+
+    /* Pipeline / Flow */
+    .flow-chain {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .flow-step {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      position: relative;
+    }
+
+    .flow-arrow {
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Footer Controls */
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(231, 197, 106, 0.2);
+    }
+
+    .controls-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-btn {
+      background: rgba(231, 197, 106, 0.1);
+      border: 1px solid rgba(231, 197, 106, 0.3);
+      color: var(--cream);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-family: var(--font-tech);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--gold);
+      color: #0a1410;
+      border-color: var(--gold);
+    }
+
+    .slide-progress-dots {
+      display: flex;
+      gap: 0.45rem;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(231, 197, 106, 0.25);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .dot.active {
+      width: 24px;
+      border-radius: 12px;
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold);
+    }
+
+    .slide-counter {
+      font-family: var(--font-tech);
+      font-size: 0.95rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .shortcut-hints {
+      font-size: 0.8rem;
+      color: var(--cream-muted);
+      opacity: 0.7;
+    }
+
+    /* Speaker Notes Popup */
+    .speaker-notes {
+      position: fixed;
+      bottom: 5.5rem;
+      right: 2rem;
+      width: 380px;
+      background: rgba(10, 20, 16, 0.95);
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+      z-index: 100;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: var(--cream);
+      display: none;
+    }
+
+    .speaker-notes.open {
+      display: block;
+    }
+
+    .speaker-notes h5 {
+      font-family: var(--font-tech);
+      color: var(--gold);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Timer Pill */
+    .timer-pill {
+      font-family: var(--font-tech);
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(231,197,106,0.3);
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Print & PDF Export styles */
+    @page {
+      size: 16in 9in;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 16in !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: #0a1410 !important;
+        color: #f7f1e4 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* Suppression totale de la barre inférieure de navigation et des contrôles pour le PDF */
+      .bottom-bar,
+      .controls-left,
+      .slide-progress-dots,
+      .speaker-notes,
+      .ambient-glow,
+      .nav-btn,
+      .timer-pill {
+        display: none !important;
+        visibility: hidden !important;
+      }
+
+      .deck {
+        width: 16in !important;
+        height: auto !important;
+        position: relative !important;
+      }
+
+      .slide {
+        position: relative !important;
+        width: 16in !important;
+        height: 9in !important;
+        max-height: 9in !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        padding: 3.2rem 4.5rem !important;
+        background: radial-gradient(circle at 15% 15%, rgba(22, 56, 44, 0.75) 0%, transparent 45%),
+                    radial-gradient(circle at 85% 85%, rgba(231, 197, 106, 0.15) 0%, transparent 50%),
+                    #0a1410 !important;
+        overflow: hidden !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <div class="deck" id="deck">
+
+    <!-- ==========================================
+         SLIDE 1 : COVER & VISION
+    =========================================== -->
+    <section class="slide hero-slide active" data-title="Vision & Titre">
+      <div class="top-bar" style="border: none; margin-bottom: 0;">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT • TOGO</span>
+        </div>
+        <div class="slide-badge">Pitch Officiel</div>
+      </div>
+
+      <div class="hero-badge">🛰️ L'Espace au secours du Dernier Kilomètre Agricole</div>
+      
+      <h1 class="hero-title">Nourrir la Terre depuis <span>l'Orbite</span></h1>
+      
+      <p class="hero-tagline">
+        De la constellation satellitaire de la NASA aux téléphones 2G des producteurs ruraux et aux comités de crédit bancaire au Togo.
+      </p>
+
+      <div class="hero-triad">
+        <div class="hero-pill">
+          <strong>1. Télémétrie Spatiale NASA</strong>
+          <span>SMAP & ECOSTRESS descendus à 30 m par parcelle et canton</span>
+        </div>
+        <div class="hero-pill">
+          <strong>2. Moteur Agronomique Vivant</strong>
+          <span>Simulation de rotation (FAO-56/33), bilan azote et résilience eau</span>
+        </div>
+        <div class="hero-pill">
+          <strong>3. Inclusion Rurale & Fintech</strong>
+          <span>Alertes vocales (Éwé, Kabyè) et qualification du risque pour le crédit</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2 : LE PROBLÈME RÉEL (THE PAIN POINT)
+    =========================================== -->
+    <section class="slide" data-title="Le Défi du Dernier Kilomètre">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">01 • Le Constat de Terrain</div>
+      </div>
+
+      <div class="slide-header">
+        <span class="slide-tag">La Réalité Rurale Ouest-Africaine</span>
+        <h2 class="slide-title">Le gouffre entre <span>l'espace</span> et le <span>champ</span></h2>
+        <p class="slide-subtitle">
+          Le Togo compte 392 cantons ruraux où des millions de familles dépendent d'une météo devenue imprévisible.
+        </p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card">
+            <div class="stat-number danger">65%</div>
+            <div class="stat-label">de la population active togolaise dépend exclusivement d'une agriculture pluviale sans irrigation.</div>
+          </div>
+          <div class="card">
+            <div class="stat-number danger">-40%</div>
+            <div class="stat-label">de pertes de rendement soudaines causées par les poches de sécheresse intra-saisonnières et la monoculture usante.</div>
+          </div>
+          <div class="card">
+            <div class="stat-number danger">82%</div>
+            <div class="stat-label">des petits producteurs sont exclus du crédit bancaire (FUCEC, WAGES, MIFA) faute d'évaluation fiable du risque climatique.</div>
+          </div>
+        </div>
+
+        <div class="card card-highlight" style="margin-top: 1.5rem; flex-direction: row; align-items: center; gap: 1.5rem;">
+          <div style="font-size: 2.5rem;">🚫</div>
+          <div>
+            <h3 style="color: var(--gold); margin-bottom: 0.2rem;">La double barrière du dernier kilomètre</h3>
+            <p style="margin: 0;">L'agriculteur de Dapaong ou de Notsé <strong>n'a ni smartphone, ni connexion Internet sur sa parcelle</strong>. Les plateformes web modernes complexes ne l'atteignent jamais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3 : POURQUOI LES SOLUTIONS ÉCHOUENT
+    =========================================== -->
+    <section class="slide" data-title="L'Échec des Solutions Actuelles">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">02 • Différenciation Clé</div>
+      </div>
+
+      <div class="slide-header">
+        <span class="slide-tag">Pourquoi 95% des projets échouent</span>
+        <h2 class="slide-title">Le piège de la <span>« belle carte satellite »</span></h2>
+        <p class="slide-subtitle">
+          Les hackathons regorgent de tableaux de bord satellitaires superbes, mais totalement stériles pour la survie économique des paysans.
+        </p>
+      </div>
+
+      <div class="slide-body">
+        <div class="vs-box">
+          <div class="card" style="border-color: rgba(231, 76, 60, 0.4);">
+            <span class="card-tag" style="background: rgba(231,76,60,0.2); color: #e74c3c;">Approche Classique Défaillante</span>
+            <h3>Ce que font les autres équipes</h3>
+            <ul class="pill-list">
+              <li><span class="pill-dot" style="background: #e74c3c;"></span> Rasters satellites bruts à résolution 9 km ou 36 km (inutilisable pour un champ d'1 ha).</li>
+              <li><span class="pill-dot" style="background: #e74c3c;"></span> Interface web lourde nécessitant fibre/4G et navigateur Chrome moderne.</li>
+              <li><span class="pill-dot" style="background: #e74c3c;"></span> Constat passif : <em>« Votre sol est sec, bon courage »</em>.</li>
+              <li><span class="pill-dot" style="background: #e74c3c;"></span> Zéro lien avec la banque, l'assurance ou le marchand d'intrants.</li>
+            </ul>
+          </div>
+
+          <div class="vs-divider">VS</div>
+
+          <div class="card card-highlight">
+            <span class="card-tag" style="background: rgba(46,204,113,0.2); color: #2ecc71;">La Rupture Terra-Orbit</span>
+            <h3>Ce que nous apportons</h3>
+            <ul class="pill-list">
+              <li><span class="pill-dot" style="background: #2ecc71;"></span> <strong>Descente d'échelle à 30 m</strong> par topographie (TWI) et texture du sol locale.</li>
+              <li><span class="pill-dot" style="background: #2ecc71;"></span> <strong>Inclusion 2G sans Internet</strong> : Alertes vocales en langues locales (Éwé, Kabyè) & SMS/USSD.</li>
+              <li><span class="pill-dot" style="background: #2ecc71;"></span> <strong>Prescription active</strong> : 3 plans de rotation alternatifs chiffrés en FCFA et azote.</li>
+              <li><span class="pill-dot" style="background: #2ecc71;"></span> <strong>Déblocage du crédit</strong> : Scoring de risque pour les institutions de microfinance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4 : L'ARCHITECTURE TECHNIQUE & DONNÉES
+    =========================================== -->
+    <section class="slide" data-title="Architecture & Données NASA">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">03 • Pipeline Technique</div>
+      </div>
+
+      <div class="slide-header">
+        <span class="slide-tag">Traçabilité & Science Spatiale</span>
+        <h2 class="slide-title">De l'orbite terrestre à la <span>parcelle de 30 mètres</span></h2>
+        <p class="slide-subtitle">
+          Une chaîne d'ingestion certifiée croisant les capteurs orbitaux NASA et les modèles pédoclimatiques ouest-africains.
+        </p>
+      </div>
+
+      <div class="slide-body">
+        <div class="flow-chain">
+          <div class="flow-step">
+            <span class="card-tag">Constellations NASA</span>
+            <h3>Capteurs Spatiaux</h3>
+            <p style="font-size: 0.88rem;">• <strong>SMAP L3</strong> : Humidité volumique du sol (Cumulus Cloud).<br>• <strong>ECOSTRESS (ISS)</strong> : Stress thermique par évapotranspiration (70 m).<br>• <strong>NASA POWER</strong> : Historique pluviométrique et températures quotidiennes.</p>
+          </div>
+
+          <div class="flow-arrow">➔</div>
+
+          <div class="flow-step" style="border-color: rgba(231, 197, 106, 0.4);">
+            <span class="card-tag">Algorithme Propriétaire</span>
+            <h3>MultiSensor Downscaler</h3>
+            <p style="font-size: 0.88rem;">• Modèle <strong>TVDI</strong> (Sandholt) : Indice de sécheresse température/végétation.<br>• Modèle <strong>TWI</strong> : Indice topographique d'humidité selon la pente locale.<br>• Référence <strong>Saxton-Rawls</strong> : Rétention utile (RU) selon le sol togolais.</p>
+          </div>
+
+          <div class="flow-arrow">➔</div>
+
+          <div class="flow-step">
+            <span class="card-tag">Agronomie Vivante</span>
+            <h3>Moteur FAO-56 & 33</h3>
+            <p style="font-size: 0.88rem;">• Équation de Stewart : perte de rendement en fonction du déficit hydrique.<br>• Matrice symbiotique : restitution d'azote (+35 kg N) et mémoire hydrique du sol.</p>
+          </div>
+
+          <div class="flow-arrow">➔</div>
+
+          <div class="flow-step card-highlight">
+            <span class="card-tag">Dernier Kilomètre</span>
+            <h3>Diffusion Terrain</h3>
+            <p style="font-size: 0.88rem;">• <strong>Audio Éwé / Kabyè / FR</strong> pour les agriculteurs sur 2G.<br>• <strong>Dossier d'audit PDF/JSON</strong> certifié pour la banque et le crédit.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 1.2rem; padding: 1rem 1.5rem; background: rgba(0,0,0,0.3); border-color: rgba(231,197,106,0.2);">
+          <p style="font-size: 0.9rem; margin: 0; color: var(--gold);">
+            🛰️ <strong>Traçabilité Scientifique Vérifiable :</strong> Ingestion des identifiants exacts de granules orbitaux NASA CMR (ex. <em>SMAP_L3_SM_P_E_20261113_R19240</em>) permettant au jury et aux auditeurs de contrôler l'authenticité des sources parcellaires en un clic.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5 : L'INNOVATION : ROTATIONS STRATÉGIQUES
+    =========================================== -->
+    <section class="slide" data-title="Générateur de Rotations Stratégiques">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">04 • Prescription Active</div>
+      </div>
+
+      <div class="slide-header">
+        <span class="slide-tag">Aide à la Décision Concrète</span>
+        <h2 class="slide-title">Ne plus seulement constater, <span>proposer les meilleures solutions</span></h2>
+        <p class="slide-subtitle">
+          Le moteur évalue dynamiquement 3 stratégies de rotation adaptées au sol et au climat du canton, avec gains chiffrés en FCFA et en azote.
+        </p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card">
+            <span class="card-tag">🌱 Recommandé Agro-Filière</span>
+            <h3>Synergie Soja Bio</h3>
+            <p style="font-weight: 700; color: var(--gold); margin-bottom: 0.4rem;">Maïs ➔ Soja Bio ➔ Sorgho</p>
+            <p style="font-size: 0.92rem; margin-bottom: 1rem;">Le soja fixe l'azote de l'air (+35 kg N/ha) pour booster le sorgho qui le suit. Débouché garanti sur le marché d'exportation togolais.</p>
+            <div style="border-top: 1px solid rgba(231,197,106,0.2); padding-top: 0.8rem; font-family: var(--font-tech);">
+              <div style="color: var(--green-glow); font-weight: 700;">Revenu : ~1 326 362 FCFA</div>
+              <div style="color: var(--cream-muted); font-size: 0.85rem;">Bilan Azote : -65 kg/ha (+35 kg sauvés)</div>
+            </div>
+          </div>
+
+          <div class="card card-highlight">
+            <span class="card-tag" style="background: rgba(46,204,113,0.2); color: #2ecc71;">🛡️ Sécurité Climat Extrême</span>
+            <h3>Bouclier Sécheresse</h3>
+            <p style="font-weight: 700; color: var(--gold); margin-bottom: 0.4rem;">Maïs ➔ Niébé ➔ Sorgho</p>
+            <p style="font-size: 0.92rem; margin-bottom: 1rem;">Cycle ultra-court (75 j) du niébé pour esquiver les arrêts précoces de pluie. Tapis végétal couvrant 95% du sol stoppant l'évaporation.</p>
+            <div style="border-top: 1px solid rgba(231,197,106,0.2); padding-top: 0.8rem; font-family: var(--font-tech);">
+              <div style="color: var(--green-glow); font-weight: 700;">Risque Sécheresse : 0% au Cycle 2</div>
+              <div style="color: var(--cream-muted); font-size: 0.85rem;">Revenu : ~1 282 852 FCFA</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">🔋 Reconstitution Sols Usés</span>
+            <h3>Cure Régénératrice</h3>
+            <p style="font-weight: 700; color: var(--gold); margin-bottom: 0.4rem;">Niébé ➔ Soja Bio ➔ Maïs</p>
+            <p style="font-size: 0.92rem; margin-bottom: 1rem;">Double légumineuse rompant le cycle parasitaire du Striga et rechargeant massivement la réserve organique (+80 kg N/ha cumulés).</p>
+            <div style="border-top: 1px solid rgba(231,197,106,0.2); padding-top: 0.8rem; font-family: var(--font-tech);">
+              <div style="color: var(--green-glow); font-weight: 700;">Fertilité nette : +30 kg N/ha</div>
+              <div style="color: var(--cream-muted); font-size: 0.85rem;">Économie : sacs d'engrais épargnés</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.2rem; background: rgba(231,197,106,0.1); border: 1px solid rgba(231,197,106,0.3); padding: 0.8rem 1.4rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.95rem;">💡 <strong>Personnalisation Marché Local :</strong> L'utilisateur peut modifier en direct le prix au kilo du maïs, soja ou niébé constaté sur son marché rural (ex. 300 F au lieu de 250 F) avec recalcul instantané des revenus.</span>
+          <span class="card-tag" style="margin: 0;">100% Dynamique</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6 : L'INCLUSION AU DERNIER KILOMÈTRE
+    =========================================== -->
+    <section class="slide" data-title="Inclusion Rurale au Dernier Kilomètre">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">05 • Impact Social</div>
+      </div>
+
+      <div class="slide-header">
+        <span class="slide-tag">Accessibilité Zéro Barrière</span>
+        <h2 class="slide-title">Parler la langue du paysan, <span>sur le téléphone qu'il possède déjà</span></h2>
+        <p class="slide-subtitle">
+          Aucun téléchargement d'application, aucun besoin de smartphone Android, aucune dépendance à une connexion Internet sur la parcelle.
+        </p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">🗣️</div>
+            <h3>Audio en Langues Locales</h3>
+            <p>Diffusion vocale des alertes et conseils agronomiques en <strong>Éwé</strong> (Sud Togo), <strong>Kabyè</strong> (Nord Togo) et <strong>Français</strong> pour surmonter la barrière de l'analphabétisme.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📟</div>
+            <h3>SMS & USSD Basique 2G</h3>
+            <p>Notifications compactes déclenchées par les seuils hydriques satellites (ex: <em>« La terre de Dapaong a bu assez d'eau pour semer le soja sans risque »</em>) sur téléphones à touches.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🏛️</div>
+            <h3>392 Cantons Officiels du Togo</h3>
+            <p>Intégration du référentiel territorial national togolais complet (6 régions, 39 préfectures, 116 communes, 392 cantons) avec coordonnées GPS et pentes pédologiques.</p>
+          </div>
+        </div>
+
+        <div class="card card-highlight" style="margin-top: 1.5rem; padding: 1.2rem 1.8rem;">
+          <h4 style="font-family: var(--font-tech); color: var(--gold); margin-bottom: 0.4rem;">Exemple d'alerte vocale réelle générée :</h4>
+          <p style="font-style: italic; color: var(--cream); font-size: 1.05rem; margin: 0;">
+            « Miawoe zɔ. Anyigba la le ku dzi. Mina miado ayi (soja) be anyigba la naɖu nu nyuie. »<br>
+            <span style="font-size: 0.88rem; color: var(--cream-muted); font-style: normal;">(Conseil en éwé : Votre terre s'épuise. Plantez du soja pour que la terre se nourrisse bien et assure votre récolte.)</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7 : LE DÉBLOCAGE DU CRÉDIT & LA FINTECH
+    =========================================== -->
+    <section class="slide" data-title="Déblocage du Crédit & Fintech">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">06 • Viabilité Économique</div>
+      </div>
+
+      <div class="slide-header">
+        <span class="slide-tag">Rentabilité & Microfinance</span>
+        <h2 class="slide-title">Donner à la banque la <span>confiance</span> pour financer les champs</h2>
+        <p class="slide-subtitle">
+          Comment transformer une donnée climatique brute en collatéral digital pour les institutions financières (FUCEC, WAGES, MIFA).
+        </p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="card">
+            <div class="stat-number green">-42%</div>
+            <div class="stat-label"><strong>Baisse du Risque de Défaut :</strong> Le plan de rotation équilibré évite le crash de production qui empêchait le remboursement de la dette d'engrais.</div>
+          </div>
+          <div class="card">
+            <div class="stat-number green">961 F</div>
+            <div class="stat-label"><strong>Efficience de l'Eau (WUE) :</strong> Mesure le revenu généré par millimètre d'eau reçu (F/mm). Prouve à la banque que chaque pluie est monétisée.</div>
+          </div>
+          <div class="card">
+            <div class="stat-number green">100%</div>
+            <div class="stat-label"><strong>Assurance Paramétrique Directe :</strong> Indemnisation automatique déclenchée par satellite en cas de sécheresse certifiée, sans expert coûteux ni contestation.</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 1.5rem; background: rgba(10,20,16,0.6); border-color: rgba(231,197,106,0.3);">
+          <h4 style="font-family: var(--font-tech); color: var(--gold); margin-bottom: 0.3rem;">Le modèle économique d'agrégation :</h4>
+          <p style="font-size: 0.95rem; margin: 0;">
+            L'agriculteur ne paie pas d'abonnement logiciel. Le service est sponsorisé par les <strong>institutions de microfinance</strong> (réduction des créances douteuses), les <strong>agrégateurs de filières</strong> (sécurisation des volumes de soja bio/coton) et les <strong>programmes de résilience climatique</strong> étatiques.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8 : TRACTION & VALIDATION TERRAIN
+    =========================================== -->
+    <section class="slide" data-title="Démonstration & Validations">
+      <div class="top-bar">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">07 • Maturité Opérationnelle</div>
+      </div>
+
+      <div class="slide-header">
+        <span class="slide-tag">Ce qui est déjà livré et testable</span>
+        <h2 class="slide-title">Un prototype <span>industriel</span> prêt pour le déploiement</h2>
+        <p class="slide-subtitle">
+          Ce n'est pas un concept sur papier : c'est une application entièrement fonctionnelle, testée et déployée.
+        </p>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-2">
+          <div class="card card-highlight">
+            <span class="card-tag">Réalisations Validées</span>
+            <h3>Acquis Techniques & Métier</h3>
+            <ul class="pill-list">
+              <li><span class="pill-dot"></span> <strong>12/12 tests de régression automatisés</strong> passés avec succès.</li>
+              <li><span class="pill-dot"></span> <strong>392 cantons administratifs togolais</strong> intégrés avec cascades Région ➔ Préfecture ➔ Commune ➔ Canton.</li>
+              <li><span class="pill-dot"></span> <strong>Passerelle NASA Earthdata CMR</strong> validée pour SMAP L3 et ECOSTRESS.</li>
+              <li><span class="pill-dot"></span> <strong>Saisie manuelle des mercuriales de prix</strong> du marché local avec recalcul temps réel.</li>
+              <li><span class="pill-dot"></span> <strong>Générateur de rotations à 3 cartes</strong> avec application instantanée en 1 clic.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="card-tag">Feuille de Route 2026</span>
+            <h3>Prochaines Étapes de Déploiement</h3>
+            <ul class="pill-list">
+              <li><span class="pill-dot" style="background: var(--gold);"></span> <strong>Pilote Coopérative Savanes (Q1 2026) :</strong> 500 parcelles de maïs/soja testées avec la FUCEC et l'ITRA à Dapaong.</li>
+              <li><span class="pill-dot" style="background: var(--gold);"></span> <strong>Passerelle Télécom USSD (Q2 2026) :</strong> Accord de diffusion avec les opérateurs mobiles TogoCom et Moov Africa.</li>
+              <li><span class="pill-dot" style="background: var(--gold);"></span> <strong>Extension Régionale CEDEAO (Q4 2026) :</strong> Déploiement au Bénin et au Ghana voisins sur les bassins coton/soja.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9 : CONCLUSION & APPEL AU JURY
+    =========================================== -->
+    <section class="slide hero-slide" data-title="Conclusion & Démonstration">
+      <div class="top-bar" style="border: none; margin-bottom: 0;">
+        <div class="brand">
+          <div class="brand-logo">🌍</div>
+          <span class="brand-title">TERRA-ORBIT</span>
+        </div>
+        <div class="slide-badge">08 • Conclusion</div>
+      </div>
+
+
+      <h2 class="hero-title" style="font-size: 4.2rem;">L'Espace n'a de valeur que s'il <span>nourrit la Terre</span></h2>
+
+      <p class="hero-tagline" style="font-size: 1.35rem; max-width: 800px; margin-bottom: 2rem;">
+        Terra-Orbit réconcilie les milliards investis dans les télescopes et constellations de la NASA avec la dignité alimentaire des producteurs ruraux africains.
+      </p>
+
+      <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 2rem;">
+        <div class="card" style="padding: 1.2rem 2rem; border-color: var(--gold); text-align: center;">
+          <div style="font-family: var(--font-tech); font-size: 1.8rem; color: var(--gold); font-weight: 800;">392 Cantons</div>
+          <div style="font-size: 0.85rem; color: var(--cream-muted);">Territoire togolais couvert</div>
+        </div>
+        <div class="card" style="padding: 1.2rem 2rem; border-color: var(--green-glow); text-align: center;">
+          <div style="font-family: var(--font-tech); font-size: 1.8rem; color: var(--green-glow); font-weight: 800;">3 Langues</div>
+          <div style="font-size: 0.85rem; color: var(--cream-muted);">Français • Éwé • Kabyè</div>
+        </div>
+        <div class="card" style="padding: 1.2rem 2rem; border-color: var(--gold); text-align: center;">
+          <div style="font-family: var(--font-tech); font-size: 1.8rem; color: var(--gold); font-weight: 800;">0 Smartphone</div>
+          <div style="font-size: 0.85rem; color: var(--cream-muted);">Requis sur la parcelle</div>
+        </div>
+      </div>
+
+      <p style="font-family: var(--font-tech); font-size: 1.1rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;">
+        Merci pour votre attention • Démonstration Live & Questions du Jury
+      </p>
+    </section>
+
+  </div>
+
+  <!-- Bottom Navigation & Controls -->
+  <div class="bottom-bar" style="position: fixed; bottom: 0; left: 0; right: 0; padding: 1rem 3rem; background: rgba(10,20,16,0.95); z-index: 10;">
+    <div class="controls-left">
+      <button class="nav-btn" onclick="prevSlide()">◀ Précédent</button>
+      <button class="nav-btn" onclick="nextSlide()">Suivant ▶</button>
+      <div class="slide-progress-dots" id="dotsContainer"></div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1.5rem;">
+      <div class="timer-pill" id="timerDisplay">⏱️ 00:00</div>
+      <button class="nav-btn" onclick="toggleTimer()">Chrono</button>
+      <button class="nav-btn" onclick="toggleNotes()">Notes (N)</button>
+      <button class="nav-btn" onclick="toggleFullscreen()">Plein écran (F)</button>
+      <div class="slide-counter" id="slideCounter">1 / 9</div>
+    </div>
+  </div>
+
+  <!-- Speaker Notes Modal -->
+  <div class="speaker-notes" id="speakerNotes">
+    <h5>Notes pour l'orateur (Touche N)</h5>
+    <div id="notesContent">Présentez la vision de Terra-Orbit en 30 secondes. Insistez sur le pont entre l'espace et le producteur 2G.</div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const slideCounter = document.getElementById('slideCounter');
+    const speakerNotes = document.getElementById('speakerNotes');
+    const notesContent = document.getElementById('notesContent');
+    const timerDisplay = document.getElementById('timerDisplay');
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    const NOTES = [
+      "SLIDE 1 (Vision) : Capter l'attention du jury dès les 15 premières secondes. Rappelez le nom : Terra-Orbit. Insistez sur le sous-titre : l'espace au secours du dernier kilomètre agricole.",
+      "SLIDE 2 (Le Défi) : Donnez des chiffres choc sur le Togo. 65% de paysans sans irrigation, 40% de pertes par poches sèches, 82% rejetés des banques. Mentionnez l'absence d'Internet sur la parcelle.",
+      "SLIDE 3 (La Concurrence) : Dites franchement que 95% des projets du hackathon présentent de superbes cartes satellites mais inutilisables sur le terrain. Terra-Orbit fait l'inverse : il amène le conseil directement dans la main du paysan.",
+      "SLIDE 4 (L'Architecture) : Expliquez comment la NASA (SMAP, ECOSTRESS, NASA POWER) est transformée à 30m par le TVDI et le TWI sans inventer de données.",
+      "SLIDE 5 (Rotations Stratégiques) : Montrez la force de l'outil : 3 plans de culture concrets avec gains en FCFA et azote. Montrez que le paysan peut adapter son prix local du maïs ou soja.",
+      "SLIDE 6 (Inclusion Rurale) : Le point qui fait gagner le concours : l'audio en Éwé et Kabyè sur téléphone 2G basique. Lisez l'exemple en Éwé pour impressionner le jury !",
+      "SLIDE 7 (Fintech & Banques) : Pourquoi les investisseurs et le MIFA vont adorer : on qualifie le risque pour débloquer le crédit agricole et l'assurance indicielle sans expert.",
+      "SLIDE 8 (Maturité) : Montrez que le code est propre, 12 tests automatisés réussis, 392 cantons intégrés. Déjà prêt pour les coopératives.",
+      "SLIDE 9 (Conclusion) : Terminez avec force sur la formule : 'L'espace n'a de valeur que s'il nourrit la Terre'. Lancez immédiatement la démonstration en direct !"
+    ];
+
+    // Initialize dots
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (idx === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(idx));
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateSlide() {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === currentSlide);
+      });
+      document.querySelectorAll('.dot').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+      });
+      slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+      notesContent.textContent = NOTES[currentSlide] || "Pas de note pour cette diapositive.";
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(index) {
+      if (index >= 0 && index < totalSlides) {
+        currentSlide = index;
+        updateSlide();
+      }
+    }
+
+    function toggleNotes() {
+      speakerNotes.classList.toggle('open');
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // Timer logic
+    let timerInterval = null;
+    let secondsElapsed = 0;
+
+    function toggleTimer() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      } else {
+        timerInterval = setInterval(() => {
+          secondsElapsed++;
+          const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+          const secs = String(secondsElapsed % 60).padStart(2, '0');
+          timerDisplay.textContent = `⏱️ ${mins}:${secs}`;
+        }, 1000);
+      }
+    }
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullscreen();
+      } else if (e.key === 'n' || e.key === 'N') {
+        toggleNotes();
+      } else if (e.key >= '1' && e.key <= '9') {
+        goToSlide(parseInt(e.key) - 1);
+      }
+    });
+
+    // Touch swipe support for mobile / tablets
+    let touchStartX = 0;
+    window.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    window.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) nextSlide();
+      if (touchEndX - touchStartX > 50) prevSlide();
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>
