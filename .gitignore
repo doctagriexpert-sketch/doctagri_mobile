@@ -2,7 +2,7 @@
 *.keras
 *.h5
 *.tflite
-!assets/models/*.tflite
+!assets/models/**/*.tflite
 # Backup du modèle cassava : asset non-runtime, 16 Mo → exclu de l'historique
 assets/models/model_backup.tflite
 
