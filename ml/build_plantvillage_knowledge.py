@@ -41,6 +41,15 @@ def make_entry(label: str,
                i18n_name: dict[str, str] | None = None,
                i18n_desc: dict[str, str] | None = None,
                i18n_plain: dict[str, str] | None = None) -> dict:
+    # Nettoyage commercial : supprimer priceXof, sku, vendor
+    clean_products = []
+    for p in products:
+        clean_products.append({
+            "name": p.get("name", ""),
+            "dosage": p.get("dosage", ""),
+            "precautions": p.get("precautions", "")
+        })
+
     entry = {
         "model_label": label,
         "culture": culture,
@@ -49,8 +58,13 @@ def make_entry(label: str,
         "severity": severity,
         "symptoms": symptoms,
         "treatments": treatments,
-        "products": products,
+        "products": clean_products,
         "prevention": prevention,
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": None,
+        "validation_date": None,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     }
     if i18n_name:
         entry["display_name_i18n"] = i18n_name
@@ -548,29 +562,29 @@ ENTRIES.append(make_entry(
         "Réduction nette du rendement"
     ],
     treatments=[{
-        "method": "Fongicide + résidus",
-        "description": "",
+        "method": "Mesures culturales et protection ciblée",
+        "description": "Privilégier la prophylaxie culturale ; ne pas utiliser de bouillie cuprique sur le maïs.",
         "steps": [
-            "Brûler les résidus de récolte",
-            "Pulvériser fongicide à base de cuivre",
-            "Rotation avec légumineuses"
+            "Enfouir ou brûler les résidus de récolte infectés après la récolte",
+            "Pratiquer une rotation culturale de 1 à 2 ans avec des légumineuses (soja, niébé)",
+            "Semer des variétés certifiées tolérantes recommandées par l'ITRA",
+            "En cas d'attaque sévère avant la floraison : consulter un agent ICAT pour un fongicide homologué"
         ]
     }],
     products=[
-        {"name": "Bouillie bordelaise", "dosage": "20 g/L",
-         "precautions": "", "priceXof": 6500, "sku": "DGA-1001",
-         "vendor": "DoctAgri Shop"}
+        {"name": "Fongicide systémique homologué céréales (ex: Azoxystrobine)", "dosage": "Selon prescription ICAT",
+         "precautions": "Port de masque et gants obligatoire. Ne pas traiter en plein soleil."}
     ],
-    prevention=["Variétés résistantes", "Rotation", "Brûler résidus"],
+    prevention=["Variétés résistantes ITRA", "Rotation culturale", "Gestion des résidus"],
     i18n_name={"ee": "Agblɛ ƒe dɔmegblẽ ɣi", "kab": "Agblɛ ƒe dɔmegblẽ ɣi"},
     i18n_desc={
         "ee": "Atsɔ̃ ɣi ɖe lãme me. Wòawu agbe la sesẽ.",
         "kab": "Atsɔ̃ ɣi ɖe lãme me.",
     },
     i18n_plain={
-        "fr": "Maladie grise du maïs. Brûler les résidus, traiter au cuivre, faire la rotation.",
-        "ee": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple kɔpe.",
-        "kab": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple kɔpe.",
+        "fr": "Cercosporiose du maïs. Détruire les résidus après récolte, faire la rotation avec le niébé et utiliser des semences certifiées.",
+        "ee": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple ayi. Bia gblenɔla ƒe aɖaŋuɖoɖo.",
+        "kab": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe. Bia gblenɔla ƒe aɖaŋuɖoɖo.",
     },
 ))
 
@@ -586,17 +600,18 @@ ENTRIES.append(make_entry(
         "Feuilles affaiblies, jaunissement"
     ],
     treatments=[{
-        "method": "Fongicide si infestation forte",
-        "description": "",
+        "method": "Prophylaxie et variétés tolérantes",
+        "description": "La résistance variétale est le premier levier de contrôle ; la bouillie bordelaise est inadaptée.",
         "steps": [
-            "Surveiller dès les premiers stades",
-            "Pulvériser bouillie cuprique si > 20 % feuilles atteintes"
+            "Semer dès les premières pluies utiles",
+            "Détruire les repousses spontanées et adventices hôtes",
+            "Éviter les excès de fertilisation azotée isolée",
+            "Traitement fongicide envisagé uniquement si plus de 20% des feuilles sont atteintes avant floraison"
         ]
     }],
     products=[
-        {"name": "Bouillie bordelaise", "dosage": "20 g/L",
-         "precautions": "", "priceXof": 6500, "sku": "DGA-1001",
-         "vendor": "DoctAgri Shop"}
+        {"name": "Fongicide foliaire homologué (ex: Mancozèbe / Tébuconazole)", "dosage": "Selon prescription technique ICAT",
+         "precautions": "Réservé aux attaques précoces sévères. Respecter le délai avant récolte."}
     ],
     prevention=["Variétés résistantes", "Semis précoces"],
     i18n_name={"ee": "Agblɛ ƒe rouille", "kab": "Agblɛ ƒe rouille"},
@@ -605,7 +620,7 @@ ENTRIES.append(make_entry(
         "kab": "Atsɔ̃ dzĩ-yibɔ ɖe lãme. Mesesẽ akpa o.",
     },
     i18n_plain={
-        "fr": "Rouille du maïs. Surveiller et traiter au cuivre si l'attaque est forte.",
+        "fr": "Rouille du maïs. Semer tôt, nettoyer les adventices hôtes et choisir des semences résistantes. Consulter l'agent ICAT.",
         "ee": "Agblɛ ƒe dɔmegblẽ dzĩ. Kpɔe nyuie, wɔ dɔ ne edze.",
         "kab": "Agblɛ ƒe dɔmegblẽ dzĩ. Kpɔe nyuie, wɔ dɔ ne edze.",
     },
@@ -623,18 +638,18 @@ ENTRIES.append(make_entry(
         "Apparition d'abord sur les feuilles basses"
     ],
     treatments=[{
-        "method": "Fongicide + résidus",
-        "description": "",
+        "method": "Lutte agronomique intégrée",
+        "description": "Mesures d'hygiène culturale et fongicide adapté si nécessaire (pas de bouillie cuprique).",
         "steps": [
-            "Brûler résidus de récolte",
-            "Pulvériser bouillie cuprique tous les 10 jours",
-            "Variétés tolérantes pour la prochaine saison"
+            "Labourer ou enfouir profondément les résidus après récolte",
+            "Rotation de 2 ans minimum sans maïs ni sorgho",
+            "Éliminer les premières feuilles basses fortement atteintes",
+            "Consulter l'agent de vulgarisation si les lésions progressent vers l'épi"
         ]
     }],
     products=[
-        {"name": "Bouillie bordelaise", "dosage": "20 g/L",
-         "precautions": "", "priceXof": 6500, "sku": "DGA-1001",
-         "vendor": "DoctAgri Shop"}
+        {"name": "Fongicide homologué grandes cultures", "dosage": "Selon homologation nationale",
+         "precautions": "Équipement de protection individuel complet obligatoire."}
     ],
     prevention=["Rotation", "Variétés résistantes"],
     i18n_name={
@@ -643,6 +658,14 @@ ENTRIES.append(make_entry(
     },
     i18n_desc={
         "ee": "Atsɔ̃ legble ɣi-yibɔ ɖe lãme. Sesẽ ŋutɔ.",
+        "kab": "Atsɔ̃ legble ɣi-yibɔ ɖe lãme. Sesẽ ŋutɔ.",
+    },
+    i18n_plain={
+        "fr": "Helminthosporiose du maïs. Enfouir les résidus, faire la rotation sans maïs ni sorgho pendant 2 ans. Demandez conseil à l'ICAT.",
+        "ee": "Agblɛ ƒe dɔ legble. Wɔ dɔ kple ayi ƒe eve. Bia gblenɔla.",
+        "kab": "Agblɛ ƒe dɔ legble. Wɔ dɔ kple ayi ƒe eve. Bia gblenɔla.",
+    },
+))
         "kab": "Atsɔ̃ legble ɣi-yibɔ ɖe lãme. Sesẽ ŋutɔ.",
     },
     i18n_plain={

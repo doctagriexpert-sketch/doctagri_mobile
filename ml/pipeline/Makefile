@@ -59,6 +59,9 @@ annotate-ensemble:
 		--images_dir ../../data/field_photos \
 		--output_csv ../../data/ensemble_annotations.csv
 
+evaluate-field:
+	python 10_evaluate_field_accuracy.py
+
 all: export quantize validate benchmark package
 
 clean:

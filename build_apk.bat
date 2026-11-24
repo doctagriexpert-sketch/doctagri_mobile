@@ -43,11 +43,20 @@ if "%SUPABASE_ANON_KEY%"=="" (
 )
 
 REM -- Environnement Java / Gradle ------------------------------
-REM JDK 21 WEPoll/UDS : TEMP/TMP sans espaces (override local OK).
-if "%JAVA_HOME%"=="" set "JAVA_HOME=C:\Users\HP VICTUS\AppData\Local\Programs\Eclipse Adoptium\jdk-21.0.9.10-hotspot"
-set "TEMP=C:\GradleTemp"
-set "TMP=C:\GradleTemp"
-if not exist "C:\GradleTemp" mkdir "C:\GradleTemp"
+REM Verifier si JAVA_HOME est defini, sinon verifier si java.exe est dans le PATH.
+if "%JAVA_HOME%"=="" (
+    where java >nul 2>nul
+    if errorlevel 1 (
+        echo [DoctAgri] AVERTISSEMENT : JAVA_HOME n'est pas defini et java.exe est introuvable dans le PATH.
+        echo Veuillez installer un JDK (17 ou 21) ou definir la variable JAVA_HOME.
+    )
+)
+REM Repertoire temporaire sans espace pour eviter les soucis de socket Gradle WEPoll/UDS sous Windows.
+if not exist "%SystemDrive%\GradleTemp" mkdir "%SystemDrive%\GradleTemp" 2>nul
+if exist "%SystemDrive%\GradleTemp" (
+    set "TEMP=%SystemDrive%\GradleTemp"
+    set "TMP=%SystemDrive%\GradleTemp"
+)
 
 REM -- Build ----------------------------------------------------
 echo [DoctAgri] Build APK release en cours...

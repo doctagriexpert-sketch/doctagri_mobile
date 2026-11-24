@@ -28,18 +28,12 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "300-400 g de cuivre/100L d'eau",
-                "precautions": "Traitement préventif. Ne pas appliquer en plein soleil.",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Traitement préventif. Ne pas appliquer en plein soleil."
             },
             {
                 "name": "Eau de javel diluée",
                 "dosage": "10 mL/L pour désinfection des outils",
-                "precautions": "Uniquement pour les outils. Rincer après usage.",
-                "priceXof": 1500,
-                "sku": "DGA-1002",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Uniquement pour les outils. Rincer après usage."
             }
         ],
         "prevention": [
@@ -47,7 +41,12 @@
             "Rotation des cultures (2-3 ans sans manioc)",
             "Détruire les plants infectés par le feu",
             "Espacement adéquat (1m x 1m minimum)"
-        ]
+        ],
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Cassava Brown Streak Disease (CBSD)",
@@ -78,18 +77,12 @@
             {
                 "name": "Pièges jaunes collants",
                 "dosage": "20-30 pièges/ha",
-                "precautions": "Disposer en bordure de parcelle à hauteur des plants.",
-                "priceXof": 4500,
-                "sku": "DGA-2001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Disposer en bordure de parcelle à hauteur des plants."
             },
             {
                 "name": "Huile de neem",
                 "dosage": "5 mL/L d'eau",
-                "precautions": "Répulsif naturel contre les aleurodes. Traiter le soir.",
-                "priceXof": 3800,
-                "sku": "DGA-2002",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Répulsif naturel contre les aleurodes. Traiter le soir."
             }
         ],
         "prevention": [
@@ -97,7 +90,12 @@
             "Boutures saines certifiées uniquement",
             "Rotation avec des cultures non-hôtes",
             "Élimination des aleurodes vecteurs"
-        ]
+        ],
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Cassava Green Mottle (CGM)",
@@ -128,18 +126,12 @@
             {
                 "name": "Huile de neem",
                 "dosage": "5 mL/L d'eau",
-                "precautions": "Répulsif contre les insectes vecteurs. Traiter le soir.",
-                "priceXof": 3800,
-                "sku": "DGA-2002",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Répulsif contre les insectes vecteurs. Traiter le soir."
             },
             {
                 "name": "Savon insecticide",
                 "dosage": "10-20 mL/L d'eau",
-                "precautions": "Contre les insectes vecteurs. Rincer si température > 35°C.",
-                "priceXof": 2800,
-                "sku": "DGA-3001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Contre les insectes vecteurs. Rincer si température > 35°C."
             }
         ],
         "prevention": [
@@ -147,7 +139,12 @@
             "Contrôle des insectes vecteurs",
             "Rotation des cultures",
             "Élimination des plants infectés"
-        ]
+        ],
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Cassava Mosaic Disease (CMD)",
@@ -179,18 +176,12 @@
             {
                 "name": "Pièges jaunes collants",
                 "dosage": "20-30 pièges/ha",
-                "precautions": "Pour capturer les aleurodes vecteurs. Remplacer quand saturés.",
-                "priceXof": 4500,
-                "sku": "DGA-2001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Pour capturer les aleurodes vecteurs. Remplacer quand saturés."
             },
             {
                 "name": "Huile de neem",
                 "dosage": "5 mL/L d'eau",
-                "precautions": "Répulsif naturel. Appliquer le soir pour éviter la photodégradation.",
-                "priceXof": 3800,
-                "sku": "DGA-2002",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Répulsif naturel. Appliquer le soir pour éviter la photodégradation."
             }
         ],
         "prevention": [
@@ -198,7 +189,12 @@
             "Boutures saines certifiées uniquement",
             "Arrachage systématique des plants malades",
             "Rotation avec des cultures non-hôtes (maïs, arachide)"
-        ]
+        ],
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Cassava___healthy",
@@ -225,7 +221,12 @@
             "Rotation des cultures tous les 2-3 ans",
             "Bon drainage du sol",
             "Espacement 1m x 1m minimum"
-        ]
+        ],
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Cassava___unknown",
@@ -251,7 +252,12 @@
         "prevention": [
             "Surveillance régulière des plants",
             "Consulter un expert en cas de doute"
-        ]
+        ],
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Background_without_leaves",
@@ -286,7 +292,12 @@
             "fr": "Photo inutilisable. Reprenez avec une feuille bien visible au centre, lumière naturelle.",
             "ee": "Foto la megblɔ nu o. Wɔ foto yeye, da lãme ɖe titina, kekeli nyuie.",
             "kab": "Foto la mèfia nu o. Wɔ foto yeye lè kekeli nyuie me."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Bacterial_spot",
@@ -316,10 +327,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "200 g pour 20 L d'eau",
-                "precautions": "Ne pas appliquer en plein soleil.",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Ne pas appliquer en plein soleil."
             }
         ],
         "prevention": [
@@ -340,7 +348,12 @@
             "fr": "Maladie bactérienne grave de la tomate. Petites taches noires sur feuilles et fruits. Traitement au cuivre nécessaire.",
             "ee": "Tomati ƒe dɔ sesẽ. Atsɔ̃ yibɔ sue ɖe lãme kple atsiame. Wɔ dɔ kple kɔpe.",
             "kab": "Tomati ƒe dɔ sesẽ. Atsɔ̃ yibɔ sue ɖe lãme kple atsiame. Wɔ dɔ kple kɔpe."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Early_blight",
@@ -370,10 +383,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "Pulvériser le matin tôt ou le soir.",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Pulvériser le matin tôt ou le soir."
             }
         ],
         "prevention": [
@@ -394,7 +404,12 @@
             "fr": "Champignon courant de la tomate. Taches brunes en cible sur les feuilles basses. Traiter vite au cuivre.",
             "ee": "Tomati ƒe dɔ. Atsɔ̃ yibɔ ɖe lãme. Wɔ dɔ kple kɔpe kabakaba.",
             "kab": "Tomati ƒe dɔ. Atsɔ̃ yibɔ ɖe lãme. Wɔ dɔ kple kɔpe kabakaba."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Late_blight",
@@ -424,10 +439,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "25 g/L",
-                "precautions": "En traitement curatif, doubler la fréquence.",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "En traitement curatif, doubler la fréquence."
             }
         ],
         "prevention": [
@@ -448,7 +460,12 @@
             "fr": "Maladie très dangereuse. Peut tuer le champ en une semaine. Traiter immédiatement et arracher les plants atteints.",
             "ee": "Dɔ sesẽ ŋutɔ. Aɖu agble le kwasiɖa ɖeka me. Wɔ dɔ enumake.",
             "kab": "Dɔ sesẽ ŋutɔ. Aɖu agble le kwasiɖa ɖeka me. Wɔ dɔ enumake."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Leaf_Mold",
@@ -476,10 +493,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "Tôt le matin de préférence.",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Tôt le matin de préférence."
             }
         ],
         "prevention": [
@@ -498,7 +512,12 @@
             "fr": "Maladie fongique liée à l'humidité. Aérez la parcelle et traitez au cuivre.",
             "ee": "Tsi gbɔ̃ ƒe dɔ. Wɔ ɖe agble la nu eye nàwɔ dɔ kple kɔpe.",
             "kab": "Tsi gbɔ̃ ƒe dɔ. Wɔ dɔ kple kɔpe."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Septoria_leaf_spot",
@@ -527,10 +546,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -549,7 +565,12 @@
             "fr": "Petites taches grises sur les feuilles. Retirer feuilles atteintes et traiter au cuivre.",
             "ee": "Atsɔ̃ sue ɣi ɖe lãme. Ɖe lãmewo ɖa nàwɔ dɔ.",
             "kab": "Atsɔ̃ sue ɣi ɖe lãme. Wɔ dɔ kple kɔpe."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Spider_mites Two-spotted_spider_mite",
@@ -579,10 +600,7 @@
             {
                 "name": "Huile de neem",
                 "dosage": "5 mL/L",
-                "precautions": "Le soir.",
-                "priceXof": 3800,
-                "sku": "DGA-2002",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Le soir."
             }
         ],
         "prevention": [
@@ -601,7 +619,12 @@
             "fr": "Acariens rouges. Vaporiser eau le matin et traiter à l'huile de neem.",
             "ee": "Lã sue dzĩ. Hlɔ tsi ɖe lãme nàwɔ dɔ kple amĩ neem.",
             "kab": "Lã sue dzĩ. Hlɔ tsi ɖe lãme nàwɔ dɔ kple amĩ neem."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Target_Spot",
@@ -628,10 +651,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -650,7 +670,12 @@
             "fr": "Taches en cible sur la tomate. Traiter au cuivre.",
             "ee": "Atsɔ̃ kotokpe ɖe tomati. Wɔ dɔ kple kɔpe.",
             "kab": "Atsɔ̃ kotokpe ɖe tomati. Wɔ dɔ kple kɔpe."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
@@ -680,18 +705,12 @@
             {
                 "name": "Pièges jaunes collants",
                 "dosage": "20-30 pièges/ha",
-                "precautions": "",
-                "priceXof": 4500,
-                "sku": "DGA-2001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             },
             {
                 "name": "Huile de neem",
                 "dosage": "5 mL/L",
-                "precautions": "Soir.",
-                "priceXof": 3800,
-                "sku": "DGA-2002",
-                "vendor": "DoctAgri Shop"
+                "precautions": "Soir."
             }
         ],
         "prevention": [
@@ -711,7 +730,12 @@
             "fr": "Virus très grave transmis par les aleurodes. Pas de cure. Arracher et planter une variété résistante.",
             "ee": "Virus sesẽ. Hopo plant si dze, dzra atikomeli sesẽ.",
             "kab": "Virus sesẽ. Hopo plant si dze, dzra atikomeli sesẽ."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___Tomato_mosaic_virus",
@@ -754,7 +778,12 @@
             "fr": "Virus contagieux par contact. Hygiène stricte des mains et outils. Arracher les plants atteints.",
             "ee": "Virus tsɔna kple asi. Klɔ asi kple dɔwɔnu. Hopo plant si dze.",
             "kab": "Virus tsɔna kple asi. Klɔ asi kple dɔwɔnu. Hopo plant si dze."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Tomato___healthy",
@@ -794,13 +823,18 @@
             "fr": "Tomate en bonne santé. Continuez la surveillance et les bonnes pratiques.",
             "ee": "Tomati la le lãmesẽ me. Yi edzi.",
             "kab": "Tomati la le lãmesẽ me. Yi edzi."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Corn___Cercospora_leaf_spot Gray_leaf_spot",
         "culture": "Maïs",
-        "display_name": "Cercosporiose grise du maïs",
-        "description": "Champignon qui crée des taches grises rectangulaires entre les nervures. Très destructeur en culture de maïs en Afrique de l'Ouest.",
+        "display_name": "Cercosporiose du maïs (Tache grise)",
+        "description": "Maladie fongique foliaire (Cercospora zeae-maydis) créant des lésions rectangulaires délimitées par les nervures. Très fréquente en climat chaud et humide en Afrique de l'Ouest.",
         "severity": "grave",
         "symptoms": [
             "Taches grises rectangulaires entre les nervures",
@@ -810,29 +844,28 @@
         ],
         "treatments": [
             {
-                "method": "Fongicide + résidus",
-                "description": "",
+                "method": "Mesures culturales et protection ciblée",
+                "description": "Privilégier la prophylaxie culturale ; ne pas utiliser de bouillie cuprique sur le maïs.",
                 "steps": [
-                    "Brûler les résidus de récolte",
-                    "Pulvériser fongicide à base de cuivre",
-                    "Rotation avec légumineuses"
+                    "Enfouir ou brûler les résidus de récolte infectés après la récolte",
+                    "Pratiquer une rotation culturale de 1 à 2 ans avec des légumineuses (soja, niébé)",
+                    "Semer des variétés certifiées tolérantes recommandées par l'ITRA",
+                    "En cas d'attaque sévère avant la floraison : consulter un agent ICAT pour un fongicide homologué (ex: Azoxystrobine)"
                 ]
             }
         ],
         "products": [
             {
-                "name": "Bouillie bordelaise",
-                "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "name": "Fongicide systémique homologué céréales (ex: Azoxystrobine / Pyraclostrobine)",
+                "dosage": "Selon prescription de l'agent agricole et notice fabricant",
+                "precautions": "Port de masque, gants et bottes obligatoire. Ne pas traiter en plein soleil ni avant une pluie."
             }
         ],
         "prevention": [
-            "Variétés résistantes",
-            "Rotation",
-            "Brûler résidus"
+            "Utiliser des semences certifiées et traitées",
+            "Rotation des cultures avec légumineuses (niébé, arachide)",
+            "Gestion rigoureuse des résidus de récolte",
+            "Densité de semis aérée pour limiter l'humidité foliaire"
         ],
         "display_name_i18n": {
             "ee": "Agblɛ ƒe dɔmegblẽ ɣi",
@@ -843,16 +876,21 @@
             "kab": "Atsɔ̃ ɣi ɖe lãme me."
         },
         "plain_explanation_i18n": {
-            "fr": "Maladie grise du maïs. Brûler les résidus, traiter au cuivre, faire la rotation.",
-            "ee": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple kɔpe.",
-            "kab": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple kɔpe."
-        }
+            "fr": "Cercosporiose du maïs. Détruire les résidus après récolte, faire la rotation avec le niébé et utiliser des semences certifiées. Demandez conseil à l'agent ICAT.",
+            "ee": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe, wɔ dɔ kple azi alo ayi. Bia gblenɔla ƒe aɖaŋuɖoɖo.",
+            "kab": "Agblɛ ƒe dɔ ɣi. Tɔ dzo agble ƒe ɣe. Bia gblenɔla ƒe aɖaŋuɖoɖo."
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Corn___Common_rust",
         "culture": "Maïs",
         "display_name": "Rouille commune du maïs",
-        "description": "Champignon (Puccinia sorghi) qui produit des pustules rouille (orange-brun) sur les deux faces des feuilles. Affaiblit la plante.",
+        "description": "Maladie fongique (Puccinia sorghi) provoquant des pustules poudreuses brun-rouille sur les deux faces des feuilles. Réduit la photosynthèse et le rendement grainier.",
         "severity": "modéré",
         "symptoms": [
             "Pustules rouge-brun sur les feuilles",
@@ -861,27 +899,28 @@
         ],
         "treatments": [
             {
-                "method": "Fongicide si infestation forte",
-                "description": "",
+                "method": "Prophylaxie et variétés tolérantes",
+                "description": "La résistance variétale est le premier levier de contrôle ; les produits cupriques sont inadaptés.",
                 "steps": [
-                    "Surveiller dès les premiers stades",
-                    "Pulvériser bouillie cuprique si > 20 % feuilles atteintes"
+                    "Semer dès les premières pluies utiles pour échapper au pic de sporulation",
+                    "Détruire les repousses spontanées et adventices hôtes en bordure de parcelle",
+                    "Éviter les excès de fertilisation azotée isolée",
+                    "Traitement fongicide foliaire envisagé uniquement si plus de 15 à 20% des feuilles sont atteintes avant la floraison"
                 ]
             }
         ],
         "products": [
             {
-                "name": "Bouillie bordelaise",
-                "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "name": "Fongicide foliaire homologué (ex: Mancozèbe / Tébuconazole)",
+                "dosage": "Selon prescription technique locale ICAT",
+                "precautions": "Réservé aux attaques précoces sévères. Respecter le délai avant récolte (DAR)."
             }
         ],
         "prevention": [
-            "Variétés résistantes",
-            "Semis précoces"
+            "Variétés résistantes vulgarisées par la recherche agricole",
+            "Semis précoce et synchronisé",
+            "Désherbage précoce des abords du champ",
+            "Fertilisation NPK équilibrée"
         ],
         "display_name_i18n": {
             "ee": "Agblɛ ƒe rouille",
@@ -892,16 +931,21 @@
             "kab": "Atsɔ̃ dzĩ-yibɔ ɖe lãme. Mesesẽ akpa o."
         },
         "plain_explanation_i18n": {
-            "fr": "Rouille du maïs. Surveiller et traiter au cuivre si l'attaque est forte.",
-            "ee": "Agblɛ ƒe dɔmegblẽ dzĩ. Kpɔe nyuie, wɔ dɔ ne edze.",
-            "kab": "Agblɛ ƒe dɔmegblẽ dzĩ. Kpɔe nyuie, wɔ dɔ ne edze."
-        }
+            "fr": "Rouille du maïs. Semer tôt, nettoyer les adventices hôtes et choisir des semences résistantes. Traitement uniquement si l'attaque est précoce.",
+            "ee": "Agblɛ ƒe aŋɔdɔ. Do agblɛ kaba, kplɔ gbe vɔ̃wo ɖa. Bia gblenɔla ƒe aɖaŋuɖoɖo.",
+            "kab": "Agblɛ ƒe aŋɔdɔ. Do agblɛ kaba. Bia gblenɔla ƒe aɖaŋuɖoɖo."
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Corn___Northern_Leaf_Blight",
         "culture": "Maïs",
         "display_name": "Helminthosporiose du maïs",
-        "description": "Champignon (Setosphaeria turcica) qui crée de longues lésions grises en forme de cigare sur les feuilles. Peut causer 50 % de pertes.",
+        "description": "Maladie fongique (Exserohilum turcicum / Setosphaeria turcica) causant de longues nécroses fusiformes (en forme de cigare) gris-vert à brun clair sur le feuillage.",
         "severity": "grave",
         "symptoms": [
             "Lésions allongées en forme de cigare (5-15 cm)",
@@ -910,28 +954,27 @@
         ],
         "treatments": [
             {
-                "method": "Fongicide + résidus",
-                "description": "",
+                "method": "Lutte agronomique intégrée",
+                "description": "Mesures d'hygiène culturale et fongicide adapté si nécessaire (pas de bouillie cuprique).",
                 "steps": [
-                    "Brûler résidus de récolte",
-                    "Pulvériser bouillie cuprique tous les 10 jours",
-                    "Variétés tolérantes pour la prochaine saison"
+                    "Labourer ou enfouir profondément les résidus après récolte pour décomposer les spores",
+                    "Rotation de 2 ans minimum sans maïs ni sorgho sur la même parcelle",
+                    "Éliminer les premières feuilles basses fortement atteintes lors des sarclages",
+                    "Consulter l'agent de vulgarisation si les lésions progressent vers l'épi avant la floraison"
                 ]
             }
         ],
         "products": [
             {
-                "name": "Bouillie bordelaise",
-                "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "name": "Fongicide homologué grandes cultures (ex: formulation triazole / strobilurine)",
+                "dosage": "Selon dose homologuée par le comité phytosanitaire national",
+                "precautions": "Équipement de protection individuel complet obligatoire. Ne jamais appliquer sur maïs doux en récolte."
             }
         ],
         "prevention": [
-            "Rotation",
-            "Variétés résistantes"
+            "Utiliser des semences saines traitées",
+            "Rotation longue avec cultures non-graminées (coton, arachide, soja)",
+            "Espacement de semis respectant les normes agronomiques (aération)"
         ],
         "display_name_i18n": {
             "ee": "Agblɛ ƒe dɔ legble",
@@ -942,10 +985,15 @@
             "kab": "Atsɔ̃ legble ɣi-yibɔ ɖe lãme. Sesẽ ŋutɔ."
         },
         "plain_explanation_i18n": {
-            "fr": "Maladie grave du maïs. Longues taches en cigare. Brûler résidus et traiter au cuivre.",
-            "ee": "Agblɛ ƒe dɔ sesẽ. Atsɔ̃ legble. Tɔ dzo ɣe, wɔ dɔ.",
-            "kab": "Agblɛ ƒe dɔ sesẽ. Atsɔ̃ legble. Tɔ dzo ɣe, wɔ dɔ."
-        }
+            "fr": "Helminthosporiose du maïs. Enfouir les résidus, faire la rotation sans maïs ni sorgho pendant 2 ans. Demandez conseil à l'ICAT.",
+            "ee": "Agblɛ ƒe dɔ gã. Wɔ dɔ kple ayi alo azi ƒe eve. Bia gblenɔla ƒe aɖaŋuɖoɖo.",
+            "kab": "Agblɛ ƒe dɔ gã. Wɔ dɔ kple ayi ƒe eve. Bia gblenɔla ƒe aɖaŋuɖoɖo."
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Corn___healthy",
@@ -985,7 +1033,12 @@
             "fr": "Maïs en bonne santé. Continuez la surveillance.",
             "ee": "Agblɛ la le lãmesẽ me. Yi edzi.",
             "kab": "Agblɛ la le lãmesẽ me. Yi edzi."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Potato___Early_blight",
@@ -1013,10 +1066,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1035,7 +1085,12 @@
             "fr": "Champignon courant. Taches en cible sur les feuilles. Traiter au cuivre.",
             "ee": "Kaklo ƒe dɔ. Atsɔ̃ ɖe lãme. Wɔ dɔ kple kɔpe.",
             "kab": "Kaklo ƒe dɔ. Atsɔ̃ ɖe lãme. Wɔ dɔ kple kɔpe."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Potato___Late_blight",
@@ -1065,10 +1120,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "25 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1088,7 +1140,12 @@
             "fr": "Mildiou très dangereux. Réagir vite : fongicide cuprique tous les 5 jours.",
             "ee": "Mildiou sesẽ. Wɔ dɔ enumake.",
             "kab": "Mildiou sesẽ. Wɔ dɔ enumake."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Potato___healthy",
@@ -1128,7 +1185,12 @@
             "fr": "Pomme de terre saine. Continuez la surveillance.",
             "ee": "Kaklo la le lãmesẽ me. Yi edzi.",
             "kab": "Kaklo la le lãmesẽ me. Yi edzi."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Pepper,_bell___Bacterial_spot",
@@ -1157,10 +1219,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1179,7 +1238,12 @@
             "fr": "Maladie bactérienne du piment. Retirer feuilles atteintes et traiter au cuivre.",
             "ee": "Ɖoku ƒe dɔ bacteria. Wɔ dɔ kple kɔpe.",
             "kab": "Ɖoku ƒe dɔ bacteria. Wɔ dɔ kple kɔpe."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Pepper,_bell___healthy",
@@ -1219,7 +1283,12 @@
             "fr": "Piment en bonne santé. Continuez la surveillance.",
             "ee": "Ɖoku la le lãmesẽ me. Yi edzi.",
             "kab": "Ɖoku la le lãmesẽ me. Yi edzi."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Apple___Apple_scab",
@@ -1242,10 +1311,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1264,7 +1330,12 @@
             "fr": "Champignon qui crée des taches noires veloutées sur feuilles et fruits.",
             "ee": "Champignon qui crée des taches noires veloutées sur feuilles et fruits.",
             "kab": "Champignon qui crée des taches noires veloutées sur feuilles et fruits."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Apple___Black_rot",
@@ -1287,10 +1358,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1309,7 +1377,12 @@
             "fr": "Maladie fongique grave qui pourrit les fruits.",
             "ee": "Maladie fongique grave qui pourrit les fruits.",
             "kab": "Maladie fongique grave qui pourrit les fruits."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Apple___Cedar_apple_rust",
@@ -1332,10 +1405,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1354,7 +1424,12 @@
             "fr": "Champignon créant des taches orange sur les feuilles.",
             "ee": "Champignon créant des taches orange sur les feuilles.",
             "kab": "Champignon créant des taches orange sur les feuilles."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Apple___healthy",
@@ -1388,7 +1463,12 @@
             "fr": "Aucun signe de maladie. Continuez la surveillance.",
             "ee": "Aucun signe de maladie. Continuez la surveillance.",
             "kab": "Aucun signe de maladie. Continuez la surveillance."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Blueberry___healthy",
@@ -1422,7 +1502,12 @@
             "fr": "Aucun signe de maladie.",
             "ee": "Aucun signe de maladie.",
             "kab": "Aucun signe de maladie."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Cherry___Powdery_mildew",
@@ -1445,10 +1530,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1467,7 +1549,12 @@
             "fr": "Feutrage blanc sur les feuilles. Traiter au soufre.",
             "ee": "Feutrage blanc sur les feuilles. Traiter au soufre.",
             "kab": "Feutrage blanc sur les feuilles. Traiter au soufre."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Cherry___healthy",
@@ -1501,7 +1588,12 @@
             "fr": "Aucun signe de maladie.",
             "ee": "Aucun signe de maladie.",
             "kab": "Aucun signe de maladie."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Grape___Black_rot",
@@ -1524,10 +1616,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1546,7 +1635,12 @@
             "fr": "Champignon dévastateur sur grappes et feuilles.",
             "ee": "Champignon dévastateur sur grappes et feuilles.",
             "kab": "Champignon dévastateur sur grappes et feuilles."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Grape___Esca_(Black_Measles)",
@@ -1569,10 +1663,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1591,7 +1682,12 @@
             "fr": "Maladie complexe du bois. Tailler les ceps atteints.",
             "ee": "Maladie complexe du bois. Tailler les ceps atteints.",
             "kab": "Maladie complexe du bois. Tailler les ceps atteints."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
@@ -1614,10 +1710,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1636,7 +1729,12 @@
             "fr": "Champignon qui brunit les feuilles.",
             "ee": "Champignon qui brunit les feuilles.",
             "kab": "Champignon qui brunit les feuilles."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Grape___healthy",
@@ -1670,7 +1768,12 @@
             "fr": "Aucun signe de maladie.",
             "ee": "Aucun signe de maladie.",
             "kab": "Aucun signe de maladie."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Orange___Haunglongbing_(Citrus_greening)",
@@ -1693,10 +1796,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1715,7 +1815,12 @@
             "fr": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints.",
             "ee": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints.",
             "kab": "Maladie bactérienne mortelle pour les agrumes. Pas de cure : arracher les arbres atteints."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Peach___Bacterial_spot",
@@ -1738,10 +1843,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1760,7 +1862,12 @@
             "fr": "Petites taches sur feuilles et fruits.",
             "ee": "Petites taches sur feuilles et fruits.",
             "kab": "Petites taches sur feuilles et fruits."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Peach___healthy",
@@ -1794,7 +1901,12 @@
             "fr": "Aucun signe de maladie.",
             "ee": "Aucun signe de maladie.",
             "kab": "Aucun signe de maladie."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Raspberry___healthy",
@@ -1828,7 +1940,12 @@
             "fr": "Aucun signe de maladie.",
             "ee": "Aucun signe de maladie.",
             "kab": "Aucun signe de maladie."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Soybean___healthy",
@@ -1862,7 +1979,12 @@
             "fr": "Aucun signe de maladie.",
             "ee": "Aucun signe de maladie.",
             "kab": "Aucun signe de maladie."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Squash___Powdery_mildew",
@@ -1885,10 +2007,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1907,7 +2026,12 @@
             "fr": "Feutrage blanc sur les feuilles.",
             "ee": "Feutrage blanc sur les feuilles.",
             "kab": "Feutrage blanc sur les feuilles."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Strawberry___Leaf_scorch",
@@ -1930,10 +2054,7 @@
             {
                 "name": "Bouillie bordelaise",
                 "dosage": "20 g/L",
-                "precautions": "",
-                "priceXof": 6500,
-                "sku": "DGA-1001",
-                "vendor": "DoctAgri Shop"
+                "precautions": ""
             }
         ],
         "prevention": [
@@ -1952,7 +2073,12 @@
             "fr": "Champignon qui brunit le bord des feuilles.",
             "ee": "Champignon qui brunit le bord des feuilles.",
             "kab": "Champignon qui brunit le bord des feuilles."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     },
     {
         "model_label": "Strawberry___healthy",
@@ -1986,6 +2112,11 @@
             "fr": "Aucun signe de maladie.",
             "ee": "Aucun signe de maladie.",
             "kab": "Aucun signe de maladie."
-        }
+        },
+        "validation_status": "en_attente_validation_agronome",
+        "validated_by": null,
+        "validation_date": null,
+        "source": "Guide de protection phytosanitaire des cultures vivrières (ITRA / ICAT / FAO)",
+        "disclaimer": "Fiche informative d'aide à la décision. Tout traitement phytosanitaire doit être confirmé auprès d'un conseiller agricole local (ICAT / ITRA)."
     }
 ]
