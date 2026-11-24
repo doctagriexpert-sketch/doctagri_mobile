@@ -54,6 +54,11 @@ package:
 		--version $(VERSION) \
 		--accuracy $(EXPECTED_ACCURACY)
 
+annotate-ensemble:
+	python 09_ensemble_annotate.py \
+		--images_dir ../../data/field_photos \
+		--output_csv ../../data/ensemble_annotations.csv
+
 all: export quantize validate benchmark package
 
 clean:

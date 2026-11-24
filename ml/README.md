@@ -20,6 +20,7 @@ This directory contains the reproducible ML pipeline for model quantization and 
 |--------|---------|
 | `07_field_domain_analysis.py` | Unsupervised lab→field domain-shift analysis: compares model output distributions (confidence/entropy/margin) on field vs lab images, quantifies the gap (KS distance), recommends abstention thresholds. No ground-truth labels needed. |
 | `08_vlm_label.py` | VLM-assisted labeling of unlabeled field photos (Claude vision). Proposes crop + disease + severity + photo quality, grounded in the app's taxonomy (registry + knowledge base); outputs a resumable CSV a non-expert verifies. `--validate_dir` first measures VLM reliability against a labeled set (PlantVillage) before trusting it. Needs `pip install anthropic` + `ANTHROPIC_API_KEY`. |
+| `09_ensemble_annotate.py` | Multi-model committee annotation (Ensemble Consensus). Combines up to 9 models across complementary paradigms: 5 Hugging Face vision models (ViT Tomato, ResNet-50 Tomato, ResNet-18 PlantVillage, MobileNetV2 PlantVillage, ConvNeXt-Tiny PlantVillage), 2 edge TFLite models (PlantVillage INT8, Cassava FP16), 1 full Keras MobileNetV2, and 1 VLM (Claude/Gemini vision). Governed by 3 safety barriers: unified canonical taxonomy, calibrated temperature scaling, and domain-shift/OOD entropy rejection. Produces an actionable CSV triaged into `AUTO_APPROVED`, `NEEDS_HUMAN_REVIEW`, and `REJECTED_UNUSABLE`. |
 
 ### Shared module — `app_inference.py`
 
@@ -119,3 +120,14 @@ Each packaged model gets an entry in `ml/models/registry.json`:
   "released_at": "2026-04-17T00:00:00Z"
 }
 ```
+
+## Notebooks d'entraînement & Stockage des poids bruts
+
+### 1. Notebooks (`ml/notebooks/`)
+- `ml/notebooks/plantvillage_training_colab.ipynb` : Notebook d'entraînement Google Colab (MobileNetV2, 38 classes PlantVillage). Permet de reproduire l'apprentissage du modèle de base.
+
+### 2. Poids bruts Keras (`plant_disease_model.keras`)
+- **Poids** : ~395 Mo (Keras SavedModel / format `.keras`).
+- **Politique de stockage GitHub** : GitHub refuse les fichiers supérieurs à 100 Mo (`GH001`). Le fichier `*.keras` est donc exclu par le `.gitignore`.
+- **Hébergement recommandé** : Stocké sur Hugging Face Hub, Google Drive ou GitHub Releases (liens de téléchargement directs), puis quantifié en TFLite INT8 (`assets/models/plantvillage/model_int8.tflite`, 4,9 Mo) pour l'application mobile.
+
