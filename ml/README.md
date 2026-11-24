@@ -131,3 +131,20 @@ Each packaged model gets an entry in `ml/models/registry.json`:
 - **Politique de stockage GitHub** : GitHub refuse les fichiers supérieurs à 100 Mo (`GH001`). Le fichier `*.keras` est donc exclu par le `.gitignore`.
 - **Hébergement recommandé** : Stocké sur Hugging Face Hub, Google Drive ou GitHub Releases (liens de téléchargement directs), puis quantifié en TFLite INT8 (`assets/models/plantvillage/model_int8.tflite`, 4,9 Mo) pour l'application mobile.
 
+## Démarche de modélisation : Modèle de laboratoire (.keras) vs Modèle embarqué terrain (TFLite INT8)
+
+La conception du système de vision artificielle de DoctAgri s'est articulée en deux phases complémentaires :
+
+1. **Phase expérimentale & reproductibilité (Laboratoire)** :
+   - Conception et entraînement d'une architecture MobileNetV2 (38 classes, format `.keras`, 395 Mo) documentée dans `ml/notebooks/plantvillage_training_colab.ipynb`.
+   - **Objectif** : Maîtriser la chaîne complète d'apprentissage (augmentation de données, pondération des classes, convergence) et établir une **baseline de référence scientifique**.
+
+2. **Phase d'industrialisation & contraintes terrain au Togo (Edge AI)** :
+   - Le déploiement au champ auprès des producteurs togolais impose un diagnostic **100 % hors-ligne** sur des smartphones d'entrée de gamme (avec interface adaptée en Français, Éwé et Kabyè).
+   - Un modèle Float32 de 395 Mo étant incompatible avec ces contraintes (téléchargement impossible en zone rurale, saturation mémoire RAM, décharge rapide de la batterie), nous avons retenu une architecture EfficientNet quantifiée en **Full INT8** (`assets/models/plantvillage/model_int8.tflite`, 4,9 Mo).
+   - **Bénéfices d'ingénierie** : Réduction de l'empreinte mémoire de **98,7 %**, inférence fluide en moins de 100 ms sur CPU mobile et zéro consommation de données mobiles au champ.
+
+3. **Synergie opérationnelle (Comité d'annotation multi-modèles)** :
+   - Le modèle `.keras` n'est pas abandonné : il est réexploité côté pipeline / station de travail dans l'outil d'annotation par consensus (`ml/pipeline/09_ensemble_annotate.py`) aux côtés des modèles Hugging Face et du VLM pour valider et calibrer les annotations des photos de terrain.
+
+

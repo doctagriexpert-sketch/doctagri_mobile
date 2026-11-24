@@ -35,7 +35,7 @@ DoctAgri réunit le diagnostic phytosanitaire mobile hors-ligne sur smartphone e
 ## 📱 Application Mobile DoctAgri
 
 Application mobile Flutter distribuée par APK pour le diagnostic de maladies des cultures par vision artificielle embarquée :
-* **Inférence locale sans connexion** : Modèles TensorFlow Lite quantifiés (int8) exécutés directement sur l'appareil.
+* **Inférence locale sans connexion** : Modèles TensorFlow Lite quantifiés (INT8, 4,9 Mo) exécutés directement sur l'appareil (optimisation de 98,7 % par rapport au modèle d'entraînement de laboratoire `.keras` de 395 Mo, voir [démarche de modélisation](ml/README.md#démarche-de-modélisation--modèle-de-laboratoire-keras-vs-modèle-embarqué-terrain-tflite-int8)).
 * **Résilience réseau** : Fonctionnement complet hors ligne (historique local Hive, photos, fiches de traitement).
 * **Inclusion rurale** : Synthèse vocale et alertes SMS/audio en langues locales (Français, Éwé, Kabyè).
 
